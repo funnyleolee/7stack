@@ -41,7 +41,7 @@ public class UserDetailAction extends ActionSupport {
 		System.out.println(simpleService.getUserById(Integer.valueOf(q)));
 		return "hello";
 	}
-
+	@Action("/user/new")
 	public String add() throws Exception {
 		int i = simpleService.saveUser(user);
 		System.out.println(i);

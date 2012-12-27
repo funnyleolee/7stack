@@ -28,6 +28,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="me/sevenstack/blog/model/User.xml" />
+		<mapper resource="mapping/User.xml" />
 	</mappers>
 </configuration> 

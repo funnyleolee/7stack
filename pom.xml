@@ -78,7 +78,7 @@
 				<artifactId>tomcat6-maven-plugin</artifactId>
 				<version>2.0-beta-1</version>
 				<configuration>
-					<path>/steetyle</path>
+					<path>/7stack</path>
 					<port>8080</port>
 					<ajpPort>8009</ajpPort>
 				</configuration>

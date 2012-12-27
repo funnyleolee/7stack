@@ -68,8 +68,4 @@ public class SimpleDao<T> implements BasicDao<T>{
 		String str = cls.getSimpleName();
 		return str+"."+opt+str;
 	}
-	public static void main(String[] args) {
-		Injector inj = Guice.createInjector();
-		inj.getInstance(SimpleDao.class);
-	}
 }

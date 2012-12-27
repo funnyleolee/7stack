@@ -34,7 +34,6 @@ public class SimpleServiceImp implements SimpleService {
 	@Transactional
 	public int saveUser(User u)throws Exception{
 		int i = userDao.insert(u);
-		System.out.println(i/0);
 		return i;
 	}
 	@Transactional
