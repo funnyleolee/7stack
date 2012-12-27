@@ -3,21 +3,16 @@ package me.sevenstack.blog.dao.basic;
 import java.util.List;
 import java.util.Map;
 
-import me.sevenstack.blog.model.User;
-
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.google.inject.Guice;
 import com.google.inject.Inject;
+import com.google.inject.Injector;
 
-public class SimpleDao<T> implements BasicDao<T> {
+public class SimpleDao<T> implements BasicDao<T>{
 	@Inject
-	private SqlSessionFactory sessionFactory;
-
-	public SqlSession getSession(){
-		return sessionFactory.openSession();
-	}
-
+	private SqlSession session;
+	
 	public List<T> find(T t) {
 
 		return null;
@@ -29,24 +24,19 @@ public class SimpleDao<T> implements BasicDao<T> {
 	}
 
 	public T findOne(T t) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne(genNv(t, "findOne"), t);
 	}
-
+	
+	public T findById(Integer id,Class<?> cls) throws Exception {
+		return session.selectOne(genNv(cls, "findById"),id);
+	}
+	
 	public int update(T t) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return session.update(genNv(t, "update"), t);
 	}
 
 	public int insert(T t) throws Exception {
-		System.out.println(getSession()+"======>>>>");
-		SqlSession session = getSession();
-		
-		session.insert("saveUser", t);
-		session.commit();
-		// System.out.println(session.getMapper(t.getClass()));
-		// System.out.println(session.getConnection());
-		return 0;
+		return session.insert(genNv(t, "insert"), t);
 	}
 
 	public int delete(T t) throws Exception {
@@ -54,16 +44,7 @@ public class SimpleDao<T> implements BasicDao<T> {
 		return 0;
 	}
 
-	public T findById(Integer id) throws Exception {
-		try {
-			User u = new User();
-			u.setId(id);
-			System.out.println(getSession().selectOne("users.getUserById"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+	
 
 	public List<T> findByMap(Map<String, String> param) throws Exception {
 		// TODO Auto-generated method stub
@@ -75,9 +56,20 @@ public class SimpleDao<T> implements BasicDao<T> {
 		return 0;
 	}
 
-	public int deleteById(Integer id) throws Exception {
+	public int deleteById(Integer id,Class<?> cls) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	protected String genNv(T t,String opt){
+		return genNv(t.getClass(), opt);
+	}
+	protected String genNv(Class<?> cls,String opt){
+		
+		String str = cls.getSimpleName();
+		return str+"."+opt+str;
+	}
+	public static void main(String[] args) {
+		Injector inj = Guice.createInjector();
+		inj.getInstance(SimpleDao.class);
+	}
 }

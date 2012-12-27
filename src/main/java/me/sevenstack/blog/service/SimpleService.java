@@ -10,5 +10,7 @@ public interface SimpleService {
 	public String okey() throws Exception;
 
 	public User getUserById(Integer id) throws Exception;
+	
+	public int saveUser(User u)throws Exception;
 
 }

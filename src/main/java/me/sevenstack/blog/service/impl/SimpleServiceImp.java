@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.mybatis.guice.transactional.Transactional;
 
+import me.sevenstack.blog.annotation.Bind;
 import me.sevenstack.blog.dao.basic.BasicDao;
 import me.sevenstack.blog.model.User;
 import me.sevenstack.blog.service.SimpleService;
@@ -25,12 +26,19 @@ public class SimpleServiceImp implements SimpleService {
 		u.setName("test");
 		u.setAddress("=sdfsdf");
 		userDao.insert(u);
-		userDao.findById(8);
+		userDao.findById(8,User.class);
 		//objDao.findOne(new Date());
 		System.out.println(objDao.equals(objDao));
 		return "";
 	}
+	@Transactional
+	public int saveUser(User u)throws Exception{
+		int i = userDao.insert(u);
+		System.out.println(i/0);
+		return i;
+	}
+	@Transactional
 	public User getUserById(Integer id) throws Exception {
-		return userDao.findById(id);
+		return userDao.findById(id,User.class);
 	}
 }
