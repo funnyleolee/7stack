@@ -30,7 +30,9 @@ public class HomeAction extends ActionSupport{
 	}
 	@Action("/home")
 	public String index()throws Exception{
-		userList = userService.findUserList(new User());
+		User u = new User();
+		u.setName("===");
+		userList = userService.findUserList(u);
 		return "home";
 	}
 }
