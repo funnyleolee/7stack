@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<properties resource="mysql.properties" />
 	<typeAliases>
-		<typeAlias alias="user" type="me.sevenstack.blog.model.User" />
+		<typeAlias alias="user" type="me.sevenstack.web.model.User" />
 	</typeAliases>
 	<environments default="dev">
 		<environment id="dev">
