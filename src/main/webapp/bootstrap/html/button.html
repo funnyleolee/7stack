@@ -1,51 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.responsive.css">
-	<link rel="stylesheet" type="text/css" href="../../resources/css/doc.css">
-	<link rel="stylesheet" type="text/css" href="../css/base.css">
-	<script type="text/javascript" src="../../resources/js/jquery-latest.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.js"></script>
-	<title>Form</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.responsive.css">
+  <link rel="stylesheet" type="text/css" href="../../resources/css/doc.css">
+  <link rel="stylesheet" type="text/css" href="../css/base.css">
+  <script type="text/javascript" src="../../resources/js/jquery-latest.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    var letter = $(".letter");
+    var lw = letter.width();
+    var lh = letter.height();
+    letter.css({"margin-left":-1*lw/2,"margin-top":-1*lh})
+    $(".veil-hide").bind("click",function(){
+      $(this).parents("div").remove();
+      $(".veil").remove();
+      return false;
+    });
+  })
+  </script>
+  <title>Form</title>
 </head>
 <body>
+  <div class="bs-docs-example">
+    <a href="http://www.google.com" class="btn">google</a>
+    <button class="btn btn-primary">主要</button>
+    <button class="btn btn-info">资料</button>
+    <button class="btn btn-error">错误</button>
+    <button class="btn btn-warning">警告</button>
+    <button class="btn btn-success">成功</button>
+    <input type="button" class="btn btn-danger" value="危险">
+    <input type="button" class="btn btn-inverse" value="反向"> 
+    <input type="submit" class="btn btn-link" value="链接">
+  </div>
 
-	<div class="bs-docs-example">
-		<a href="http://www.google.com" class="btn">google</a>
-		<button class="btn btn-primary">主要</button>
-		<button class="btn btn-info">资料</button>
-		<button class="btn btn-error">错误</button>
-		<button class="btn btn-warning">警告</button>
-		<button class="btn btn-success">成功</button>
-		<input type="button" class="btn btn-danger" value="危险">
-		<input type="button" class="btn btn-inverse" value="反向"> 
-		<input type="submit" class="btn btn-link" value="链接">
-	</div>
-
-	<div class="bs-docs-example">
-		<p>
-			<button class="btn btn-large">大</button>
-			<button class="btn btn-medium">中</button>
-			<button class="btn btn-small">小</button>
-			<button class="btn btn-mini">迷你</button>
-		</p>
-		<p>
-			<button class="btn btn-block btn-primary">block level button</button>
-			<button class="btn btn-block ">block level button</button>
-		</p>
-		<p>
-			<button class="btn btn-primary" disabled>主按钮</button>
-			<button class="btn" disabled>按钮</button>
-		</p>
-		<p>
-			<a href="javascript:;" class="btn">Link</a>
-			<button class="btn">Button</button>
-			<input type="button" class="btn" value="button">
-			<input type="submit" class="btn" value="submit">
-			<input type="reset" class="btn" value="reset">
-		</p>
-	</div>
+  <div class="bs-docs-example">
+    <p>
+      <button class="btn btn-large">大</button>
+      <button class="btn btn-medium">中</button>
+      <button class="btn btn-small">小</button>
+      <button class="btn btn-mini">迷你</button>
+    </p>
+    <p>
+      <button class="btn btn-block btn-primary">block level button</button>
+      <button class="btn btn-block ">block level button</button>
+    </p>
+    <p>
+      <button class="btn btn-primary" disabled>主按钮</button>
+      <button class="btn" disabled>按钮</button>
+    </p>
+    <p>
+      <a href="javascript:;" class="btn">Link</a>
+      <button class="btn">Button</button>
+      <input type="button" class="btn" value="button">
+      <input type="submit" class="btn" value="submit">
+      <input type="reset" class="btn" value="reset">
+    </p>
+  </div>
+  <div class="veil">
+  </div>
+  <div class="letter">
+    <div class="header">
+      <a href="javascript:;" class="veil-hide"><li class="icon-remove-circle"></li></a>
+    </div>
+    <div class="outer">
+      <form class="form-inline">
+        <p>
+            <div class="input-prepend">
+              <span class="add-on"><li class="icon-user"></li></span>
+              <input type="text" placeholder="Username" class="span3">
+            </div>
+        </p>
+        <p>
+          <div class="input-prepend">
+            <span class="add-on"><li class="icon-asterisk"></li></span>
+            <input type="password" placeholder="Password" class="span3">
+          </div>
+          
+        </p>
+        <p style="text-align:right;">
+          <label class="checkbox inline">
+            <input type="checkbox">
+            Remember me
+          </label>
+          <input type="button" class="btn btn-primary" value="Sign in">
+        </p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

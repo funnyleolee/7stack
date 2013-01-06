@@ -1,0 +1,45 @@
+body{
+  margin: 0;
+  width: 100%;
+  background-color: #DEDEDE;
+}
+.toolbar{
+  background-color: black;
+  color: #fff;
+  border-bottom: 1px solid #2A2A2A;
+}
+
+.toolbar .toolbar-container{
+  
+}
+.toolbar .tc-left{
+  float: left;
+  width: 20%;
+  height: 20px;
+  line-height: 20px;
+  min-height: 20px;
+   padding:4px 12px;
+   font-weight: bold;
+   margin-bottom: 0;
+}
+.toolbar .tc-left b{
+  height: 20px;
+  line-height: 20px;
+  min-height: 20px;
+  font-size: 17px;
+}
+.toolbar .tc-right{
+  float: right;
+  text-align: right;
+}
+.toolbar  .span-opt a{
+  color: #fff;
+}
+.no-underline,.no-underline:hover{
+  text-decoration: none;
+}
+
+/*container*/
+.container{
+  margin-top: 20px;
+}
