@@ -4,7 +4,8 @@ body{
   background-color: #DEDEDE;
 }
 .toolbar{
-  background-color: black;
+  background-color: #2C4762;
+  /*background:none repeat scroll 0 0 #F1F1F1*/
   color: #fff;
   border-bottom: 1px solid #2A2A2A;
 }
@@ -31,15 +32,55 @@ body{
 .toolbar .tc-right{
   float: right;
   text-align: right;
+  padding-right: 22px;
 }
 .toolbar  .span-opt a{
   color: #fff;
+  padding: 4px;
 }
 .no-underline,.no-underline:hover{
   text-decoration: none;
 }
 
 /*container*/
-.container{
-  margin-top: 20px;
+.stack-container,.stack-footer-ctx{
+  margin: 20px auto;
+  width: 85%;
+}
+/*footer*/
+.stack-footer{
+  /*color: white;
+  background: linear-gradient(#353535, #010101) repeat scroll 0 0 transparent;
+  background-image: url("../img/noise-1.png"), -moz-linear-gradient(center top , #353535, #202020,#010101);
+  background-position: 50% 50%;*/
+  background-color: #202020;
+  border-top: 1px solid #DDDDDD;
+}
+.stack-footer img{
+  width: 48px;
+  height: 48px;
+  margin: 7px 3px;
+}
+.stack-footer .row{
+  padding-top: 20px;
+}
+.stack-footer .btn-link{
+  color: #fff;
+}
+.bs-under-line,.bs{
+  margin: 0;
+}
+.bs-desc{
+  text-align: center;
+}
+.line{
+  height: 31px;
+  width: 590px;
+  padding: 0;
+  margin: 0 auto;
+  background: url("../img/line.png") no-repeat scroll left bottom transparent;
+}
+
+.hero-unit{
+  background: url("../img/bgtex.jpg") repeat scroll 0 0 #FAFAF2;
 }
