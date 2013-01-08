@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.responsive.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap-responsive.css">
 <link rel="stylesheet" type="text/css" href="../../resources/css/doc.css">
 <link rel="stylesheet" type="text/css" href="../css/home.css">
 <script type="text/javascript" src="../../resources/js/jquery-latest.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
 <script type="text/javascript">
 $(function(){
   $(".container-fluid a.btn-link").hover(function(){
@@ -28,7 +29,7 @@ $(function(){
         </div>
       </div>
       <div class="span6 header-right">
-        <a href="#" class="btn btn-link">Sign up</a>|<a href="#" class="btn btn-link no-underline">
+        <a href="#" class="btn btn-link">Sign up</a>|<a href="/user/login" class="btn btn-link no-underline btn-login">
           <li class="icon-lock icon-white"></li>&nbsp;Login
         </a>
       </div>
@@ -122,25 +123,5 @@ $(function(){
     </div>
   </div>
   <!-- foot end -->
-  <div class="veil-div"></div>
-  <div class="login-dialog" >
-    <div class="login-content">
-      <form>
-        <LEGEND>Login 7stack</LEGEND>
-        <div class="controls">
-          <input type="text" class="input-large" placeholder="Username">
-        </div>
-        <div class="controls">
-          <input type="password" class="input-large" placeholder="Password">
-        </div>
-        <div class="controls">
-          <a href="#" class="btn btn-link"><li class="icon-question-sign"></li> 忘记密码</a>
-          <input type="submit" class="btn btn-primary btn-samll" value="登录">
-        </div>
-      </form>
-      <span class="close-btn"></span>
-    </div>
-  </div>
-
 </body>
 </html>
