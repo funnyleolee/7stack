@@ -2,6 +2,8 @@ $(function(){
   $(".btn-login").bind("click",function(){
     return genLoginBox();
   });
+  var h = $(".search-box").width()-($(".search-box .btn").width()+36)
+  $(".search-box :text").width(h);
 })
 /** 登录遮罩 **/
 function genLoginBox(){

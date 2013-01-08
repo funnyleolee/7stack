@@ -6,6 +6,9 @@ body{
   background: url("../img/paper.jpg") repeat scroll 0 0 #FAFAF2;
  
 }
+.black-color{
+  color: black;
+}
 .stack-header{
   background-color: #2C4762;
   /*background:none repeat scroll 0 0 #F1F1F1*/
@@ -36,6 +39,14 @@ body{
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
+
+a.color-white:hover [class*="icon-"]{
+  background-image:url("../img/glyphicons-halflings.png");
+}
+a.color-black:hover [class*="icon-"]{
+  background-image: url("../img/glyphicons-halflings-white.png");
+}
+
 .stack-header .header-right{
   text-align: right;
 }
@@ -65,12 +76,41 @@ body{
   background: url("../img/line.png") no-repeat scroll left bottom transparent;
 }
 
-.hero-unit{
+.doc,.side{
+   margin-bottom: 23px;
+   padding: 30px;
+   border-radius:6px;
    background:  #FFF;
    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
    -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.5);
    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
 }
+.side{
+  margin-bottom: 30px;
+  padding: 10px 10px 15px;
+}
+.side-title{
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 3px;
+  padding-left: 10px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: bottom;
+  font-weight: bold;
+}
+.site-body{
+  padding: 2px;
+}
+.site-body li{
+  border-bottom: 1px dashed #C6C6C6;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+.side-end{
+  text-align: right;
+  color: black;
+}
+
 .veil-div{
   position: absolute; 
   width: 100%;
