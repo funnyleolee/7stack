@@ -5,167 +5,142 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.responsive.css">
 <link rel="stylesheet" type="text/css" href="../../resources/css/doc.css">
-<link rel="stylesheet" type="text/css" href="../css/base.css">
 <link rel="stylesheet" type="text/css" href="../css/home.css">
 <script type="text/javascript" src="../../resources/js/jquery-latest.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(".container-fluid a.btn-link").hover(function(){
+    $(this).children("li").css({"background-image":"url('../img/glyphicons-halflings.png')"});
+  },function(){
+    $(this).children("li").css({"background-image":"url('../img/glyphicons-halflings-white.png')"});
+  });
+});
+</script>
 <title>Home-http://www.behance.net/</title>
 </head>
 <body>
-  <div class="toolbar">
-    <div class="toolbar-container">
-      <div class="tc-left">
-        <div class="span3">7<i>STACK</i>
+  <div class="container-fluid stack-header">
+    <div class="row-fluid nav-bar">
+      <div class="span5 offset1 header-left">
+        <div class="span6 simple-box">
+          <a href="#" class="logo" >7<i>STACK</i></a>
         </div>
       </div>
-      <div class="tc-right">
-        <div class="span3 span-opt">
-          <a href="#" class="btn btn-link">Sign up</a>|<a href="#" class="btn btn-link no-underline">
-            <li class="icon-lock icon-white"></li>&nbsp;Login
-          </a>
+      <div class="span6 header-right">
+        <a href="#" class="btn btn-link">Sign up</a>|<a href="#" class="btn btn-link no-underline">
+          <li class="icon-lock icon-white"></li>&nbsp;Login
+        </a>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  
+  <!-- new -->
+  <div class="container-fluid stack-content">
+    <div class="row-fluid">
+      <!-- right -->
+      <div class="span9">
+        <div class="hero-unit">
+          <h4>学习使用cucumber</h4>
+          <div>Kuler是一款倍受专业网页设计人员喜爱的工具，它在配色方案中增加了社会化媒体和网络因素，设计人员使用Adobe注册账号登陆后可以创建调色板并且互相分享，也可以根据自己的需求修改别人的调色板。颜色显示格式包括RGB，CMYK，LAB和HSV。 <div><img src="../img/example.png" class="img-polaroid"></div>创作灵感有时候来的很突然，也许偶然在网上看到的一张图片就会是你产生一个完美的配色方案。这个工具支持上传JPG和PNG格式的图片，并且会对图片色彩显示做详细分解。 
+          </div>
         </div>
       </div>
-      <div style="clear:both;"></div>
+      <!-- right end -->
+      <!-- left -->
+      <div class="span3">
+        <!-- search -->
+
+        <form class="form-search">
+          <div class="input-append" width="100%">
+            <input type="text" class="input-medium"  placeholder="请输入关键字">
+            <a class="btn" href="#">
+              <li class="icon-search"></li>
+            </a>
+          </div>
+        </form>
+        <!-- search end -->
+
+        <!-- hero 1 -->
+        <div class="hero-unit">
+          <h4>df</h4>
+          <p>sdfsdf</p>
+        </div>
+        <!-- hero 1 end -->
+        <!-- test -->
+        <div class="hero-unit">
+          <h4>df</h4>
+          <p>sdfsdf</p>
+        </div>
+        <div class="hero-unit">
+          <h4>df</h4>
+          <p>sdfsdf</p>
+        </div>
+        <div class="hero-unit">
+          <h4>df</h4>
+          <p>sdfsdf</p>
+        </div>
+        <div class="hero-unit">
+          <h4>df</h4>
+          <p>sdfsdf</p>
+        </div>
+        <!-- test end -->
+
+      </div>
+      <!-- left end -->
     </div>
   </div>
-  <!-- content -->
-  <div class="stack-container">
-    <!-- container-fluid -->
-    <div class="container-fluid">
-      <!-- row-fluid -->
-      <div class="row-fluid">
-        <div class="span10 row-fluid-left">
-          <!-- hero-unit 1-->
-          <div class="hero-unit">
-            <h3>可能是最小的电视游戏主机</h3>
-            <p><img src="http://a.36krcnd.com/photo/3ed8372698aba3f75883e595af5f4c11.png" class="img-polaroid"><p>
-            <p>
-              GameStick 在 Kickstarter 的筹款页面上称，现在世界上有 14 亿台电视，其中不到 1% 的被用来玩游戏，太不能忍了。他们希望改变传统游戏主机收费太高的现状，从近 70 万款 Android 游戏中挑出了约 70 款适合在电视上玩的，还同超过 250 名开发者进行了合作洽谈，其中包括开发了 ShadowGun 系列的 Madfinger 和 Disney 等。未来 GameStick 旗下大多数游戏都会免费的，但也会有一些以较低的价格出售。
-            </p>
-          </div>
-          <!--hero-unit 2-->
-          <div class="hero-unit">
-            <h3>汽车的未来</h3>
-            <p>
-              <img src="http://a.36krcnd.com/photo/78746fff04c46756ff121cbc9a86bca0.jpg" class="img-polaroid">
-            </p>
-            <p>
-              想象这样一个未来，我们大部分人都摈弃老式的私家车概念，拥抱“拼车”模式，你可以夏天坐敞篷，冬天换防滑 SUV。
-
-我们的驾驶技术，也会被车载电脑自动记分，当附近有分数很低的驾驶员时，车载系统不仅会自动提示，还会实时导航一条更加安全的路径。甚至我们的汽车不但可以帮助我们避开车流高峰和安全事故，还能自动帮助我们打包行李，提供像机场大巴式的服务，将我们安全送往机场。
-
-而电信和其他行业的公司，也希望抓住与车主展开终生合作的机会，通过与汽车制造商合作，在我们购买汽车时，给于我们相应的补贴。保险公司开始对那些自己开车上路的人收取高额的保险费用，政府开始也开始监控车主的二氧化碳排放量。
-
-不管你拥抱还是拒绝上述的这些场景，它们都离我们不远了。这不单是一项由科技驱使的，联网汽车的变革，这也要比无人驾驶汽车更进一步。它也不局限于仅是一个由传感器建立起来的网络，更是一个属于智能汽车的新纪元——一个车联网的时代。
-
-从根本上讲，汽车已经成为“终极移动设备”了，与此同时，车主们也将成为“联网车主”。这并非只是一套空洞的说辞：作为这一领域的战略顾问和分析师，自打 1998 年开始，我为了写汽车领域这一根本变革，就已经开始使用这套术语了。在未来的十年里，这种变革也将成为现实。到 2016 年，大多数的汽车买家都会将汽车是否能够获取网络的信息，作为一个购买汽车的重要指标。而对于高端汽车买主来说，这个引爆点会来的更快：2014 年。是的，就在明年。
-
-届时，联网汽车将开启自从汽车被发明以来，汽车工业史上最重要的创新篇章
-            </p>
-          </div>
-          <!--end-->
-        </div>
-        <!--left-->
-        <div class="span2">
-          <!--search-->
-          <div class="search">
-            <form class="form-search">
-              <div class="input-append">
-                <input type="text" class="input-medium" placeholder="请输入关键字">
-                <a class="btn" href="#">
-                  <li class="icon-search"></li>
-                </a>
-              </div>
-            </form>
-          </div>
-          <!-- search end -->
-        </div>
-        <!--left end -->
-      </div>
-      <!-- row-fluid end-->
-    </div>
-    <!-- container-fluid end-->
-  </div>
-  <!-- content end-->
+  <!-- end -->
   <!-- foot -->
+  <div class="line"></div>
   <div class="container-fluid stack-footer">
     <div class="row-fluid">
-      <div class="span7 offset1">
-        <div class="row">
-          <div class="span4">
-            <p class="bs">
-              <img src="../img/chrome.png">
-              <img src="../img/firefox.png" >
-              <img src="../img/ie9.png" >
-              <img src="../img/safari.png">
-            </p>
-            <p>
-              <img src="../img/line.png" class="span12 bs-under-line">
-            </p>
-            <p class="text-info bs-desc">
-              推荐使用以上浏览器
-            </p>
-          </div>
-          <div class="span4">
-            <ul class="unstyled">
-              <li>
-                <a href="#" class="btn btn-link">
-                  <li class="icon-tag"></li>&nbsp;智能汽车
-                </a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-link">
-                  <li class="icon-tag"></li>&nbsp;Description
-                </a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-link">
-                  <li class="icon-tag"></li>&nbsp;DescriptionDescription
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="span4">
-            <ul class="unstyled">
-              <li>
-                <a href="#" class="btn btn-link">
-                  <li class="icon-tag"></li>&nbsp;Description
-                </a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-link">
-                  <li class="icon-tag"></li>&nbsp;Description
-                </a>
-              </li>
-              <li>
-                <a href="#" class="btn btn-link">
-                  <li class="icon-tag"></li>&nbsp;DescriptionDescription
-                </a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
       <div class="span3">
-        <form>
-            <legend>Advice</legend>
-            <textarea cols="5"></textarea>
-            <p>
-              <input type="button"class="btn btn-samll btn-info" value="advice">
-            </p>
-        </form>
+        <span class="help-inline">
+          ©2013 7STACK Workstation<a href="mailto:nideyee@163.com" class="btn btn-link" tile="Contact us">
+          <li class="icon-envelope"></li></a>
+        </span>
       </div>
-    </div>
-
-    <div class="row-fluid">
-      <div class="span12 stack-footer-end">
-        <div class="line"></div>
-        <span class="help-block">©2013 ®7STACK Workstation 
+      <div class="span9 footer-right">
+        <span class="help-inline browser-support text-small">
+          support by
+          <a href="#" class="btn btn-link">
+            <img src="../img/chrome.png" title="谷歌浏览器">
+          </a>
+          <a href="#" class="btn btn-link">
+            <img src="../img/firefox.png"  title="火狐浏览器">
+          </a>
+          <a href="#" class="btn btn-link">
+            <img src="../img/ie9.png"  title="IE9或IE10">
+          </a>
+          <a href="#" class="btn btn-link">
+            <img src="../img/safari.png" title="苹果浏览器">
+          </a>
         </span>
       </div>
     </div>
   </div>
   <!-- foot end -->
+  <div class="veil-div"></div>
+  <div class="login-dialog" >
+    <div class="login-content">
+      <form>
+        <LEGEND>Login 7stack</LEGEND>
+        <div class="controls">
+          <input type="text" class="input-large" placeholder="Username">
+        </div>
+        <div class="controls">
+          <input type="password" class="input-large" placeholder="Password">
+        </div>
+        <div class="controls">
+          <a href="#" class="btn btn-link"><li class="icon-question-sign"></li> 忘记密码</a>
+          <input type="submit" class="btn btn-primary btn-samll" value="登录">
+        </div>
+      </form>
+      <span class="close-btn"></span>
+    </div>
+  </div>
+
 </body>
 </html>
