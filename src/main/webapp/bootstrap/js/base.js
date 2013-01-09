@@ -35,7 +35,7 @@ function genLoginBox(){
   $("body").append(dialog);
   var dw = dialog.width();
   var dh = dialog.height();
-  dialog.css({"margin-left":-1*dw/2,"margin-top":-1*dh});
+  dialog.css({"margin-left":-1*dw/2,"margin-top":-1*dh/2});
   close.bind("click",function(){
     $(".veil-div").remove();
     $(this).parents(".login-dialog").remove();
