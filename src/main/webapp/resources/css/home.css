@@ -16,10 +16,10 @@ body{
   margin: 0;
 }
 a.color-white:hover [class*="icon-"]{
-  background-image:url("../img/glyphicons-halflings.png");
+  background-image:url("http://lib.sinaapp.com/js/bootstrap/2.2.1/img/glyphicons-halflings.png");
 }
 a.color-black:hover [class*="icon-"]{
-  background-image: url("../img/glyphicons-halflings-white.png");
+  background-image: url("http://lib.sinaapp.com/js/bootstrap/2.2.1/img/glyphicons-halflings-white.png");
 }
 
 /*container*/
@@ -110,7 +110,7 @@ a.color-black:hover [class*="icon-"]{
   border: 1px solid black;
 }
 .close-btn{
-background: url("http://assets.behance.net/img/network/site/sprite.png?cb=630395978");
+background: url("../img/sprite.png");
 display: block;
 width: 29px;
 height: 29px;
