@@ -28,10 +28,28 @@
 .other-login h4{
   border-bottom: 1px solid gainsboro;
 }
+.btn-signup{
+  display: inline-block !important;
+  padding-left: 36px;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  width: 131px;
+  font-size: 12px;
+  font-weight: bold;
+  height: 23px;
+  line-height: 23px;
+  border-radius:3px;
+  display: inline-block;
+}
+.btn-fb-signup{
+  background: linear-gradient(#6478B1, #4760A0) repeat scroll 0 0 transparent;
+  border-color: #2F426F;
+}
 </style>
 </head>
 <body>
-  <jsp:include page="/WEB-INF/pages/include/home-head.jsp" />
+  <jsp:include page="/WEB-INF/pages/include/home-head.html" />
   <div class="container">
     <div class="sign-box c-fix">
       <div class="login-form f-left">
@@ -59,6 +77,7 @@
             <input type="submit" class="btn btn-primary" value="Sign in">
           </div>
         </form>
+        <span>还没有帐号?<a>现在注册</a></span>
       </div>
       <div class="other-login f-left">
         <div>
