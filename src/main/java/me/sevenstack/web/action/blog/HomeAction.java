@@ -3,8 +3,8 @@ package me.sevenstack.web.action.blog;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.sevenstack.web.model.User;
-import me.sevenstack.web.service.UserService;
+import me.sevenstack.web.model.Post;
+import me.sevenstack.web.service.PostService;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
@@ -20,17 +20,17 @@ import com.opensymphony.xwork2.ActionSupport;
 })
 public class HomeAction extends ActionSupport{
 	@Inject
-	private UserService userService;
-	private List<User> userList = new ArrayList<User>();
-	public List<User> getUserList() {
-		return userList;
+	private PostService postService;
+	private List<Post> postList = new ArrayList<Post>();
+	public List<Post> getPostList() {
+		return postList;
 	}
-	public void setUserList(List<User> userList) {
-		this.userList = userList;
+	public void setPostList(List<Post> postList) {
+		this.postList = postList;
 	}
 	@Action("/home")
 	public String index()throws Exception{
-		
+		postList = postService.findPostList(new Post());
 		return "home";
 	}
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="postMapping">
+	<select id="findPostList" resultType="post" parameterType="post">
+		select id id,
+				name name,
+				content content,
+				author_id authorId,
+				author_name authorName,
+				visits_num vistisNum,
+				fav_num favNum,
+				create_time createTime,
+				update_time updateTime
+		from posts
+	</select>
+</mapper>

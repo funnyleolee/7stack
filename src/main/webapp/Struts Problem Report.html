@@ -1,0 +1,589 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Struts Problem Report</title>
+    <style>
+    	pre {
+	    	margin: 0;
+	        padding: 0;
+	    }    
+    </style>
+</head>
+<body>
+    <h2>Struts Problem Report</h2>
+    <p>
+    Struts has detected an unhandled exception:
+    </p>
+
+
+<div id="exception-info">
+<table>
+    <tbody><tr>
+        <td><strong>Messages</strong>:</td>
+        <td>
+            <ol>
+                        <li>Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.</li>
+                        <li>Communications link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.</li>
+                        <li>Error configuring AutoCommit.  Your driver 
+may not support getAutoCommit() or setAutoCommit(). Requested setting: 
+false.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: 
+Communications link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.</li>
+                        <li>
+### Error querying database.  Cause: 
+org.apache.ibatis.transaction.TransactionException: Error configuring 
+AutoCommit.  Your driver may not support getAutoCommit() or 
+setAutoCommit(). Requested setting: false.  Cause: 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications 
+link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.
+### The error may exist in mapping/Post.xml
+### The error may involve postMapping.findPostList
+### The error occurred while executing a query
+### Cause: org.apache.ibatis.transaction.TransactionException: Error 
+configuring AutoCommit.  Your driver may not support getAutoCommit() or 
+setAutoCommit(). Requested setting: false.  Cause: 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications 
+link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>File</strong>:</td>
+        <td>com/mysql/jdbc/MysqlIO.java</td>
+    </tr>
+    <tr>
+        <td><strong>Line number</strong>:</td>
+        <td>3,039</td>
+    </tr>
+    
+</tbody></table>
+</div>
+
+
+<div id="stacktraces">
+<hr>
+<h3>Stacktraces</h3>
+<div class="stacktrace" style="padding-left: 0em">
+    <strong>org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: 
+org.apache.ibatis.transaction.TransactionException: Error configuring 
+AutoCommit.  Your driver may not support getAutoCommit() or 
+setAutoCommit(). Requested setting: false.  Cause: 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications 
+link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.
+### The error may exist in mapping/Post.xml
+### The error may involve postMapping.findPostList
+### The error occurred while executing a query
+### Cause: org.apache.ibatis.transaction.TransactionException: Error 
+configuring AutoCommit.  Your driver may not support getAutoCommit() or 
+setAutoCommit(). Requested setting: false.  Cause: 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications 
+link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.</strong>
+    <div>
+    <pre>    org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:23)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:104)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:95)
+    sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager$SqlSessionInterceptor.invoke(SqlSessionManager.java:282)
+    $Proxy10.selectList(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager.selectList(SqlSessionManager.java:171)
+    me.sevenstack.web.dao.basic.DefaultBasicDao.find(DefaultBasicDao.java:19)
+    me.sevenstack.web.service.impl.PostServiceImpl.findPostList(PostServiceImpl.java:29)
+    me.sevenstack.web.action.blog.HomeAction.index(HomeAction.java:33)
+    sun.reflect.GeneratedMethodAccessor56.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeAction(DefaultActionInvocation.java:446)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeActionOnly(DefaultActionInvocation.java:285)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:248)
+    org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:176)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+    org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:68)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:252)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:176)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:187)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+    org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:544)
+    org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:77)
+    org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:91)
+    org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+    org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+    org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+    org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+    org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+    org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+    org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+    org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+    org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+    org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+    org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+    java.lang.Thread.run(Unknown Source)
+    </pre>
+    </div>
+</div>
+<div class="stacktrace" style="padding-left: 2em">
+    <strong>org.apache.ibatis.transaction.TransactionException: Error 
+configuring AutoCommit.  Your driver may not support getAutoCommit() or 
+setAutoCommit(). Requested setting: false.  Cause: 
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications 
+link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.</strong>
+    <div>
+    <pre>    org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:102)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:135)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:58)
+    org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+    org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:69)
+    org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:56)
+    org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+    org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:141)
+    org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:105)
+    org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:101)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:95)
+    sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager$SqlSessionInterceptor.invoke(SqlSessionManager.java:282)
+    $Proxy10.selectList(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager.selectList(SqlSessionManager.java:171)
+    me.sevenstack.web.dao.basic.DefaultBasicDao.find(DefaultBasicDao.java:19)
+    me.sevenstack.web.service.impl.PostServiceImpl.findPostList(PostServiceImpl.java:29)
+    me.sevenstack.web.action.blog.HomeAction.index(HomeAction.java:33)
+    sun.reflect.GeneratedMethodAccessor56.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeAction(DefaultActionInvocation.java:446)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeActionOnly(DefaultActionInvocation.java:285)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:248)
+    org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:176)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+    org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:68)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:252)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:176)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:187)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+    org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:544)
+    org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:77)
+    org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:91)
+    org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+    org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+    org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+    org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+    org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+    org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+    org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+    org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+    org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+    org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+    org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+    java.lang.Thread.run(Unknown Source)
+    </pre>
+    </div>
+</div>
+<div class="stacktrace" style="padding-left: 4em">
+    <strong>com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: 
+Communications link failure
+
+The last packet successfully received from the server was 459,630 
+milliseconds ago.  The last packet sent successfully to the server was 1
+ milliseconds ago.</strong>
+    <div>
+    <pre>    sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+    sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+    sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+    java.lang.reflect.Constructor.newInstance(Unknown Source)
+    com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+    com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1117)
+    com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3589)
+    com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3478)
+    com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4019)
+    com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+    com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+    com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2728)
+    com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5075)
+    sun.reflect.GeneratedMethodAccessor45.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    org.apache.ibatis.datasource.pooled.PooledConnection.invoke(PooledConnection.java:246)
+    $Proxy19.setAutoCommit(Unknown Source)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:97)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:135)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:58)
+    org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+    org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:69)
+    org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:56)
+    org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+    org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:141)
+    org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:105)
+    org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:101)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:95)
+    sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager$SqlSessionInterceptor.invoke(SqlSessionManager.java:282)
+    $Proxy10.selectList(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager.selectList(SqlSessionManager.java:171)
+    me.sevenstack.web.dao.basic.DefaultBasicDao.find(DefaultBasicDao.java:19)
+    me.sevenstack.web.service.impl.PostServiceImpl.findPostList(PostServiceImpl.java:29)
+    me.sevenstack.web.action.blog.HomeAction.index(HomeAction.java:33)
+    sun.reflect.GeneratedMethodAccessor56.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeAction(DefaultActionInvocation.java:446)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeActionOnly(DefaultActionInvocation.java:285)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:248)
+    org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:176)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+    org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:68)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:252)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:176)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:187)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+    org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:544)
+    org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:77)
+    org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:91)
+    org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+    org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+    org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+    org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+    org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+    org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+    org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+    org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+    org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+    org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+    org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+    java.lang.Thread.run(Unknown Source)
+    </pre>
+    </div>
+</div>
+<div class="stacktrace" style="padding-left: 6em">
+    <strong>java.io.EOFException: Can not read response from server. 
+Expected to read 4 bytes, read 0 bytes before connection was 
+unexpectedly lost.</strong>
+    <div>
+    <pre>    com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3039)
+    com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3489)
+    com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3478)
+    com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4019)
+    com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+    com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+    com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2728)
+    com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5075)
+    sun.reflect.GeneratedMethodAccessor45.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    org.apache.ibatis.datasource.pooled.PooledConnection.invoke(PooledConnection.java:246)
+    $Proxy19.setAutoCommit(Unknown Source)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:97)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:135)
+    org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:58)
+    org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:279)
+    org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:69)
+    org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:56)
+    org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:267)
+    org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:141)
+    org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:105)
+    org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:101)
+    org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:95)
+    sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager$SqlSessionInterceptor.invoke(SqlSessionManager.java:282)
+    $Proxy10.selectList(Unknown Source)
+    org.apache.ibatis.session.SqlSessionManager.selectList(SqlSessionManager.java:171)
+    me.sevenstack.web.dao.basic.DefaultBasicDao.find(DefaultBasicDao.java:19)
+    me.sevenstack.web.service.impl.PostServiceImpl.findPostList(PostServiceImpl.java:29)
+    me.sevenstack.web.action.blog.HomeAction.index(HomeAction.java:33)
+    sun.reflect.GeneratedMethodAccessor56.invoke(Unknown Source)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+    java.lang.reflect.Method.invoke(Unknown Source)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeAction(DefaultActionInvocation.java:446)
+    com.opensymphony.xwork2.DefaultActionInvocation.invokeActionOnly(DefaultActionInvocation.java:285)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:248)
+    org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:256)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:176)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:265)
+    org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:68)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:138)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:238)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:191)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.MultiselectInterceptor.intercept(MultiselectInterceptor.java:73)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:91)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:252)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:100)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:141)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:145)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:171)
+    com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:98)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:176)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:193)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:187)
+    com.google.inject.struts2.Struts2Factory$ProvidedInterceptor.intercept(Struts2Factory.java:215)
+    com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+    org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:54)
+    org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:544)
+    org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:77)
+    org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:91)
+    org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+    org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+    org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+    org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+    org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+    org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+    org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+    org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+    org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+    org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+    org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+    java.lang.Thread.run(Unknown Source)
+    </pre>
+    </div>
+</div>
+</div>
+
+<div class="footer">
+<hr>
+<p>
+You are seeing this page because development mode is enabled.  Development mode, or devMode, enables extra
+debugging behaviors and reports to assist developers.  To disable this mode, set:
+</p><pre>  struts.devMode=false
+</pre>
+in your <code>WEB-INF/classes/struts.properties</code> file.
+<p></p>
+</div>
+
+
+</body></html>
