@@ -7,7 +7,7 @@
     <div class="span9">
       <s:iterator value="postList">
         <div class="doc">
-          <h4><s:property value="name"/></h4>
+          <h4><s:property value="name" escape="false"/></h4>
           <div>
             <s:property value="content" escape="false"/>
           </div>
@@ -60,13 +60,12 @@
       <div class="side">
         <div class="side-title" >常用标签</div>
         <div class="site-body">
-          <span class="label">javascript</span>
+          <span class="label">万恶的资本主意</span>
           <span class="label label-info">海边的卡夫卡</span>
           <span class="label label-important">三条腿的驴</span>
-          <span class="label label-warning"><a href="#">Golang</a></span>
-          <span class="label label-warning"><a href="#">Golang</a></span>
-          <span class="label label-warning"><a href="#">Golang</a></span>
-          <span class="label label-warning"><a href="#">Golang</a></span>
+          <span class="label label-warning"><a href="#">白雪公主</a></span>
+          <span class="label label-warning"><a href="#">落日黄昏</a></span>
+          <span class="label label-warning"><a href="#">放牛班的春天</a></span>
         </div>
       </div>
       <div class="side">

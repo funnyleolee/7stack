@@ -8,7 +8,7 @@
 <title>Login</title>
 <style type="text/css">
 .sign-box{
-  width: 50%;
+  width: 600px;
   margin: 50px auto 30px;
   background-color: #F9F9F9;
   border-radius: 3px;
@@ -45,6 +45,12 @@
 .btn-fb-signup{
   background: linear-gradient(#6478B1, #4760A0) repeat scroll 0 0 transparent;
   border-color: #2F426F;
+}
+#footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 </style>
 </head>
