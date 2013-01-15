@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <div class="line"></div>
-<div class="container-fluid stack-footer">
+<div class="container-fluid stack-footer footer">
   <div class="row-fluid">
     <div class="span3">
       <span class="help-inline">
