@@ -11,7 +11,7 @@
         </li>
         <li class="divider-vertical"></li>
         <li>
-          <a href="/user/login" class="btn btn-link color-black btn-login">
+          <a href="<s:url value='/login'/>" class="btn btn-link color-black">
             <span class="icon-lock"></span>&nbsp;Login
           </a>
         </li>

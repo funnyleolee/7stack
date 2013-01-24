@@ -49,12 +49,23 @@
 </style>
 </head>
 <body>
-  <jsp:include page="/WEB-INF/pages/include/home-head.html" />
+  <div class="navbar navbar-inverse navbar-header">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">7STACK</a>
+      <ul class="nav pull-right">
+        <li>
+          <a href="<s:url value='/account/signUp'/>" class="btn btn-link color-white">注册</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
   <div class="container">
     <div class="sign-box c-fix">
       <div class="login-form f-left">
         <form >
-          <legend>Sign in</legend>
+          <legend>登录</legend>
           <div>
             <input type="text" class="span3" placeholder="Username">
           </div>
@@ -64,7 +75,7 @@
           <div class="c-fix">
             <div class="f-left">
               <label class="checkbox">
-                <input type="checkbox">Remember me
+                <input type="checkbox">记住我
               </label>
             </div>
             <div class="f-right">
@@ -77,11 +88,11 @@
             <input type="submit" class="btn btn-primary" value="Sign in">
           </div>
         </form>
-        <span>还没有帐号?<a>现在注册</a></span>
+        <span>还没有帐号?<a href="<s:url value='/account/signUp'/>">现在注册</a></span>
       </div>
       <div class="other-login f-left">
         <div>
-          <h4 style="padding-bottom:7px;">sign in with other platform</h4>
+          <h4 style="padding-bottom:7px;">第三方登录</h4>
           <div>
             <p>
               <button class="btn btn-small">

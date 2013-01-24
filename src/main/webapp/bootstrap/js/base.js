@@ -2,9 +2,9 @@ $(function(){
   $(".btn-login").bind("click",function(){
     return genLoginBox();
   });
-  var h = $(".search-box").width()-($(".search-box .btn").width()+36)
+  var h = $(".search-box").width()-($(".search-box .btn").width()+36);
   $(".search-box :text").width(h);
-})
+});
 /** 登录遮罩 **/
 function genLoginBox(){
   var panel = $("<div>");
@@ -17,7 +17,7 @@ function genLoginBox(){
   var password = $("<input type='password'>").addClass("span4").attr({placeholder:"Password"});
   var checkbox = $("<input type='checkbox'>");
   var submit = $("<input type='submit'>").addClass("btn btn-primary btn-samll").val("登录");
-  var left = panel.clone().css({float:"left"});
+  var left = panel.clone().css({float:"left",width:"200px"});
   var right = panel.clone().css({float:"right"});
   var forgot = $("<li>").addClass("icon-question-sign");
   var close = $("<span>").addClass("close-btn");

@@ -88,7 +88,7 @@
 				<artifactId>tomcat6-maven-plugin</artifactId>
 				<version>2.0-beta-1</version>
 				<configuration>
-					<path>/7stack</path>
+					<path>/</path>
 					<port>8080</port>
 					<ajpPort>8009</ajpPort>
 				</configuration>
