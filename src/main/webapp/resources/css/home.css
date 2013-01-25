@@ -12,9 +12,6 @@ body{
 .navbar-header .navbar-inner{
   border-radius:0;
 }
-.navbar-header .btn{
-  margin: 0;
-}
 a.color-white:hover [class*="icon-"]{
   background-image:url("http://lib.sinaapp.com/js/bootstrap/2.2.1/img/glyphicons-halflings.png");
 }

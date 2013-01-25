@@ -3,43 +3,46 @@
 <mapper namespace="userMapping">
 	<select id="findUserById" resultType="user" parameterType="_int">
 		select
-		id id, name as name, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from user 
+		id id, user_name as userName, password password, email email, address address,
+		mobile mobile, telephone telephone, sns sns from users 
 		where id = #{value}
 	</select>
 	<select id="findOneUser" resultType="user" parameterType="user">
 		select
-		id id, name as name, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from user 
+		id id, user_name as userName, password password, email email, address address,
+		mobile mobile, telephone telephone, sns sns from users 
 		where 1=1
 		<if test="id != null">
 			and id = #{id}
 		</if>
-		<if test="@org.apache.commons.lang3.StringUtils@isNotBlank(name)">
-			and name = #{name}
+		<if test="@org.apache.commons.lang3.StringUtils@isNotBlank(userName)">
+			and user_name = #{userName}
+		</if>
+		<if test="password != ''">
+			and password = #{password}
 		</if>
 		limit 1
 	</select>
 	<select id="findUserList" resultType="user" parameterType="user">
 		select
-		id id, name as name, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from user 
+		id id, user_name as userName, password password, email email, address address,
+		mobile mobile, telephone telephone, sns sns from users 
 		where 1=1
 		<if test="id != null">
 			and id = #{id}
 		</if>
-		<if test="@org.apache.commons.lang3.StringUtils@isNotBlank(name)">
-			and name = #{name}
+		<if test="@org.apache.commons.lang3.StringUtils@isNotBlank(userName)">
+			and user_name = #{userName}
 		</if>
 	</select>
 	<select id="findAllUserList" resultType="java.util.List">
 		select
-		id id, name as name, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from user
+		id id, user_name as userName, password password, email email, address address,
+		mobile mobile, telephone telephone, sns sns from users
 	</select>
 	<update id="updateUser" parameterType="user">
-		update user set 
-		name = #{name},
+		update users set 
+		user_name = #{userName},
 		email = #{email},
 		address = #{address},
 		mobile = #{mobile},
@@ -48,8 +51,8 @@
 		where id = #{id}
 	</update>
 	<insert id="insertUser" parameterType="user">
-		insert into user 
-		(name,password,email,address,mobile,telephone,sns)values
-		(#{name},#{password},#{email},#{address},#{mobile},#{telephone},#{sns})
+		insert into users 
+		(user_name,password,email,address,mobile,telephone,sns)values
+		(#{userName},#{password},#{email},#{address},#{mobile},#{telephone},#{sns})
 	</insert>
 </mapper>
