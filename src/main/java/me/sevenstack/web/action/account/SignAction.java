@@ -7,19 +7,15 @@ import me.sevenstack.web.model.User;
 
 
 public class SignAction extends ActionSupport{
+	@Inject
 	private User user;
-	public void setUser(User user) {
-		this.user = user;
-	}
-	public User getUser() {
-		return user;
-	}
+	
 	public String signIn(){
 		return "signIn";
 	}
 	
 	public String signUp(){
-		
-		return "/blog/home";
+		System.out.println(user.getUserName());
+		return "signIn";
 	}
 }
