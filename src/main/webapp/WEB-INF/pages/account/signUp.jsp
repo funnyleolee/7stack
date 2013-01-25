@@ -95,13 +95,20 @@ $(function(){
   background: linear-gradient(#6478B1, #4760A0) repeat scroll 0 0 transparent;
   border-color: #2F426F;
 }
+#footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 833px;
+}
 </style>
 </head>
 <body>
   	<div class="navbar navbar-inverse navbar-header">
 	  <div class="navbar-inner">
 	    <div class="container">
-	      <a class="brand" href="#">7STACK</a>
+	      <a class="brand" href="<s:url value='/'/>">7STACK</a>
 	      <ul class="nav pull-right">
 	        <li>
 	          <a href="<s:url value='/account/signIn'/>" class="btn btn-link color-white">登录</a>
@@ -113,7 +120,7 @@ $(function(){
 	</div>
   <div class="container">
     <div class="sign-box c-fix">
-    	<s:form action="sign!signUp" cssClass="form-horizontal" name="signUp" namespace="/account" id="sign-form" theme="simple">
+    	<s:form action="sign!up" cssClass="form-horizontal" name="signUp" namespace="/account" id="sign-form" theme="simple">
     		<legend>新用户注册</legend>
     		<div class="control-group ">
 				<label class="control-label" for="user-name">用户名：</label>

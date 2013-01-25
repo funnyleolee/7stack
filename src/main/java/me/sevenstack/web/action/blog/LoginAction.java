@@ -2,9 +2,9 @@ package me.sevenstack.web.action.blog;
 
 import java.util.Map;
 
+import me.sevenstack.util.Constant;
 import me.sevenstack.web.model.User;
 import me.sevenstack.web.service.UserService;
-import me.sevenstack.web.util.Constant;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.convention.annotation.Action;
