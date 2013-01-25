@@ -52,7 +52,7 @@ public class LoginAction implements SessionAware {
 				result = "login";
 			} else {
 				User queryUser = new User();
-				queryUser.setName(StringUtils.trim(user.getName()));
+				//ueryUser.setName(StringUtils.trim(user.getName()));
 				queryUser.setPassword(user.getPassword());
 				loginUser = userService.findUser(queryUser);
 				if (loginUser == null) {

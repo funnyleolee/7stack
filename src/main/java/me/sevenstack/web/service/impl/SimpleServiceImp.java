@@ -20,7 +20,7 @@ public class SimpleServiceImp implements SimpleService {
 	@Transactional
 	public String okey() throws Exception {
 		User u = new User();
-		u.setName("test");
+		//u.setName("test");
 		u.setAddress("=sdfsdf");
 		userDao.insert(u);
 		userDao.findById(8,User.class);
