@@ -5,7 +5,7 @@
 <div class="navbar navbar-inverse navbar-header">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="<s:url value='/'/>">7STACK</a>
+      <a class="brand btn btn-link" href="<s:url value='/'/>">7STACK</a>
       <ul class="nav pull-right">
       	<s:if test="#loginUser != null">
       		<li><a href="#"><img  src="<s:url value='/resources/img/u-mini.png'/>"></a></li>

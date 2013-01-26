@@ -2,11 +2,11 @@ package me.sevenstack.web.model;
 
 public class Post{
 	private Integer id;
-	private String name;
+	private String title;
 	private String content;
 	private Integer authorId;
 	private String authorName;
-	private Integer vistsNum;
+	private Integer vistisNum;
 	private Integer favNum;
 	private Long createTime;
 	private Long updateTime;
@@ -16,11 +16,12 @@ public class Post{
 	public void setId(Integer id){
 		this.id = id;
 	}
-	public String getName(){
-		return this.name;
+	
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name){
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getContent(){
 		return this.content;
@@ -40,11 +41,12 @@ public class Post{
 	public void setAuthorName(String authorName){
 		this.authorName = authorName;
 	} 
-	public Integer getvistsNum(){
-		return this.vistsNum;
+	
+	public Integer getVistisNum() {
+		return vistisNum;
 	}
-	public void setVistsNum(Integer vistsNum){
-		this.vistsNum = vistsNum;
+	public void setVistisNum(Integer vistisNum) {
+		this.vistisNum = vistisNum;
 	}
 	public Integer getFavNum(){
 		return this.favNum;

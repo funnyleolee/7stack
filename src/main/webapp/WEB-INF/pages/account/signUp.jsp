@@ -108,7 +108,7 @@ $(function(){
   	<div class="navbar navbar-inverse navbar-header">
 	  <div class="navbar-inner">
 	    <div class="container">
-	      <a class="brand" href="<s:url value='/'/>">7STACK</a>
+	      <a class="brand btn btn-link" href="<s:url value='/'/>">7STACK</a>
 	      <ul class="nav pull-right">
 	        <li>
 	          <a href="<s:url value='/account/signIn'/>" class="btn btn-link color-white">登录</a>
@@ -118,34 +118,34 @@ $(function(){
 	  </div>
 	</div>
   <div class="container">
-    <div class="sign-box c-fix">
+    <div class="sign-box c-fix" id="ctx-sign-up">
     	<s:form action="signUp" cssClass="form-horizontal" name="signUp" namespace="/account" id="sign-form" theme="simple">
     		<legend>新用户注册</legend>
     		<div class="control-group ">
 				<label class="control-label" for="user-name">用户名：</label>
 				<div class="controls">
-					<input type="text"id="user-name" name="user.userName" placeholder="User Name" maxlength="30">
+					<input type="text"id="user-name" class="span2.5" name="user.userName" placeholder="User Name" maxlength="30">
 					<span class="text-error help-inline"></span>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="email">邮箱：</label>
 				<div class="controls">
-					<input type="text" id="email" name="user.email" placeholder="Email">
+					<input type="text" id="email" class="span2.5" name="user.email" placeholder="Email">
 					<span class="help-inline"></span>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="password">密码：</label>
 				<div class="controls">
-					<input type="password" id="password" name="user.password" placeholder="Password" maxlength="30">
+					<input type="password" id="password" class="span2.5" name="user.password" placeholder="Password" maxlength="30">
 					<span class="help-inline"></span>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="password-repeat">确认密码：</label>
 				<div class="controls">
-					<input type="password" id="password-repeat" name="passwordRepeat" placeholder="Repeat Password" maxlength="30">
+					<input type="password" id="password-repeat" class="span2.5" name="passwordRepeat" placeholder="Repeat Password" maxlength="30">
 					<span class="help-inline"></span>
 				</div>
 			</div>

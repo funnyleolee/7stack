@@ -4,7 +4,8 @@
 <link rel="stylesheet" type="text/css" 
   href="http://lib.sinaapp.com/js/bootstrap/2.2.1/css/bootstrap-responsive.min.css">
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/basic.css'/>">
-<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/home.css'/>">
+<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/home.base.css'/>">
+<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/home-responsive.css'/>">
 <script type="text/javascript" 
   src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" 

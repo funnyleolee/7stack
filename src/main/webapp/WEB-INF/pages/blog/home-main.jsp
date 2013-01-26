@@ -4,10 +4,10 @@
 <div class="container-fluid stack-content">
   <div class="row-fluid">
     <!-- right -->
-    <div class="span9">
+    <div class="span9 rht">
       <s:iterator value="postList">
         <div class="doc">
-          <h4><s:property value="name" escape="false"/></h4>
+          <h4><s:property value="title"/></h4>
           <div>
             <s:property value="content" escape="false"/>
           </div>
@@ -28,7 +28,7 @@
     </div>
     <!-- right end -->
     <!-- left -->
-    <div class="span3">
+    <div class="span3 lft">
       <!-- search -->
       <div class="search-box">
         <form class="form-search">

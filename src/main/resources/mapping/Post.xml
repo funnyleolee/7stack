@@ -3,7 +3,7 @@
 <mapper namespace="postMapping">
 	<select id="findPostList" resultType="post" parameterType="post">
 		select id id,
-				name name,
+				title title,
 				content content,
 				author_id authorId,
 				author_name authorName,
@@ -13,4 +13,9 @@
 				update_time updateTime
 		from posts
 	</select>
+	<insert id="insertPost" parameterType="post">
+		insert into posts 
+		(title,content,author_id,author_name,visits_num,fav_num,create_time,update_time)values
+		(#{title},#{content},#{authorId},#{authorName},#{vistisNum},#{favNum},#{createTime},#{updateTime})
+	</insert>
 </mapper>
