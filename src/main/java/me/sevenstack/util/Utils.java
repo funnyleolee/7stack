@@ -40,10 +40,15 @@ public class Utils {
 	@SuppressWarnings("serial")
 	public static String subHTML(String html, int len) throws Exception {
 		try {
+			html = StringUtils.left(html, len);
+			if(html.lastIndexOf("<") > html.lastIndexOf(">")){
+				html = html.substring(0,html.lastIndexOf("<"));
+			}
+			html += "...";
 			// 注册自定义的新结点解析器,这是必要的...
 			PrototypicalNodeFactory nf = new PrototypicalNodeFactory();
 			nf.registerTag(new FontTag());
-			Parser parser = new Parser(StringUtils.left(html, len));
+			Parser parser = new Parser(html);
 			parser.setNodeFactory(nf);
 			NodeList nodelist = parser.parse(new NodeFilter() {
 
@@ -55,20 +60,24 @@ public class Utils {
 				}
 			});
 
-			String str = "";
-			String tmp = "";
+			StringBuffer bf = new StringBuffer();
 			for (int i = 0; i < nodelist.size(); i++) {
-				CompositeTag testTag = (CompositeTag) nodelist.elementAt(i);
+				CompositeTag tag = (CompositeTag) nodelist.elementAt(i);
 				// 记住这里只需循环第一层就能帮你补齐的了
-				if (testTag.getParent() == null) {
-					tmp = new String(testTag.toHtml().getBytes("UTF-8"));
-					str += tmp;
+				if (tag.getParent() == null) {
+					bf.append(tag.toHtml());
+					
+					System.out.println(tag.getStringText());
+					//tag.
 				}
 			}
 
-			return str;
+			return bf.toString();
 		} catch (Exception e) {
 			throw new Exception("HTML解析失败", e);
 		}
+	}
+	public static void main(String[] args)throws Exception {
+		System.out.println(subHTML("<SPAN>sdfsdfs><div>sfdsf</div></span>", 20000));	
 	}
 }
