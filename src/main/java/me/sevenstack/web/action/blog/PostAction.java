@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import me.sevenstack.util.Utils;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.service.PostService;
 
@@ -43,7 +44,7 @@ public class PostAction extends ActionSupport {
 		System.out.println("list");
 		postList = postService.findPostList(new Post());
 		for(Post post : postList){
-			//post.setContent(post.getContent().substring(0, 350));			
+			post.setContent(Utils.subHTML(post.getContent(), 717)+"<a href='sss' class='pull-right'>阅读全文...</a>");			
 		}
 		return "list";
 	}
@@ -63,5 +64,9 @@ public class PostAction extends ActionSupport {
 			return "home";
 		}
 		return "newPost";
+	}
+	@Action("post")
+	public String post(){
+		return "detail";
 	}
 }

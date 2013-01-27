@@ -11,7 +11,7 @@
 				fav_num favNum,
 				create_time createTime,
 				update_time updateTime
-		from posts
+		from posts order by create_time desc;
 	</select>
 	<insert id="insertPost" parameterType="post">
 		insert into posts 
