@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
+<%
+String contextPath = request.getContextPath();
+request.setAttribute("contextPath", contextPath);
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,7 +30,8 @@
     				<label class="control-label" for="content">正文</label>
     				<div class="controls">
     					<textarea id="context" name="post.content"></textarea>
-    					<ckeditor:replace replace="context" basePath="/ckeditor/" />
+    					<ckeditor:replace replace="context" basePath="${contextPath }/ckeditor/" />
+    					
     				</div>
     			</div>
     			<div class="control-group">
