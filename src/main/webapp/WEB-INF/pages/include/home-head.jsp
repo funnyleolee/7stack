@@ -27,7 +27,7 @@
       	</s:if>
       	<s:else>
 	        <li>
-	          <a href="/account/signUp" class="btn btn-link color-white">注册</a>
+	          <a href="<s:url value='/account/signUp'/>" class="btn btn-link color-white">注册</a>
 	        </li>
 	        <li class="divider-vertical"></li>
 	        <li>

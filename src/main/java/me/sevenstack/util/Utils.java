@@ -38,9 +38,8 @@ public class Utils {
 	}
 
 	@SuppressWarnings("serial")
-	public static String subHTML(String html, int len) throws Exception {
+	public static String getHTML(String html) {
 		try {
-			html = StringUtils.left(html, len);
 			if(html.lastIndexOf("<") > html.lastIndexOf(">")){
 				html = html.substring(0,html.lastIndexOf("<"));
 			}
@@ -74,10 +73,8 @@ public class Utils {
 
 			return bf.toString();
 		} catch (Exception e) {
-			throw new Exception("HTML解析失败", e);
+			//throw new Exception("HTML解析失败", e);
 		}
-	}
-	public static void main(String[] args)throws Exception {
-		System.out.println(subHTML("<SPAN>sdfsdfs><div>sfdsf</div></span>", 20000));	
+		return "";
 	}
 }

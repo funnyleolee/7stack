@@ -4,7 +4,7 @@
 	<select id="findPostList" resultType="post" parameterType="post">
 		select id id,
 				title title,
-				content content,
+				left(content,500) content,
 				author_id authorId,
 				author_name authorName,
 				visits_num vistisNum,
