@@ -44,7 +44,6 @@ public class Utils {
 			if(html.lastIndexOf("<") > html.lastIndexOf(">")){
 				html = html.substring(0,html.lastIndexOf("<"));
 			}
-			html += "...";
 			// 注册自定义的新结点解析器,这是必要的...
 			PrototypicalNodeFactory nf = new PrototypicalNodeFactory();
 			nf.registerTag(new FontTag());

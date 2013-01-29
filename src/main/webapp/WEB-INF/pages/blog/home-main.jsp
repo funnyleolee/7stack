@@ -79,3 +79,6 @@
     <!-- left end -->
   </div>
 </div>
+<script type="text/javascript">
+//$(".doc div :first").append("<p><a href='#'>More&gt;&gt;</a></p>)");
+</script>
