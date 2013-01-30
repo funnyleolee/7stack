@@ -4,7 +4,7 @@
 	<select id="findPostList" resultType="post" parameterType="post">
 		select id id,
 				title title,
-				left(content,500) content,
+				content content,
 				author_id authorId,
 				author_name authorName,
 				visits_num vistisNum,
@@ -18,4 +18,16 @@
 		(title,content,author_id,author_name,visits_num,fav_num,create_time,update_time)values
 		(#{title},#{content},#{authorId},#{authorName},#{vistisNum},#{favNum},#{createTime},#{updateTime})
 	</insert>
+	<select id="findPostById" resultType="post" parameterType="_int">
+	   select id id,
+                title title,
+                content content,
+                author_id authorId,
+                author_name authorName,
+                visits_num vistisNum,
+                fav_num favNum,
+                create_time createTime,
+                update_time updateTime
+        from posts where id = #{value}
+	</select>
 </mapper>

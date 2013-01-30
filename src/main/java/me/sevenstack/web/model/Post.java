@@ -1,5 +1,10 @@
 package me.sevenstack.web.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import me.sevenstack.util.Utils;
 
 import com.petebevin.markdown.MarkdownProcessor;
@@ -71,7 +76,7 @@ public class Post{
 		this.updateTime = updateTime;
 	}
 	public String getSummary(){
-	    String more = "<p><a href='"+this.getId()+"'>(全文...)</a></p>";
-	    return Utils.getHTML(this.content)+more;
+	   // String more = "<p><a href='"+this.getId()+"'>(全文...)</a></p>";
+	    return Utils.subHTML(this.content, 500, "");
 	}
 }

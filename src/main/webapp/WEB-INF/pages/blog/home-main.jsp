@@ -7,23 +7,23 @@
     <div class="span9 rht">
       <s:iterator value="postList">
         <div class="doc">
-          <h4><s:property value="title"/></h4>
-          <div>
-            <s:property value="summary" escape="false"/>
+          <h4>
+            <span class="title">
+                <a href="<s:url action='post'><s:param name='pid' value='id'/></s:url>">
+                    <s:property value="title"/>
+                </a>
+            </span>
+          </h4>
+          <div class="author">
+            <strong>Alex Lee</strong>
           </div>
+          <div class="summary">
+            <s:property value="summary" escape="false"/>
+            <div style="text-align: right;"><a href="<s:url action='post'><s:param name='pid' value='id'/></s:url>" class="btn btn-link">继续阅读...</a></div>
+            </div>
         </div>
       </s:iterator>
-      
-      <!--div class="doc">
-        <h4>学习使用cucumber</h4>
-        <div>Kuler是一款倍受专业网页设计人员喜爱的工具，它在配色方案中增加了社会化媒体和网络因素，设计人员使用Adobe注册账号登陆后可以创建调色板并且互相分享，也可以根据自己的需求修改别人的调色板。颜色显示格式包括RGB，CMYK，LAB和HSV。 <div><img src="<s:url value='/tmp/example.png'/>" class="img-polaroid"></div>创作灵感有时候来的很突然，也许偶然在网上看到的一张图片就会是你产生一个完美的配色方案。这个工具支持上传JPG和PNG格式的图片，并且会对图片色彩显示做详细分解。 
-        </div>
-      </div>
-      <div class="doc">
-        <h4>学习使用cucumber</h4>
-        <div>Kuler是一款倍受专业网页设计人员喜爱的工具，它在配色方案中增加了社会化媒体和网络因素，设计人员使用Adobe注册账号登陆后可以创建调色板并且互相分享，也可以根据自己的需求修改别人的调色板。颜色显示格式包括RGB，CMYK，LAB和HSV。 <div><img src="tmp/example.png" class="img-polaroid"></div>创作灵感有时候来的很突然，也许偶然在网上看到的一张图片就会是你产生一个完美的配色方案。这个工具支持上传JPG和PNG格式的图片，并且会对图片色彩显示做详细分解。 
-        </div>
-      </div-->
+
       
     </div>
     <!-- right end -->
@@ -32,10 +32,10 @@
       <!-- search -->
       <div class="search-box">
         <form class="form-search">
-          <div class="input-append" width="100%">
+          <div class="input-append">
             <input type="text"  placeholder="请输入关键字">
             <a class="btn" href="#">
-              <li class="icon-search"></li>
+              <span class="icon-search"></span>
             </a>
           </div>
         </form>
@@ -74,8 +74,23 @@
         </div>
       </div>
       <!-- test end -->
-
     </div>
     <!-- left end -->
   </div>
 </div>
+<script type="text/javascript">
+$(".doc .summary").each(function(){
+	// 显示一张图片
+	var first = $(this).find("img:first");
+	var imgParent = $(this).find("img").parents();
+	$(this).find("img").remove();
+	imgParent.each(function(){
+		if($.trim($(this).html()) == ""){
+			$(this).remove();
+		}
+	});
+	//删除空标记
+	//$("div,span,p,li,ul").is(":empty").remove();
+	$(this).prepend($("<div>").css({"text-align":"center",margin:"12px 0"}).append(first.css({"max-width":"none",width:"100%"})));
+});
+</script>

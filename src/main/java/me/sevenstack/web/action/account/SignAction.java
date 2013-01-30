@@ -1,53 +1,26 @@
 package me.sevenstack.web.action.account;
 
-import static me.sevenstack.web.util.Constant.USER_SESSION;
+import static me.sevenstack.util.Constant.USER_SESSION;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import me.sevenstack.util.Utils;
+import me.sevenstack.web.action.blog.BaseAction;
 import me.sevenstack.web.model.User;
 import me.sevenstack.web.service.UserService;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
-import org.apache.struts2.interceptor.ServletResponseAware;
-import org.apache.struts2.interceptor.SessionAware;
 
 import com.google.inject.Inject;
-import com.opensymphony.xwork2.ActionSupport;
 
-import freemarker.template.utility.StringUtil;
 
-@Results({
-    @Result(name = "blog-list", location = "/blog/list", type = "redirect"),
-    @Result(name = "home", location = "/", type = "redirect")
-})
-public class SignAction extends ActionSupport implements SessionAware,ServletResponseAware{
-    
-    private static final long serialVersionUID = 1L;
-
+public class SignAction extends BaseAction{
     @Inject
     private UserService userService;
-    
-    private Map<String, Object> session;
-    private HttpServletResponse response;
-    
     private User user;
     private Map<String, String> message = new HashMap<String, String>();
-    private Map<String, String> param = new HashMap<String, String>();
-
-    public void setSession(Map<String, Object> session) {
-		this.session = session;
-	}
-    public void setServletResponse(HttpServletResponse response) {
-    	this.response = response;
-	}
     public User getUser() {
         return user;
     }
@@ -63,17 +36,11 @@ public class SignAction extends ActionSupport implements SessionAware,ServletRes
     public void setMessage(Map<String, String> message) {
         this.message = message;
     }
-	
-	public Map<String, String> getParam() {
-		return param;
-	}
-	public void setParam(Map<String, String> param) {
-		this.param = param;
-	}
-	@Action("signIn")
+    
+	@Action("sign-in")
     public String signIn() throws Exception {
         if(user == null){
-            return "signIn";
+            return "sign-in";
         }
         User paramUser = new User();
         paramUser.setUserName(user.getUserName());
@@ -81,33 +48,36 @@ public class SignAction extends ActionSupport implements SessionAware,ServletRes
         User loginUser = userService.findUser(paramUser);
         if (loginUser == null) {
             message.put("msg", "用户名或者密码不正确");
-            return "signIn";
+            return "sign-in";
         }
         session.put(USER_SESSION, loginUser);
-        return "home";
+        log.debug("=======================================================>>>");
+        return "index";
     }
-    @Action("signUp")
+    @Action("sign-up")
     public String signUp() {
     	if(user == null){
-    		return "signUp";
+    		return "sign-up";
     	}
         try{
             user.setPassword(Utils.sha(user.getPassword()));
             userService.saveUser(user);
         }catch (Exception e) {
             message.put("msg", "系统维护中暂停注册");
-            LOG.error("注册异常",e);
-            return "signUp";
+            log.error("注册异常",e);
+            return "sign-up";
         }
-        return "home";
+        return "index";
     }
     @Action("logout")
     public String logout() throws Exception {
     	session.remove(USER_SESSION);
     	if(StringUtils.isNotBlank(param.get("url"))){
     		response.sendRedirect(param.get("url"));
+    		return NONE;
+    	}else{
+    	    return "index";
     	}
-    	return NONE;
 	}
 	
 
