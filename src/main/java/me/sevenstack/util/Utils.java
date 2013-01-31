@@ -10,6 +10,7 @@ import org.htmlparser.PrototypicalNodeFactory;
 import org.htmlparser.filters.AndFilter;
 import org.htmlparser.filters.TagNameFilter;
 import org.htmlparser.lexer.Lexer;
+import org.htmlparser.nodes.TagNode;
 import org.htmlparser.tags.CompositeTag;
 import org.htmlparser.util.NodeList;
 
@@ -38,9 +39,8 @@ public class Utils {
 	}
 
 	@SuppressWarnings("serial")
-	public static String subHTML(String html, int len) throws Exception {
+	public static String getHTML(String html,int index) {
 		try {
-			html = StringUtils.left(html, len);
 			if(html.lastIndexOf("<") > html.lastIndexOf(">")){
 				html = html.substring(0,html.lastIndexOf("<"));
 			}
@@ -60,23 +60,41 @@ public class Utils {
 			});
 
 			StringBuffer bf = new StringBuffer();
+			int textLen = 0;
 			for (int i = 0; i < nodelist.size(); i++) {
 				CompositeTag tag = (CompositeTag) nodelist.elementAt(i);
 				// 记住这里只需循环第一层就能帮你补齐的了
 				if (tag.getParent() == null) {
-					bf.append(tag.toHtml());
+					textLen += tag.getStringText().length();
 					
-					System.out.println(tag.getStringText());
+					
+					System.out.println(tag.getText()+"-----sdf");
+					if(textLen >= index){
+						//tag.set
+						String innerHTML = StringUtils.left(tag.getStringText(), tag.getStringText().length() -(textLen-index));
+						
+						
+						String tagName = tag.getTagName();
+						tag.setText("<"+tagName+">"+innerHTML+"</"+tagName+">");
+						bf.append(tag.toHtml());
+						//break;
+					}else{
+						bf.append(tag.toHtml());
+					}
+					//System.out.println(tag.getStringText()+"  "+tag.getStringText().length());
 					//tag.
 				}
 			}
 
 			return bf.toString();
 		} catch (Exception e) {
-			throw new Exception("HTML解析失败", e);
+			//throw new Exception("HTML解析失败", e);
+			e.printStackTrace();
 		}
+		return "";
 	}
-	public static void main(String[] args)throws Exception {
-		System.out.println(subHTML("<SPAN>sdfsdfs><div>sfdsf</div></span>", 20000));	
+	public static void main(String[] args) {
+		System.out.println(getHTML("<div>werr<p>dfs</p></d",7));
+		//System.out.println("".substring());
 	}
 }

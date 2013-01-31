@@ -9,7 +9,7 @@
         <div class="doc">
           <h4><s:property value="title"/></h4>
           <div>
-            <s:property value="content" escape="false"/>
+            <s:property value="summary" escape="false"/>
           </div>
         </div>
       </s:iterator>

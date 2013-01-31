@@ -43,9 +43,6 @@ public class PostAction extends ActionSupport {
 	public String list() throws Exception {
 		System.out.println("list");
 		postList = postService.findPostList(new Post());
-		for(Post post : postList){
-			post.setContent(Utils.subHTML(post.getContent(), 717));			
-		}
 		return "list";
 	}
 
