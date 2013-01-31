@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="me.sevenstack.web.mapper.PostMapper">
+<mapper namespace="postMapping">
 	<select id="findPostList" resultType="post" parameterType="post">
 		select id id,
 				title title,
@@ -29,9 +29,5 @@
                 create_time createTime,
                 update_time updateTime
         from posts where id = #{value}
-	</select>
-	<select id="count" resultType="_int">
-	
-	   select 100 
 	</select>
 </mapper>

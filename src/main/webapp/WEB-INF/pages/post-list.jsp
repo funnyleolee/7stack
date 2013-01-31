@@ -17,7 +17,7 @@
 	        <div class="doc">
 	          <h4>
 	            <span class="title">
-	                <a href="<s:url action='post'><s:param name='pid' value='id'/></s:url>">
+	                <a href="<s:url action='post'/>/<s:property value='id'/>">
 	                    <s:property value="title"/>
 	                </a>
 	            </span>
@@ -27,7 +27,7 @@
 	          </div>
 	          <div class="summary">
 	            <s:property value="summary" escape="false"/>
-	            <div style="text-align: right;"><a href="<s:url action='post'><s:param name='pid' value='id'/></s:url>" class="btn btn-link">继续阅读...</a></div>
+	            <div style="text-align: right;"><a href="<s:url action='post'/>/<s:property value='id'/>" class="btn btn-link">继续阅读...</a></div>
 	            </div>
 	        </div>
 	      </s:iterator>
