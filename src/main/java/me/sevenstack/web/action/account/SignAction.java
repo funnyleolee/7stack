@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import me.sevenstack.util.Utils;
-import me.sevenstack.web.action.blog.BaseAction;
+import me.sevenstack.web.action.BaseAction;
 import me.sevenstack.web.model.User;
 import me.sevenstack.web.service.UserService;
 

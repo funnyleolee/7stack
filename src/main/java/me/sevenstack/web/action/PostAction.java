@@ -1,4 +1,4 @@
-package me.sevenstack.web.action.blog;
+package me.sevenstack.web.action;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,15 +9,8 @@ import me.sevenstack.web.model.Post;
 import me.sevenstack.web.service.PostService;
 
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
-import org.apache.struts2.convention.annotation.InterceptorRefs;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.ParentPackage;
-import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
 
 import com.google.inject.Inject;
-import com.opensymphony.xwork2.ActionSupport;
 public class PostAction extends BaseAction {
     private static final long serialVersionUID = 1L;
 

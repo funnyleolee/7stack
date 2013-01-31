@@ -1,4 +1,4 @@
-package me.sevenstack.web.action.blog;
+package me.sevenstack.web.action;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @Namespace("/home")
 @Results({
-	@Result(name="home",location="/WEB-INF/pages/blog/home.jsp")
+	@Result(name="home",location="/WEB-INF/pages/home.jsp")
 })
 public class HomeAction extends ActionSupport{
 	@Inject

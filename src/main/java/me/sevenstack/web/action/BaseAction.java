@@ -1,4 +1,4 @@
-package me.sevenstack.web.action.blog;
+package me.sevenstack.web.action;
 
 import java.util.HashMap;
 import java.util.Map;

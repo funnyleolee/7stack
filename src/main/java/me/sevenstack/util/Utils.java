@@ -35,7 +35,7 @@ public class Utils {
     }
 
     @SuppressWarnings("serial")
-    public static String getHTML(String html) {
+    public static String toHTML(String html) {
         try {
             if (html.lastIndexOf("<") > html.lastIndexOf(">")) {
                 html = html.substring(0, html.lastIndexOf("<"));
@@ -132,10 +132,10 @@ public class Utils {
             result.append(endHTML.get(i));
             result.append(">");
         }
-        return result.toString();
+        return toHTML(result.toString());
     }
     public static void main(String[] args) {
-        String str = "<br style=\"margin: 0px; padding: 0px; font-family: 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L', 'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter', 'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow', 'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L', Georgia, serif; font-size: 16px; line-height: 25px;\">";
+        String str = "<code>sdfsdf";
         System.out.println(subHTML(str+str, 100, ""));
     }
 }
