@@ -159,6 +159,6 @@ $(function(){
     	</s:form>
     </div>
   </div>
-  <jsp:include page="/WEB-INF/pages/include/home-foot.jsp" />
+  <%-- jsp:include page="/WEB-INF/pages/include/home-foot.jsp" / --%>
 </body>
 </html>
