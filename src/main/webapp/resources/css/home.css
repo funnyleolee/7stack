@@ -45,6 +45,9 @@ a.color-black:hover [class*="icon-"]{
   background: url("../img/line.png") no-repeat scroll left bottom transparent;
 }
 
+.doc .title{
+	color: #19558d;
+}
 .doc,.side{
    margin-bottom: 23px;
    padding: 30px;

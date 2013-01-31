@@ -27,11 +27,11 @@
       	</s:if>
       	<s:else>
 	        <li>
-	          <a href="<s:url value='/account/signUp'/>" class="btn btn-link color-white">注册</a>
+	          <a href="<s:url value='/account/sign-up'/>" class="btn btn-link color-white">注册</a>
 	        </li>
 	        <li class="divider-vertical"></li>
 	        <li>
-	          <a href="<s:url value='/account/signIn'/>" class="btn btn-link color-black">
+	          <a href="<s:url value='/account/sign-in'/>" class="btn btn-link color-black">
 	            <span class="icon-lock"></span>&nbsp;登录
 	          </a>
 	        </li>

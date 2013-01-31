@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userMapping">
-	<select id="findUserById" resultType="user" parameterType="_int">
-		select
-		id id, user_name as userName, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from users 
-		where id = #{value}
+	<resultMap type="me.sevenstack.web.model.User" id="user-result">
+		<id     property="id"         column="id"/>
+		<result property="userName"   column="user_name"/>
+		<result property="password"   column="password"/>
+		<result property="email"      column="email"/>
+		<result property="address"    column="address"/>
+		<result property="mobile"     column="mobile"/>
+		<result property="telephone"  column="telephone"/>
+		<result property="sns"        column="sns"/>		
+	</resultMap>
+	
+	<select id="findUserById" resultMap="user-result" parameterType="_int">
+		select * 
+		  from users 
+		 where id = #{value}
 	</select>
-	<select id="findOneUser" resultType="user" parameterType="user">
-		select
-		id id, user_name as userName, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from users 
-		where 1=1
+	<select id="findOneUser" resultMap="user-result" parameterType="user">
+		select *
+		  from users 
+		 where 1=1
 		<if test="id != null">
 			and id = #{id}
 		</if>
@@ -23,36 +32,48 @@
 		</if>
 		limit 1
 	</select>
-	<select id="findUserList" resultType="user" parameterType="user">
-		select
-		id id, user_name as userName, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from users 
-		where 1=1
+	<select id="findUserList" resultMap="user-result" parameterType="user">
+		select *
+		  from users 
+		 where 1=1
 		<if test="id != null">
-			and id = #{id}
+		   and id = #{id}
 		</if>
 		<if test="@org.apache.commons.lang3.StringUtils@isNotBlank(userName)">
-			and user_name = #{userName}
+		   and user_name = #{userName}
 		</if>
 	</select>
-	<select id="findAllUserList" resultType="java.util.List">
-		select
-		id id, user_name as userName, password password, email email, address address,
-		mobile mobile, telephone telephone, sns sns from users
+	<select id="findLoginUser" resultMap="user-result" parameterType="user">
+		select *
+		  from users 
+		 where user_name = #{userName} or email = #{userName}
 	</select>
+
 	<update id="updateUser" parameterType="user">
-		update users set 
-		user_name = #{userName},
-		email = #{email},
-		address = #{address},
-		mobile = #{mobile},
-		telephone = #{telephone},
-		sns = #{sns}
-		where id = #{id}
+		update users 
+		   set user_name  =  #{userName},
+		       email      =  #{email},
+		       address    =  #{address},
+		       mobile     =  #{mobile},
+		       telephone  =  #{telephone},
+		       sns        =  #{sns}
+		 where id         =  #{id}
 	</update>
-	<insert id="insertUser" parameterType="user">
-		insert into users 
-		(user_name,password,email,address,mobile,telephone,sns)values
-		(#{userName},#{password},#{email},#{address},#{mobile},#{telephone},#{sns})
+	<insert id="saveUser" parameterType="user">
+		insert into users (
+		       user_name,
+		       password,
+		       email,
+		       address,
+		       mobile,
+		       telephone,
+		       sns)
+	   values( #{userName},
+	           #{password},
+	           #{email},
+	           #{address},
+	           #{mobile},
+	           #{telephone},
+	           #{sns})
 	</insert>
 </mapper>

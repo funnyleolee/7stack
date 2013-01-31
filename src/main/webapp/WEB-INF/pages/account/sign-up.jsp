@@ -111,7 +111,7 @@ $(function(){
 	      <a class="brand btn btn-link" href="<s:url value='/'/>">7STACK</a>
 	      <ul class="nav pull-right">
 	        <li>
-	          <a href="<s:url value='/account/signIn'/>" class="btn btn-link color-white">登录</a>
+	          <a href="<s:url value='/account/sign-in'/>" class="btn btn-link color-white">登录</a>
 	        </li>
 	      </ul>
 	    </div>
@@ -119,7 +119,7 @@ $(function(){
 	</div>
   <div class="container">
     <div class="sign-box c-fix" id="ctx-sign-up">
-    	<s:form action="signUp" cssClass="form-horizontal" name="signUp" namespace="/account" id="sign-form" theme="simple">
+    	<s:form action="sign-up" cssClass="form-horizontal" name="signUp" namespace="/account" id="sign-form" theme="simple">
     		<legend>新用户注册</legend>
     		<div class="control-group ">
 				<label class="control-label" for="user-name">用户名：</label>
@@ -159,6 +159,6 @@ $(function(){
     	</s:form>
     </div>
   </div>
-  <jsp:include page="/WEB-INF/pages/include/home-foot.jsp" />
+  <%-- jsp:include page="/WEB-INF/pages/include/home-foot.jsp" / --%>
 </body>
 </html>

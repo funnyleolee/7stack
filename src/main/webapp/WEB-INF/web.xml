@@ -12,13 +12,20 @@
        <location>/resources/error/500.html</location>
     </error-page>
 	<listener>
-        <listener-class>me.sevenstack.web.event.TheGuiceServletContextListener</listener-class>
+        <listener-class>me.sevenstack.web.event.SimpleGuiceServletContextListener</listener-class>
     </listener>
 	<filter>
 		<filter-name>guice</filter-name>
 		<filter-class>com.google.inject.servlet.GuiceFilter
 		</filter-class>
 	</filter>
+	<filter>
+        <description>
+        </description>
+        <display-name>PostFilter</display-name>
+        <filter-name>PostFilter</filter-name>
+        <filter-class>me.sevenstack.web.event.PostFilter</filter-class>
+    </filter>
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
@@ -27,16 +34,21 @@
 			<param-value>me.sevenstack.web.action</param-value>
 		</init-param>
 	</filter>
-
+	
+    <filter-mapping>
+        <filter-name>PostFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 	<filter-mapping>
 		<filter-name>struts2</filter-name>
 		<url-pattern>/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>   
+        <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher> 
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>guice</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
 	
 </web-app>

@@ -14,8 +14,16 @@
 	<constant name="struts.convention.action.name.separator" value="-" />
 	<constant name="struts.convention.result.path" value="/WEB-INF/pages" /> 
 	<constant name="struts.objectFactory" value="guice" /> 
-	<package name="root" namespace="/" extends="struts-default">
-
+	
+	<package name="7stack-default" extends="struts-default">
+	   <interceptors>
+	       <interceptor name="authorityStack" class="me.sevenstack.web.interceptor.AuthorityInterceptor"/>
+	       <interceptor-stack name="theSevenStack">
+	           <interceptor-ref name="authorityStack"/>
+	           <interceptor-ref name="defaultStack"/>
+	       </interceptor-stack>
+	   </interceptors>
+	   <default-interceptor-ref name="theSevenStack"></default-interceptor-ref>
 	</package>
 
 </struts>

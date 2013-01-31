@@ -1,16 +1,12 @@
 package me.sevenstack.web.event;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 import org.mybatis.guice.XMLMyBatisModule;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.inject.Guice;
 import com.google.inject.Injector;

@@ -13,6 +13,8 @@ public interface UserService extends Serializable {
 	public User findUser(User user) throws Exception;
 
 	public User findUserById(Integer userId) throws Exception;
+	
+	public User findLoginUser(User user) throws Exception;
 
 	public List<User> findUserList(User user) throws Exception;
 

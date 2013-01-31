@@ -1,21 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="postMapping">
-	<select id="findPostList" resultType="post" parameterType="post">
-		select id id,
-				title title,
-				left(content,500) content,
-				author_id authorId,
-				author_name authorName,
-				visits_num vistisNum,
-				fav_num favNum,
-				create_time createTime,
-				update_time updateTime
-		from posts order by create_time desc;
-	</select>
-	<insert id="insertPost" parameterType="post">
-		insert into posts 
-		(title,content,author_id,author_name,visits_num,fav_num,create_time,update_time)values
-		(#{title},#{content},#{authorId},#{authorName},#{vistisNum},#{favNum},#{createTime},#{updateTime})
-	</insert>
+	<resultMap type="me.sevenstack.web.model.Post" id="post-result">
+		<id     property="id"          column="id"/>
+		<result property="title"       column="title"/>
+		<result property="content"     column="content"/>
+		<result property="authorId"    column="author_id"/>
+		<result property="authorName"  column="author_name"/>
+		<result property="visitsNum"   column="visits_num"/>
+		<result property="favNum"      column="fav_num"/>
+		<result property="createTime"  column="create_time"/>
+		<result property="updateTime"  column="update_time"/>
+	</resultMap>
+    <select id="findPostList" resultMap="post-result" parameterType="post">
+        select *
+          from posts
+         where 1=1
+         <if test="id != null">
+           and id = #{id}
+         </if>
+      order by create_time desc
+      <!-- TODO 条件 -->
+    </select>
+    <select id="findPostById" resultType="post" parameterType="_int">
+        select *
+          from posts
+         where id = #{value}
+    </select>
+    <update id="updatePost" parameterType="post">
+        update posts
+           set title       = #{title}
+               content     = #{content},
+               author_id   = #{authorId},
+               author_name = #{authorName},
+               visits_num  = #{visitsNum},
+               update_time = #{updateTime}
+         where id          = #{id}
+    </update>
+    <insert id="insertPost" parameterType="post">
+        insert into posts (
+               title,
+               content,
+               author_id,
+               author_name,
+               visits_num,
+               fav_num,
+               create_time,
+               update_time)
+        values (#{title},
+               #{content},
+               #{authorId},
+               #{authorName},
+               #{vistisNum},
+               #{favNum},
+               #{createTime},
+               #{updateTime})
+    </insert>
+    <delete id="deletePostById" parameterType="_int">
+        delete from posts
+           set id = #{value}
+    </delete>
+    <!-- TODO delete -->
+    
 </mapper>

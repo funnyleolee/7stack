@@ -93,7 +93,7 @@ $(function(){
       <a class="brand" href="<s:url value='/'/>">7STACK</a>
       <ul class="nav pull-right">
         <li>
-          <a href="<s:url value='/account/signUp'/>" class="btn btn-link color-white">注册</a>
+          <a href="<s:url value='/account/sign-up'/>" class="btn btn-link color-white">注册</a>
         </li>
       </ul>
     </div>
@@ -103,7 +103,7 @@ $(function(){
   <div class="container">
     <div class="sign-box c-fix">
       <div class="login-form f-left">
-        <s:form action="signIn" namespace="/account" id="sign-form">
+        <s:form action="sign-in" namespace="/account" id="sign-form">
           <legend>登录</legend>
           <div class="alert alert-error">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -111,12 +111,12 @@ $(function(){
           </div>
           <div class="control-group">
             <div class="controls">
-                <input type="text" class="span3" placeholder="Username" name="user.userName" id="user-name" value="<s:property value='user.userName'/>">
+                <input type="text" class="span3" placeholder="用户名或邮箱" name="user.userName" id="user-name" value="<s:property value='user.userName'/>">
             </div>
           </div>
           <div class="control-group">
             <div class="controls">
-                <input type="password" class="span3" placeholder="Password" name="user.password" id="password">
+                <input type="password" class="span3" placeholder="密码" name="user.password" id="password">
             </div>
           </div>
           <div class="control-group">
@@ -128,7 +128,7 @@ $(function(){
               </div>
           </div>
         </s:form>
-        <span class="help-inline pull-right">还没有帐号?<a href="<s:url value='/account/signUp'/>">现在注册</a></span>
+        <span class="help-inline pull-right">还没有帐号?<a href="<s:url value='/account/sign-up'/>">现在注册</a></span>
         <span ><a href="#" class="btn btn-link padding-zero"><span class="icon-question-sign"></span>忘记密码</a></span>
       </div>
       <div class="other-login f-left">

@@ -17,7 +17,7 @@ request.setAttribute("contextPath", contextPath);
 	<jsp:include page="/WEB-INF/pages/include/home-head.jsp" />
     <div class="container stack-content">
     	<div class="doc span8">
-    		<s:form action="newPost" namespace="blog">
+    		<s:form action="post-new" namespace="blog">
     			<legend>写博客</legend>
     			<div class="control-group">
     				<label class="control-label" id="title">标题</label>

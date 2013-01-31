@@ -2,7 +2,7 @@ package me.sevenstack.web.service.impl;
 
 import java.util.List;
 
-import me.sevenstack.web.dao.basic.BasicDao;
+import me.sevenstack.web.dao.UserDao;
 import me.sevenstack.web.model.User;
 import me.sevenstack.web.service.UserService;
 
@@ -15,48 +15,53 @@ public class UserServiceImpl implements UserService {
 	private static final long serialVersionUID = 1L;
 	
 	@Inject
-	private BasicDao<User> userDao;
+	private UserDao userDao;
 
 	public User findUser(User user) throws Exception {
-		return userDao.findOne(user);
+		return userDao.findOneUser(user);
 	}
 
 	public User findUserById(Integer userId) throws Exception {
-		return userDao.findById(userId, User.class);
+		return userDao.findUserById(userId);
 	}
 
 	public List<User> findUserList(User user) throws Exception {
-		return userDao.find(user);
+		return userDao.findUserList(user);
 	}
 	
 	@Transactional
 	public Integer saveUser(User user) throws Exception {
-		userDao.insert(user);
-		return user.getId();
+
+		return userDao.saveUser(user);
 	}
 
 	public void updateUser(User user) throws Exception {
-		userDao.update(user);
+		userDao.updateUser(user);
 
 	}
 
 	public Integer saveOrUpdateUser(User user) throws Exception {
 		if(user.getId() == null){
-			userDao.insert(user);
+			userDao.saveUser(user);
 		}else{
-			userDao.update(user);
+			userDao.updateUser(user);
 		}
 		return user.getId();
 	}
 
-	public void deleteUser(User u) throws Exception {
-		userDao.delete(u);
+	public void deleteUser(User user) throws Exception {
+		userDao.deleteUser(user);
 
 	}
 
 	public void deleteUserById(Integer userId) throws Exception {
-		userDao.deleteById(userId, User.class);
+		userDao.deleteUserById(userId);
 
+	}
+
+	@Override
+	public User findLoginUser(User user)throws Exception {
+		return userDao.findLoginUser(user);
 	}
 
 }
