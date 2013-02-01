@@ -1,8 +1,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- http://www.google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" 
   href="http://lib.sinaapp.com/js/bootstrap/2.2.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" 
-  href="http://lib.sinaapp.com/js/bootstrap/2.2.1/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" type="text/css" href="http://lib.sinaapp.com/js/bootstrap/2.2.1/css/bootstrap-responsive.min.css">
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/basic.css'/>">
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/home.base.css'/>">
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/home-responsive.css'/>">

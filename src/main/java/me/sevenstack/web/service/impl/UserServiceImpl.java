@@ -12,56 +12,64 @@ import com.google.inject.Inject;
 
 public class UserServiceImpl implements UserService {
 
-	private static final long serialVersionUID = 1L;
-	
-	@Inject
-	private UserDao userDao;
+    private static final long serialVersionUID = 1L;
 
-	public User findUser(User user) throws Exception {
-		return userDao.findOneUser(user);
-	}
+    @Inject
+    private UserDao userDao;
 
-	public User findUserById(Integer userId) throws Exception {
-		return userDao.findUserById(userId);
-	}
+    @Override
+    public User findUser(User user) throws Exception {
+        return userDao.findOneUser(user);
+    }
 
-	public List<User> findUserList(User user) throws Exception {
-		return userDao.findUserList(user);
-	}
-	
-	@Transactional
-	public Integer saveUser(User user) throws Exception {
+    @Override
+    public User findUserById(Integer userId) throws Exception {
+        return userDao.findUserById(userId);
+    }
 
-		return userDao.saveUser(user);
-	}
+    @Override
+    public List<User> findUserList(User user) throws Exception {
+        return userDao.findUserList(user);
+    }
 
-	public void updateUser(User user) throws Exception {
-		userDao.updateUser(user);
+    @Override
+    @Transactional
+    public Integer saveUser(User user) throws Exception {
 
-	}
+        return userDao.saveUser(user);
+    }
 
-	public Integer saveOrUpdateUser(User user) throws Exception {
-		if(user.getId() == null){
-			userDao.saveUser(user);
-		}else{
-			userDao.updateUser(user);
-		}
-		return user.getId();
-	}
+    @Override
+    public void updateUser(User user) throws Exception {
+        userDao.updateUser(user);
 
-	public void deleteUser(User user) throws Exception {
-		userDao.deleteUser(user);
+    }
 
-	}
+    @Override
+    public Integer saveOrUpdateUser(User user) throws Exception {
+        if (user.getId() == null) {
+            userDao.saveUser(user);
+        } else {
+            userDao.updateUser(user);
+        }
+        return user.getId();
+    }
 
-	public void deleteUserById(Integer userId) throws Exception {
-		userDao.deleteUserById(userId);
+    @Override
+    public void deleteUser(User user) throws Exception {
+        userDao.deleteUser(user);
 
-	}
+    }
 
-	@Override
-	public User findLoginUser(User user)throws Exception {
-		return userDao.findLoginUser(user);
-	}
+    @Override
+    public void deleteUserById(Integer userId) throws Exception {
+        userDao.deleteUserById(userId);
+
+    }
+
+    @Override
+    public User findLoginUser(User user) throws Exception {
+        return userDao.findLoginUser(user);
+    }
 
 }

@@ -1,11 +1,18 @@
 body{
-  font-family:"Helvetica Neue",Helvetica,STheiti,微软雅黑,黑体,Arial,Tahoma,sans-serif,serif;
+  font-family:"Quattrocento",Helvetica,STheiti,微软雅黑,黑体,Arial,Tahoma,sans-serif,serif;
   font-size: 14px;
   margin: 0;
   padding:0;
   background: url("../img/paper.jpg") repeat scroll 0 0 #FAFAF2;
  
 }
+span{
+	vertical-align: middle;
+}
+.brand,.footer{
+	font-family: 'Text Me One', sans-serif;
+}
+
 .black-color{
   color: black;
 }
@@ -24,7 +31,6 @@ a.color-black:hover [class*="icon-"]{
   width: 80%;
   margin: 22px auto 0;
 }
-
 /* footer */
 .stack-footer .btn-link{
   padding-right: 0;
@@ -50,7 +56,7 @@ a.color-black:hover [class*="icon-"]{
 }
 .doc,.side{
    margin-bottom: 23px;
-   padding: 30px;
+   padding: 30px 30px 10px;
    border-radius:6px;
    background:  #FFF;
    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
@@ -123,4 +129,7 @@ cursor: pointer;
 }
 .padding-zero{
   padding: 0;
+}
+.icon-trash{
+	background: url("../img/trash.png"");
 }

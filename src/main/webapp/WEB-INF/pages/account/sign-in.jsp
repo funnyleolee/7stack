@@ -122,7 +122,7 @@ $(function(){
           <div class="control-group">
               <div class="controls">
                   <input type="submit" class="btn btn-primary pull-right" value="登录">
-                  <label class="checkbox inline">
+                  <label class="checkbox">
                     <input type="checkbox">记住我
                   </label>
               </div>

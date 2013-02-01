@@ -6,34 +6,44 @@
 		<result property="title"       column="title"/>
 		<result property="content"     column="content"/>
 		<result property="authorId"    column="author_id"/>
-		<result property="authorName"  column="author_name"/>
 		<result property="visitsNum"   column="visits_num"/>
 		<result property="favNum"      column="fav_num"/>
 		<result property="createTime"  column="create_time"/>
 		<result property="updateTime"  column="update_time"/>
+		
+		<association property="author" column="author_id" javaType="user" resultMap="userMapping.only-user" />
 	</resultMap>
-    <select id="findPostList" resultMap="post-result" parameterType="post">
+    <select id="findPostList" resultMap="post-result" parameterType="post" >
         select *
-          from posts
-         where 1=1
+          from posts p,users u
+         where status = 0 and p.author_id = u.id
          <if test="id != null">
-           and id = #{id}
+           and p.id = #{id}
          </if>
-      order by create_time desc
+         <if test="authorId != null">
+           and p.id = #{author_id}
+         </if>
+      order by p.create_time desc
       <!-- TODO 条件 -->
     </select>
-    <select id="findPostById" resultType="post" parameterType="_int">
+    <select id="findPostById" resultMap="post-result" parameterType="_int">
         select *
-          from posts
-         where id = #{value}
+          from posts p left join users u on p.author_id = u.id
+         where status = 0
+           and p.id = #{value}
     </select>
     <update id="updatePost" parameterType="post">
         update posts
-           set title       = #{title}
+           set title       = #{title},
                content     = #{content},
                author_id   = #{authorId},
-               author_name = #{authorName},
                visits_num  = #{visitsNum},
+               update_time = #{updateTime}
+         where id          = #{id}
+    </update>
+    <update id="updatePostStatus" parameterType="post">
+        update posts
+           set status      = #{status},
                update_time = #{updateTime}
          where id          = #{id}
     </update>
@@ -42,17 +52,17 @@
                title,
                content,
                author_id,
-               author_name,
                visits_num,
                fav_num,
+               status,
                create_time,
                update_time)
         values (#{title},
                #{content},
                #{authorId},
-               #{authorName},
-               #{vistisNum},
+               #{visitsNum},
                #{favNum},
+               0,
                #{createTime},
                #{updateTime})
     </insert>

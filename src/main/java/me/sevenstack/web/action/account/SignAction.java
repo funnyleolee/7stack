@@ -1,6 +1,6 @@
 package me.sevenstack.web.action.account;
 
-import static me.sevenstack.util.Constant.USER_SESSION;
+import static me.sevenstack.util.Constants.USER_SESSION;
 
 import java.util.HashMap;
 import java.util.Map;

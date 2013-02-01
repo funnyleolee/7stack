@@ -43,9 +43,21 @@ $(function(){
 		}).bind("focus",function(){
 			$(this).closest(".control-group").removeClass("error");
 			$(this).next().html("");
+			if(id == "user-name" || id == "email"){
+				//TODO
+				/*
+				$.post("<s:url action='ajax-check-user'/>",
+						{"user.userName":$("#user-name").val(),
+					     "user.email":$("#email").val()
+					},
+				function(jsontext){
+					var json = JSON.parse(jsontext);
+				});*/
+			};
 		});
 		return flag;
-	})
+	});
+	
 	function error(obj,msg){
 		$(obj).next().html(msg);
 		$(obj).closest(".control-group").addClass("error");

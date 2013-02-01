@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userMapping">
+    <resultMap type="me.sevenstack.web.model.User" id="only-user">
+        <id     property="id"         column="id"/>
+        <result property="userName"   column="user_name"/>
+        <result property="password"   column="password"/>
+        <result property="email"      column="email"/>
+        <result property="address"    column="address"/>
+        <result property="mobile"     column="mobile"/>
+        <result property="telephone"  column="telephone"/>
+        <result property="sns"        column="sns"/>
+    </resultMap>
 	<resultMap type="me.sevenstack.web.model.User" id="user-result">
 		<id     property="id"         column="id"/>
 		<result property="userName"   column="user_name"/>
@@ -9,7 +19,8 @@
 		<result property="address"    column="address"/>
 		<result property="mobile"     column="mobile"/>
 		<result property="telephone"  column="telephone"/>
-		<result property="sns"        column="sns"/>		
+		<result property="sns"        column="sns"/>
+		<collection property="postList" javaType="post" column="author_id" select="postMapping.findPostList"/>
 	</resultMap>
 	
 	<select id="findUserById" resultMap="user-result" parameterType="_int">
@@ -46,7 +57,10 @@
 	<select id="findLoginUser" resultMap="user-result" parameterType="user">
 		select *
 		  from users 
-		 where user_name = #{userName} or email = #{userName}
+		 where password = #{password} 
+		   and (user_name = #{userName}
+		    or email = #{userName})
+		 limit 1
 	</select>
 
 	<update id="updateUser" parameterType="user">

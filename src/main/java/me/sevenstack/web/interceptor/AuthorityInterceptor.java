@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import me.sevenstack.util.Constant;
+import me.sevenstack.util.Constants;
 import me.sevenstack.web.annotation.LoginRequired;
 import me.sevenstack.web.model.User;
 
@@ -32,7 +32,7 @@ public class AuthorityInterceptor extends AbstractInterceptor  {
             
             HttpServletRequest request = ServletActionContext.getRequest();
             HttpServletResponse response = ServletActionContext.getResponse();
-            User user = (User)request.getSession().getAttribute(Constant.USER_SESSION);
+            User user = (User)request.getSession().getAttribute(Constants.USER_SESSION);
             if(user == null){
                 response.sendRedirect("/"+request.getContextPath());
                 return Action.NONE;

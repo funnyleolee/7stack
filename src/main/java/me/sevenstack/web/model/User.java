@@ -1,5 +1,8 @@
 package me.sevenstack.web.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private Integer id;
     private String userName;
@@ -10,6 +13,7 @@ public class User {
     private String mobile;
     private String telephone;
     private String sns;
+    private List<Post> postList = new ArrayList<Post>();
     private byte remCode;
 
     public Integer getId() {
@@ -91,5 +95,14 @@ public class User {
 	public void setRemCode(byte remCode) {
 		this.remCode = remCode;
 	}
+
+    public List<Post> getPostList() {
+        return postList;
+    }
+
+    public void setPostList(List<Post> postList) {
+        this.postList = postList;
+    }
+	
     
 }

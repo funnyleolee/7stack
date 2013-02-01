@@ -1,16 +1,18 @@
 package me.sevenstack.web.action;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import me.sevenstack.util.Constants;
 import me.sevenstack.web.annotation.LoginRequired;
 import me.sevenstack.web.model.Post;
+import me.sevenstack.web.model.User;
 import me.sevenstack.web.service.PostService;
 
 import org.apache.struts2.convention.annotation.Action;
 
 import com.google.inject.Inject;
+
 public class PostAction extends BaseAction {
     private static final long serialVersionUID = 1L;
 
@@ -58,16 +60,47 @@ public class PostAction extends BaseAction {
     }
 
     @LoginRequired
-    @Action(value="post-new")
-    public String postNew() throws Exception {
+    @Action(value = "post-edit")
+    public String postEdit() throws Exception {
+        User user = (User) session.get(Constants.USER_SESSION);
         if (post != null) {
-            post.setCreateTime(new Date().getTime());
-            post.setUpdateTime(new Date().getTime());
-            postService.savePost(post);
+            if (post.getId() != null) {
+                Post oldPost = postService.findPostById(post.getId());
+                if (oldPost != null && user.getId().equals(oldPost.getAuthorId())) {
+                    oldPost.setContent(post.getContent());
+                    oldPost.setTitle(post.getTitle());
+                    postService.updatePost(oldPost);
+                }
+            } else {
+                post.setAuthorId(user.getId());
+                postService.savePost(post);
+            }
             return "index";
         }
-        return "post-new";
+        // 编辑页面初始化
+        if (pid != null) {
+            post = postService.findPostById(pid);
+            // 过滤非本人编辑
+            if (!user.getId().equals(post.getAuthorId())) {
+                post = null;
+                return "index";
+            }
+        }
+        return "post-edit";
     }
-    
+
+    @LoginRequired
+    @Action("post-del")
+    public String postDel() throws Exception{
+        User user = (User)session.get(Constants.USER_SESSION);
+        if(pid != null){
+            Post tmpPost = postService.findPostById(pid);
+            if(tmpPost != null && user.getId().equals(tmpPost.getAuthorId())){
+                tmpPost.setStatus(Constants.STATUS_DEL);
+                postService.updatePostStatus(tmpPost);
+            }
+        }
+        return "index";
+    }
 
 }
