@@ -3,7 +3,7 @@ $(function(){
     return genLoginBox();
   });
   
-  $("#user-control-link").mouseover(function(){
+  $("#user-control-link,.menu-account").mouseover(function(){
     $(this).parent().addClass("open");
   }).mouseout(function(){
     $(this).parent().removeClass("open");
