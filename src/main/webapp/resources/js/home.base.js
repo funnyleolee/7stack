@@ -2,6 +2,12 @@ $(function(){
   $(".btn-login").bind("click",function(){
     return genLoginBox();
   });
+  
+  $("#user-control-link").mouseover(function(){
+    $(this).parent().addClass("open");
+  }).mouseout(function(){
+    $(this).parent().removeClass("open");
+  })
   var h = $(".search-box").width()-($(".search-box .btn").width()+36)
   $(".search-box :text").width(h);
 })
