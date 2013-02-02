@@ -133,8 +133,7 @@ cursor: pointer;
 .icon-trash{
 	background: url("../img/trash.png"");
 }
-.show-user-menu{
-	display: inline-block;
+.menu-account{
 	margin-top: 0;
 	-moz-border-radius: 0 0 6px 6px;
 	-webkit-border-radius: 0 0 6px 6px;
