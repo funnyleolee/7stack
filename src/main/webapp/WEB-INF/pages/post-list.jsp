@@ -99,8 +99,8 @@
         }); */
         //删除空标记
         //$("div,span,p,li,ul").is(":empty").remove();
-        $(this).prepend($("<div>").css({"text-align":"center",margin:"12px 0"}).append(first.css({"max-width":"none",width:"100%"})));
-    });
+        //$(this).prepend($("<div>").css({"text-align":"center",margin:"12px 0"}).append(first.css({"max-width":"none",width:"100%"})));
+    //});
     </script>
     <jsp:include page="/WEB-INF/pages/include/home-foot.jsp" />
 </body>
