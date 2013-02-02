@@ -20,7 +20,7 @@
 	          <a href="#" class="btn btn-link" id="user-control-link">
 	            <img  src="<s:url value='/resources/img/u-mini.png'/>"><s:property value="#loginUser.userName"/>
 	          </a>
-		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+		  <ul class="dropdown-menu menu-account" role="menu" aria-labelledby="dropdownMenu">
   			<li><a tabindex="-1" href="#">我的博客</a></li>
  	 		<li><a tabindex="-1" href="#">我的消息</a></li>
 			<li><a tabindex="-1" href="#">帐号管理</a></li>
