@@ -6,7 +6,10 @@ body{
   background: url("../img/paper.jpg") repeat scroll 0 0 #FAFAF2;
  
 }
-span{
+.height-24{
+	display: inline-block;
+    height: 24px;
+    line-height: 24px;
 	vertical-align: middle;
 }
 .brand,.footer{

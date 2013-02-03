@@ -15,4 +15,4 @@ ALTER TABLE `posts`
 DROP COLUMN `author_name`;
 
 ALTER TABLE `posts`
-ADD COLUMN `status`  tinyint(2) ZEROFILL NULL DEFAULT 0 COMMENT '已删除（-1），正常（0）' AFTER `fav_num`;
+ADD COLUMN `status`  tinyint(1) ZEROFILL NULL DEFAULT 0 COMMENT '已删除（-1），正常（0）' AFTER `fav_num`;

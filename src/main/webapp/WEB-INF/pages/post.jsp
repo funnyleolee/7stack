@@ -7,8 +7,21 @@
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <script type="text/javascript">
 $(function(){
-	var hv = window.screen.availHeight-$("body").children(":first").height()-$("body").children(":last").height()-44;
-	$(".stack-content").css({"min-height":hv});
+	$(window).resize(function(){
+		fit();
+	});
+	fit();
+	function fit(){
+		var top = $(".footer").offset().top;
+		var t2 = document.body.scrollTop | document.documentElement.scrollTop;
+		$(".debug").html(document.body.scrollHeight>document.body.clientHeight);
+		if(document.body.scrollHeight>document.body.offsetHeight){
+			$(".footer").css({position:"fixed",bottom:0});
+		}else{
+			$(".footer").css({position:"static",bottom:"auto"});
+		}
+	}
+	
 });
 
 </script>
@@ -16,6 +29,7 @@ $(function(){
 </head>
 <body>
     <jsp:include page="/WEB-INF/pages/include/home-head.jsp" />
+    <div class="debug"></div>
     <div class="container-fluid stack-content">
         <div class="row-fluid">
             <!-- right -->

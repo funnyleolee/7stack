@@ -12,7 +12,7 @@
 	      	    <li>
 	    	    <a class="btn btn-link" href="<s:url value='/post-edit'/>">
 	    	        <span class="icon-edit icon-white"></span>
-	    	        <span>写博客</span>
+	    	        <span class="height-24">写博客</span>
 	    	    </a>
 	    	    </li>
     	    </s:if>
