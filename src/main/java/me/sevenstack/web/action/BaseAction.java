@@ -13,12 +13,11 @@ import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ActionSupport;
 
 @ParentPackage("7stack-default")
-@Results({
-    @Result(name = "index", location = "/", type = "redirect") 
-})
+@Results({ @Result(name = "index", location = "/", type = "redirect") })
 public class BaseAction extends ActionSupport implements SessionAware, ServletResponseAware, ApplicationAware {
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +26,7 @@ public class BaseAction extends ActionSupport implements SessionAware, ServletRe
     protected Map<String, Object> application;
     protected Map<String, Object> session;
     protected HttpServletResponse response;
-    
+
     protected Map<String, String> param = new HashMap<String, String>();
 
     @Override
@@ -52,6 +51,9 @@ public class BaseAction extends ActionSupport implements SessionAware, ServletRe
     public void setParam(Map<String, String> param) {
         this.param = param;
     }
-    
-    
+
+    public void respondJson(Object obj) throws Exception {
+        response.setContentType("text/json; charset=utf-8");
+        response.getWriter().write(JSON.toJSONString(obj));
+    }
 }

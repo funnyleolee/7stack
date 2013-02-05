@@ -131,10 +131,65 @@ cursor: pointer;
   padding: 0;
 }
 .icon-trash{
-	background: url("../img/trash.png"");
+	background: url("../img/trash.png");
 }
 .menu-account{
 	margin-top: 0;
 	-moz-border-radius: 0 0 6px 6px;
 	-webkit-border-radius: 0 0 6px 6px;
+}
+.sign-box{
+  width: 600px;
+  margin: 50px auto 30px;
+  background-color: #F9F9F9;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
+  -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
+  padding: 45px 35px 20px;
+}
+.login-form {
+  width:300px;
+  padding-right: 39px;
+  border-right: 1px solid gainsboro;
+}
+.login-form input[type='text'],.login-form input[type='password']{
+    width: 100%;
+}
+.other-login{
+  width:220px;
+  padding-left: 39px;
+}
+/*解决文本框100%因为padding不对齐的原因*/
+.mrt-17{
+	margin-right: -17px;
+}
+.spl-0{
+	padding-left: 0;
+}
+/*社交登录按钮*/
+.social-signin{
+    width: 150px;
+    height: 23px;
+    line-height: 23px;
+    background-position: 0;
+    display: inline-block;
+}
+.social-facebook{
+    background-image: url("../img/social/facebook_signin.png");
+}
+.social-linkedin{
+    background-image: url("../img/social/linkedin_signin.png");
+}
+.social-twitter{
+    background-image: url("../img/social/twitter_signin.png");
+}
+.social-signin:hover{
+    background-position: 55% 0;
+}
+.hidden-block{
+	display: none;
+	padding: 4px 12px;
+    font-size: 12px;
+    vertical-align: bottom;
 }

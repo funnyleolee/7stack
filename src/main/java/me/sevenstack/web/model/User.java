@@ -3,6 +3,8 @@ package me.sevenstack.web.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class User {
     private Integer id;
     private String userName;
@@ -25,7 +27,7 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return StringUtils.trim(userName);
     }
 
     public void setUserName(String userName) {
@@ -49,7 +51,7 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return StringUtils.trim(email);
     }
 
     public void setEmail(String email) {
