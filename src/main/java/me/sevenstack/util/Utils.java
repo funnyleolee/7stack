@@ -148,7 +148,7 @@ public class Utils {
             picList.add(mat.group(1));
         }
         for (String picUrl : picList) {
-            if (isPic(new URL(picUrl).openStream())) {
+            if (isPic(new URL(picUrl).openStream()) && !picUrl.startsWith(Constants.FILE_SERVER)) {
                 matchPicList.add(picUrl);
             }
         }
