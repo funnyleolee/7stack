@@ -70,7 +70,7 @@ public class PostAction extends BaseAction {
                 if (oldPost != null && user.getId().equals(oldPost.getAuthorId())) {
                     oldPost.setContent(post.getContent());
                     oldPost.setTitle(post.getTitle());
-                    post.setContent(Utils.replacePic(post.getContent()));
+                    oldPost.setContent(Utils.replacePic(post.getContent()));
                     postService.updatePost(oldPost);
                 }
             } else {
