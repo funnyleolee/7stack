@@ -1,11 +1,16 @@
 package me.sevenstack.util;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
 import org.htmlparser.Node;
 import org.htmlparser.NodeFilter;
 import org.htmlparser.Parser;
@@ -134,8 +139,65 @@ public class Utils {
         }
         return toHTML(result.toString());
     }
-    public static void main(String[] args) {
-        String str = "<code>sdfsdf";
-        System.out.println(subHTML(str+str, 100, ""));
+
+    public static String replacePic(String content) throws Exception {
+
+        List<String> picList = new ArrayList<String>();
+        List<String> matchPicList = new ArrayList<String>();
+        String regEx = "<[i|I][m|M][g|G].*?[s|S][R|r][C|c]=['|\"](.*?)['|\"]";
+        Pattern pat = Pattern.compile(regEx);
+        Matcher mat = pat.matcher(content);
+        while (mat.find()) {
+            picList.add(mat.group(1));
+        }
+        for (String picUrl : picList) {
+            String ext = isPic(new URL(picUrl).openStream());
+            if (StringUtils.isNotBlank(ext)) {
+                matchPicList.add(picUrl);
+            }
+        }
+
+        for (String oldPic : matchPicList) {
+            String newPic = FileUpload.upload(oldPic, "static");
+            content.replaceAll(oldPic, newPic);
+        }
+        return content;
+    }
+    public static Map<String, String> PIC_EXT = new HashMap<String, String>();
+    static{
+        PIC_EXT.put("-1-40", "jpg");
+        PIC_EXT.put("6677", "bmp");
+        PIC_EXT.put("-11980", "png");
+        PIC_EXT.put("7173", "gif");
+    }
+    public static String isPic(final InputStream fs) {
+        String s = "";
+        try {
+           
+            byte[] b1 = new byte[1];
+            byte[] b2 = new byte[1];
+            fs.read(b1);
+            fs.read(b2);
+            // int sb1 = ((b1[0] < 0) ? (b1[0] + 256) : (b1[0]));
+            // int sb2 = ((b2[0] < 0) ? (b2[0] + 256) : (b2[0]));
+            fs.close();
+            // -1-40是jpg;7173是gif;6677是BMP,13780(-11980)是PNG; 7790是exe,8297是rar
+
+            s = "" + b1[0] + b2[0];
+            /*if ((s.equals("-1-40")) || (s.equals("6677")) || (s.equals("-11980")) || (s.equals("7173")) || (s.equals("5666"))) {
+                System.out.println(s);
+                return true;
+            } else {
+                return false;
+            }*/
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+        return PIC_EXT.get(s);
+    }
+
+    public static void main(String[] args)throws Exception {
+        System.out.println(replacePic("<img src='http://ww3.sinaimg.cn/mw600/73e9091dtw1e1jnxdg3upg.jpg' alt='蝙蝠侠的假日'>"));
     }
 }

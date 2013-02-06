@@ -14,6 +14,8 @@
 	<constant name="struts.convention.action.name.separator" value="-" />
 	<constant name="struts.convention.result.path" value="/WEB-INF/pages" /> 
 	<constant name="struts.objectFactory" value="guice" /> 
+	<!-- 文件上传 -->
+	<constant name="struts.multipart.paeser" value="cos"/>
 	
 	<package name="7stack-default" extends="struts-default">
 	   <interceptors>
