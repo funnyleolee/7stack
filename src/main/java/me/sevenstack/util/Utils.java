@@ -4,13 +4,10 @@ import java.io.InputStream;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
 import org.htmlparser.Node;
 import org.htmlparser.NodeFilter;
 import org.htmlparser.Parser;
@@ -151,29 +148,21 @@ public class Utils {
             picList.add(mat.group(1));
         }
         for (String picUrl : picList) {
-            String ext = isPic(new URL(picUrl).openStream());
-            if (StringUtils.isNotBlank(ext)) {
+            if (isPic(new URL(picUrl).openStream())) {
                 matchPicList.add(picUrl);
             }
         }
 
         for (String oldPic : matchPicList) {
             String newPic = FileUpload.upload(oldPic, "static");
-            content.replaceAll(oldPic, newPic);
+            content = content.replaceAll(oldPic, newPic);
         }
         return content;
     }
-    public static Map<String, String> PIC_EXT = new HashMap<String, String>();
-    static{
-        PIC_EXT.put("-1-40", "jpg");
-        PIC_EXT.put("6677", "bmp");
-        PIC_EXT.put("-11980", "png");
-        PIC_EXT.put("7173", "gif");
-    }
-    public static String isPic(final InputStream fs) {
-        String s = "";
+    
+    public static boolean isPic(final InputStream fs) {
         try {
-           
+            String s = "";
             byte[] b1 = new byte[1];
             byte[] b2 = new byte[1];
             fs.read(b1);
@@ -184,20 +173,20 @@ public class Utils {
             // -1-40是jpg;7173是gif;6677是BMP,13780(-11980)是PNG; 7790是exe,8297是rar
 
             s = "" + b1[0] + b2[0];
-            /*if ((s.equals("-1-40")) || (s.equals("6677")) || (s.equals("-11980")) || (s.equals("7173")) || (s.equals("5666"))) {
+            if ((s.equals("-1-40")) || (s.equals("6677")) || (s.equals("-11980")) || (s.equals("7173")) || (s.equals("5666"))) {
                 System.out.println(s);
                 return true;
             } else {
                 return false;
-            }*/
+            }
         } catch (Exception e) {
             System.out.println(e.toString());
-            return null;
+            return false;
         }
-        return PIC_EXT.get(s);
     }
 
     public static void main(String[] args)throws Exception {
         System.out.println(replacePic("<img src='http://ww3.sinaimg.cn/mw600/73e9091dtw1e1jnxdg3upg.jpg' alt='蝙蝠侠的假日'>"));
+        
     }
 }

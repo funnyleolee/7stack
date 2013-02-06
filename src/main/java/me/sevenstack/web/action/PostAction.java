@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.sevenstack.util.Constants;
+import me.sevenstack.util.Utils;
 import me.sevenstack.web.annotation.LoginRequired;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.model.User;
@@ -69,10 +70,12 @@ public class PostAction extends BaseAction {
                 if (oldPost != null && user.getId().equals(oldPost.getAuthorId())) {
                     oldPost.setContent(post.getContent());
                     oldPost.setTitle(post.getTitle());
+                    post.setContent(Utils.replacePic(post.getContent()));
                     postService.updatePost(oldPost);
                 }
             } else {
                 post.setAuthorId(user.getId());
+                post.setContent(Utils.replacePic(post.getContent()));
                 postService.savePost(post);
             }
             return "index";

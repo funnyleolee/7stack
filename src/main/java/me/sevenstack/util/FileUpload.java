@@ -9,13 +9,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
@@ -37,13 +33,13 @@ public class FileUpload {
     }
 
     public static String upload(File file, String path) throws FileNotFoundException, IOException {
-        String fileType = FileType.getFileType(new FileInputStream(file));
+        String fileType = FileType.getFileByFile(file);
         InputStream in = new FileInputStream(file);
         return upload(in, fileType, path);
     }
 
     public static String upload(String url, String path) throws MalformedURLException, IOException {
-        String fileType = FileType.getFileType(new URL(url).openStream());
+        String fileType = FileType.getFileByFile(new URL(url).openStream());
         InputStream in = new URL(url).openStream();
         return upload(in, fileType, path);
     }
@@ -73,9 +69,7 @@ public class FileUpload {
         // 设置缓存
         byte[] buffer = new byte[100];
         int length = 0;
-
         while ((length = in.read(buffer)) > 0) {
-            System.out.println(length);
             os.write(buffer, 0, length);
         }
         fileLocation = Constants.FILE_SERVER + path + "/" + toFile.getName();
