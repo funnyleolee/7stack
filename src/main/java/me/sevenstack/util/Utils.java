@@ -1,5 +1,7 @@
 package me.sevenstack.util;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
@@ -134,8 +136,57 @@ public class Utils {
         }
         return toHTML(result.toString());
     }
-    public static void main(String[] args) {
-        String str = "<code>sdfsdf";
-        System.out.println(subHTML(str+str, 100, ""));
+
+    public static String replacePic(String content) throws Exception {
+
+        List<String> picList = new ArrayList<String>();
+        List<String> matchPicList = new ArrayList<String>();
+        String regEx = "<[i|I][m|M][g|G].*?[s|S][R|r][C|c]=['|\"](.*?)['|\"]";
+        Pattern pat = Pattern.compile(regEx);
+        Matcher mat = pat.matcher(content);
+        while (mat.find()) {
+            picList.add(mat.group(1));
+        }
+        for (String picUrl : picList) {
+            if (isPic(new URL(picUrl).openStream()) && !picUrl.startsWith(Constants.FILE_SERVER)) {
+                matchPicList.add(picUrl);
+            }
+        }
+
+        for (String oldPic : matchPicList) {
+            String newPic = FileUpload.upload(oldPic, "static");
+            content = content.replaceAll(oldPic, newPic);
+        }
+        return content;
+    }
+    
+    public static boolean isPic(final InputStream fs) {
+        try {
+            String s = "";
+            byte[] b1 = new byte[1];
+            byte[] b2 = new byte[1];
+            fs.read(b1);
+            fs.read(b2);
+            // int sb1 = ((b1[0] < 0) ? (b1[0] + 256) : (b1[0]));
+            // int sb2 = ((b2[0] < 0) ? (b2[0] + 256) : (b2[0]));
+            fs.close();
+            // -1-40是jpg;7173是gif;6677是BMP,13780(-11980)是PNG; 7790是exe,8297是rar
+
+            s = "" + b1[0] + b2[0];
+            if ((s.equals("-1-40")) || (s.equals("6677")) || (s.equals("-11980")) || (s.equals("7173")) || (s.equals("5666"))) {
+                System.out.println(s);
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+
+    public static void main(String[] args)throws Exception {
+        System.out.println(replacePic("<img src='http://ww3.sinaimg.cn/mw600/73e9091dtw1e1jnxdg3upg.jpg' alt='蝙蝠侠的假日'>"));
+        
     }
 }

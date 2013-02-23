@@ -20,12 +20,15 @@ $(function(){
 		}
 		return flag;
 	});
-	$("#user-name,#password").focus(function(){
+	/*$("#user-name,#password").focus(function(){
 		$("#sign-form .alert").fadeOut(3000);
-	});
+	});*/
 	function error(msg){
-		$("#sign-form .alert .help-inline").html(msg);
-		$("#sign-form .alert").show();
+		$("#sign-form").find(".alert-error").remove();
+		var errObj = $("<div>").addClass("alert alert-error");
+		errObj.append($("<button type='button' class='close' data-dismiss='alert'>").html("&times;"));
+		errObj.append($("<span class='help-inline'>").html(msg));
+		$("#sign-form legend").after(errObj);
 		flag = false;
 	}
 	<s:if test="message['msg'] != ''">
@@ -34,26 +37,8 @@ $(function(){
 });
 </script>
 <style type="text/css">
-.sign-box{
-  width: 50%;
-  margin: 50px auto 30px;
-  background-color: #F9F9F9;
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
-  -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.5);
-  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
-  padding: 45px 35px 45px;
-  
-}
-.login-form {
-  padding-right: 39px;
-  border-right: 1px solid gainsboro;
-}
-.other-login{
-  padding-left: 39px;
-}
-.other-login h4{
-  border-bottom: 1px solid gainsboro;
+.other-login .btn-link{
+    padding-left: 0;
 }
 .btn-signup{
   display: inline-block !important;
@@ -69,10 +54,7 @@ $(function(){
   border-radius:3px;
   display: inline-block;
 }
-.btn-fb-signup{
-  background: linear-gradient(#6478B1, #4760A0) repeat scroll 0 0 transparent;
-  border-color: #2F426F;
-}
+
 
 #footer{
     position: absolute;
@@ -80,9 +62,6 @@ $(function(){
     right: 0;
     bottom: 0;
     min-width: 833px;
-}
-.alert{
-    display: none;
 }
 </style>
 </head>
@@ -100,62 +79,58 @@ $(function(){
   </div>
   
 </div>
-  <div class="container">
+  <div class="block-out">
     <div class="sign-box c-fix">
       <div class="login-form f-left">
-        <s:form action="sign-in" namespace="/account" id="sign-form">
+        <s:form action="sign-in" namespace="/account" id="sign-form" theme="simple">
           <legend>登录</legend>
-          <div class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <span class="help-inline"></span>
-          </div>
           <div class="control-group">
+            <label class="control-label" for="user-name"><span class="help-inline spl-0">用户名或邮箱</span></label>
             <div class="controls">
-                <input type="text" class="span3" placeholder="用户名或邮箱" name="user.userName" id="user-name" value="<s:property value='user.userName'/>">
+                <input type="text" name="user.userName" id="user-name" value="<s:property value='user.userName'/>">
             </div>
           </div>
           <div class="control-group">
+            <label class="control-label" for="password">
+                <span class="help-inline spl-0">密码 &nbsp;<a href="#"><span class="icon-question-sign"></span>忘记密码</a></span>
+            </label>
             <div class="controls">
-                <input type="password" class="span3" placeholder="密码" name="user.password" id="password">
+                
+                <input type="password" name="user.password" id="password">
             </div>
           </div>
           <div class="control-group">
               <div class="controls">
-                  <input type="submit" class="btn btn-primary pull-right" value="登录">
+                  <input type="submit" class="btn btn-primary pull-right mrt-17" value="登录">
                   <label class="checkbox">
                     <input type="checkbox">记住我
                   </label>
               </div>
           </div>
         </s:form>
-        <span class="help-inline pull-right">还没有帐号?<a href="<s:url value='/account/sign-up'/>">现在注册</a></span>
-        <span ><a href="#" class="btn btn-link padding-zero"><span class="icon-question-sign"></span>忘记密码</a></span>
       </div>
       <div class="other-login f-left">
         <div>
-          <h4 style="padding-bottom:7px;">第三方登录</h4>
-          <div>
-            <p>
-              <button class="btn btn-small">
-                <span class="icon-info-sign"></span> sign in with twitter
-              </button>
-            </p>
-            <p>
-              <button class="btn btn-small btn-info">
-                <span class="icon-info-sign"></span> sign in with facebook
-              </button>
-            </p>
-            <p>
-              <button class="btn btn-small btn-danger">
-                <span class="icon-info-sign"></span> sign in with linkedin
-              </button>
-            </p>
-          </div>
-        </div>
+          <legend style="margin-bottom: 23px;width: 200px;">使用其他帐号登录</legend>
+          <p class="hidden-block">使用其他帐号登录</p>
+          <p>
+            <a class="btn btn-link" href="#"><span class="social-signin social-twitter"></span></a>
+          </p>
+          <p>
+              <a class="btn btn-link" href="#"><span class="social-signin social-facebook"></span></a>
+          </p>
+          <p>
+            <a class="btn btn-link" href="#"><span class="social-signin social-linkedin"></span></a>
+          </p>
       </div>
     </div>
+    <div class="sign-bottom" style="clear: both;">
+        <span>还没有帐号?<a href="<s:url value='/account/sign-up'/>">现在注册</a></span>
+        <!--span ><a href="#" class="btn btn-link padding-zero"><span class="icon-question-sign"></span>忘记密码</a></span-->
+    </div>
   </div>
+ </div>
   
-  <jsp:include page="/WEB-INF/pages/include/home-foot.jsp" />
+  <%-- jsp:include page="/WEB-INF/pages/include/home-foot.jsp" /--%>
 </body>
 </html>

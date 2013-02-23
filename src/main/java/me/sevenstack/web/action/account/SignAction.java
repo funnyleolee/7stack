@@ -80,7 +80,24 @@ public class SignAction extends BaseAction{
     	    return "index";
     	}
 	}
-	
 
-	
+    @Action("ajax-check-user")
+    public String ajaxCheckUser() throws Exception {
+        if (StringUtils.isNotBlank(user.getUserName())) {
+            User paramUser = new User();
+            paramUser.setUserName(user.getUserName());
+            if (userService.findUser(paramUser) != null) {
+                message.put("userName", "用户名 " + user.getUserName() + " 已被注册");
+            }
+        }
+        if (StringUtils.isNotBlank(user.getEmail())) {
+            User paramUser = new User();
+            paramUser.setEmail(user.getEmail());
+            if (userService.findUser(paramUser) != null) {
+                message.put("email", "该邮箱 已被注册");
+            }
+        }
+        respondJson(message);
+        return NONE;
+    }
 }

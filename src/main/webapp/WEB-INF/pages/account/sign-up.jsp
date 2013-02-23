@@ -9,6 +9,7 @@
 <script type="text/javascript">
 $(function(){
 	var eReg = /[a-z0-9-]{1,30}@[a-z0-9-]{1,65}.[a-z]{3}/;
+	var uReg = /^[a-zA-Z0-9_-]{3,16}$/;
 	var flag = false;
 	$("#sign-form").submit(function(){
 		flag = true;
@@ -17,8 +18,10 @@ $(function(){
 			if(id == "user-name"){
 				if($.trim(this.value) == ""){
 					error(this,"请输入用户名");
-				}else if(this.value.length < 6){
-					error(this,"用户名长度不得少于6位");
+				}else if(this.value.length < 3){
+					error(this,"用户名长度不得少于3位");
+				}else if(!uReg.test(this.value)){
+					error(this,"只能包含数字字母下(中)划线");
 				}
 			}else if(id == "email"){
 				if($.trim(this.value) == ""){
@@ -30,7 +33,7 @@ $(function(){
 				if(this.value == ""){
 					error(this,"请输入密码");
 				}else if(this.value.length < 6){
-					error(this,"密码长度不得少于六位")
+					error(this,"密码长度不得少于六位");
 				}
 			}else if(id == "password-repeat"){
 				if(this.value == ""){
@@ -43,25 +46,56 @@ $(function(){
 		}).bind("focus",function(){
 			$(this).closest(".control-group").removeClass("error");
 			$(this).next().html("");
-			if(id == "user-name" || id == "email"){
-				//TODO
-				/*
-				$.post("<s:url action='ajax-check-user'/>",
-						{"user.userName":$("#user-name").val(),
-					     "user.email":$("#email").val()
-					},
-				function(jsontext){
-					var json = JSON.parse(jsontext);
-				});*/
-			};
 		});
+		//ajax 验证
+		if(flag){
+			ajaxCheck(this);
+			flag = false;
+		}
 		return flag;
 	});
 	
+	function ajaxCheck(obj){
+		// obj == null 失去焦点验证 暂时不启用
+		if(obj && $.trim($("#user-name").val()) == "" && $.trim($("#user-name").val()) == ""){
+			return;
+		}
+        $.post("<s:url action='ajax-check-user'/>",
+                {"user.userName":$("#user-name").val(),
+                 "user.email":$("#email").val()
+            },
+        function(json){
+            if(json.userName || json.email){
+            	if(json.userName){
+            		error($("#user-name").get(0),json.userName);
+            	}else{
+            		clearError("#user-name");
+            	}
+            	if(json.email){
+            		error($("#email").get(0),json.email);
+            	}else{
+            		clearError("#email");
+            	}
+            }else{
+            	clearError("#user-name,#email");
+            	if(obj){
+            		obj.submit();
+            	}
+            }
+        });
+	}
+	$("#user-name,#email").bind("blur",function(){
+		this.value = $.trim(this.value);
+        //ajaxCheck();
+    });
 	function error(obj,msg){
 		$(obj).next().html(msg);
 		$(obj).closest(".control-group").addClass("error");
 		flag = false;
+	}
+	function clearError(param){
+		$(param).closest(".control-group").removeClass("error");
+		$(param).next().html("");
 	}
 })
 
@@ -134,30 +168,30 @@ $(function(){
     	<s:form action="sign-up" cssClass="form-horizontal" name="signUp" namespace="/account" id="sign-form" theme="simple">
     		<legend>新用户注册</legend>
     		<div class="control-group ">
-				<label class="control-label" for="user-name">用户名：</label>
+				<label class="control-label" for="user-name">用户名</label>
 				<div class="controls">
-					<input type="text"id="user-name" class="span2.5" name="user.userName" placeholder="User Name" maxlength="30">
+					<input type="text"id="user-name" class="span2.5" name="user.userName" maxlength="30">
 					<span class="text-error help-inline"></span>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="email">邮箱：</label>
+				<label class="control-label" for="email">邮箱</label>
 				<div class="controls">
-					<input type="text" id="email" class="span2.5" name="user.email" placeholder="Email">
+					<input type="text" id="email" class="span2.5" name="user.email">
 					<span class="help-inline"></span>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="password">密码：</label>
+				<label class="control-label" for="password">密码</label>
 				<div class="controls">
-					<input type="password" id="password" class="span2.5" name="user.password" placeholder="Password" maxlength="30">
+					<input type="password" id="password" class="span2.5" name="user.password" maxlength="30">
 					<span class="help-inline"></span>
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="password-repeat">确认密码：</label>
+				<label class="control-label" for="password-repeat">确认密码</label>
 				<div class="controls">
-					<input type="password" id="password-repeat" class="span2.5" name="passwordRepeat" placeholder="Repeat Password" maxlength="30">
+					<input type="password" id="password-repeat" class="span2.5" name="passwordRepeat" maxlength="30">
 					<span class="help-inline"></span>
 				</div>
 			</div>
