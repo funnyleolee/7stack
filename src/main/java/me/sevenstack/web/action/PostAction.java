@@ -1,10 +1,13 @@
 package me.sevenstack.web.action;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import me.sevenstack.task.ImageReplaceTask;
+import me.sevenstack.task.TaskScheduling;
 import me.sevenstack.util.Constants;
-import me.sevenstack.util.Utils;
 import me.sevenstack.web.annotation.LoginRequired;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.model.User;
@@ -70,14 +73,19 @@ public class PostAction extends BaseAction {
                 if (oldPost != null && user.getId().equals(oldPost.getAuthorId())) {
                     oldPost.setContent(post.getContent());
                     oldPost.setTitle(post.getTitle());
-                    oldPost.setContent(Utils.replacePic(post.getContent()));
+                    oldPost.setContent(post.getContent());
                     postService.updatePost(oldPost);
                 }
             } else {
                 post.setAuthorId(user.getId());
-                post.setContent(Utils.replacePic(post.getContent()));
-                postService.savePost(post);
+                post.setContent(post.getContent());
+                Integer postId = postService.savePost(post);
+                post.setId(postId);
             }
+            //任务调度
+            Map<String, Object> taskMap = new HashMap<String, Object>();
+            taskMap.put("postId", post.getId());
+            TaskScheduling.scheduling(ImageReplaceTask.class, taskMap);
             return "index";
         }
         // 编辑页面初始化
