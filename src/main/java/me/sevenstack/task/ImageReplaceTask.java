@@ -14,8 +14,10 @@ public class ImageReplaceTask extends Task {
 		PostService postService = Guice.createInjector(new Struts2GuicePluginModule(),new SimpleXMLMyBatisModule()).getInstance(PostService.class);
 		Integer postId = (Integer) params.get("postId");
 		if (postId != null) {
+			System.out.println(postId+"========postId");
 			Post post = postService.findPostById(postId);
 			if (post != null) {
+				System.out.println(post+"========post");
 				post.setContent(Utils.replacePic(post.getContent()));
 				postService.updatePost(post);
 			}
