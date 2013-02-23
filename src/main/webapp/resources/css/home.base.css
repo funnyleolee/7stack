@@ -1,5 +1,5 @@
 body{
-  font-family:"Quattrocento",Helvetica,STheiti,微软雅黑,黑体,Arial,Tahoma,sans-serif,serif;
+  font-family:"Source Sans Pro","Quattrocento",Helvetica,STheiti,微软雅黑,黑体,Arial,Tahoma,sans-serif,serif;
   font-size: 14px;
   margin: 0;
   padding:0;
@@ -135,4 +135,9 @@ cursor: pointer;
 }
 .icon-trash{
 	background: url("../img/trash.png"");
+}
+.menu-account{
+	margin-top: 0;
+	-moz-border-radius: 0 0 6px 6px;
+	-webkit-border-radius: 0 0 6px 6px;
 }

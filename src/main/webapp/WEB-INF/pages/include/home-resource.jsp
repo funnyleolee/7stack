@@ -2,6 +2,7 @@
 <!-- http://www.google.com/webfonts -->
 <link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" 
   href="http://lib.sinaapp.com/js/bootstrap/2.2.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="http://lib.sinaapp.com/js/bootstrap/2.2.1/css/bootstrap-responsive.min.css">

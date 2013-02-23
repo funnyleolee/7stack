@@ -2,6 +2,18 @@ $(function(){
   $(".btn-login").bind("click",function(){
     return genLoginBox();
   });
+  
+  /*$("#user-control-link,.menu-account").mouseover(function(){
+    $(this).parent().addClass("open");
+  }).mouseout(function(){
+    $(this).parent().removeClass("open");
+  })*/
+  $(".menu-account").parent().mouseout(function(){
+	    $(this).parent().removeClass("open");
+	  })
+  $("#user-control-link").click(function(){
+	  $(this).parent().toggleClass("open");
+  });
   var h = $(".search-box").width()-($(".search-box .btn").width()+36)
   $(".search-box :text").width(h);
 })
