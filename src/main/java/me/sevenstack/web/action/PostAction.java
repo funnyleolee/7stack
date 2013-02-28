@@ -85,6 +85,7 @@ public class PostAction extends BaseAction {
             //任务调度
             Map<String, Object> taskMap = new HashMap<String, Object>();
             taskMap.put("postId", post.getId());
+            System.out.println("taskMap "+post.getId());
             TaskScheduling.scheduling(ImageReplaceTask.class, taskMap);
             return "index";
         }
