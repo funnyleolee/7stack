@@ -13,7 +13,11 @@
     </error-page>
 	<listener>
         <listener-class>me.sevenstack.web.event.SimpleGuiceServletContextListener</listener-class>
+        
     </listener>
+    <!--listener>
+        <listener-class>me.sevenstack.web.event.WebContextListener</listener-class>
+    </listener-->
 	<filter>
 		<filter-name>guice</filter-name>
 		<filter-class>com.google.inject.servlet.GuiceFilter

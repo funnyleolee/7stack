@@ -1,0 +1,164 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1248" measuredH="1352" mockupW="1183" mockupH="1350">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="67" y="2" w="1181" h="1350" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::HRule" x="67" y="106" w="1157" h="-1" measuredW="100" measuredH="10" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::HRule" x="65" y="1281" w="1159" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="95" y="84" w="40" h="-1" measuredW="40" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <state>up</state>
+        <text>7stack</text>
+        <textOrientation>right</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::LinkBar" x="1134" y="85" w="-1" h="-1" measuredW="70" measuredH="19" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u767B%u5F55%2C%u6CE8%u518C</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="1298" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CopyrightIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="103" y="1296" w="-1" h="-1" measuredW="62" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1997-2013</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="222" y="1296" w="-1" h="-1" measuredW="70" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Contact%20me</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Icon" x="200" y="1298" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>EmailIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Canvas" x="134" y="129" w="779" h="1137" measuredW="100" measuredH="70" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::SubTitle" x="165" y="166" w="-1" h="-1" measuredW="248" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Making%20Sharing%20Better</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Paragraph" x="165" y="208" w="711" h="394" measuredW="200" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>I%20want%20to%20close%20the%20year%20out%20by%20articulating%20our%20mission%3A%0A%20%0A*Quora%27s%20mission%20is%20to%20share%20and%20grow%20the%20world%27s%20knowledge.*%0A%20%0AThe%20vast%20majority%20of%20human%20knowledge%20is%20still%20not%20on%20the%20internet.%20Most%20of%20it%20is%20trapped%20in%20the%20form%20of%20experience%20in%20people%27s%20heads%2C%20or%20buried%20in%20books%20and%20papers%20that%20only%20experts%20can%20access.%20As%20a%20consequence%20most%20people%20don%27t%20have%20the%20knowledge%20they%20should%2C%20and%20don%27t%20have%20the%20time%2C%20connections%2C%20or%20skills%20to%20get%20to%20the%20knowledge%20they%20would%20have%20in%20an%20ideal%20world.%0A%20%0AThe%20internet%20was%20supposed%20to%20allow%20anyone%20to%20set%20up%20a%20web%20page%20and%20share%20their%20knowledge%20with%20the%20world.%20But%20in%20practice%20it%27s%20too%20difficult%20and%20takes%20too%20long%20and%20almost%20no%20one%20does%20it.%20Blogs%20are%20easy%20to%20start%2C%20but%20unless%20the%20author%20is%20famous%2C%20it%20takes%20years%20to%20build%20a%20following.%20More%20than%20a%20billion%20people%20use%20the%20internet%20yet%20only%20a%20tiny%20fraction%20contribute%20their%20knowledge%20to%20it.%0A%20%0AQuora%20aims%20to%20allow%20anyone%20to%20easily%20share%20their%20knowledge%20and%20in%20the%20process%20to%20dramatically%20increase%20the%20total%20amount%20of%20knowledge%20available%20to%20the%20world.%20As%20we%20grow%2C%20we%20will%20be%20able%20to%20provide%20larger%20and%20larger%20audiences%20to%20writers%2C%20cover%20more%20and%20more%20topics%2C%20and%20have%20greater%20and%20greater%20impact%20on%20the%20world.%0A%20%0AWe%20hope%20to%20become%20an%20internet-scale%20Library%20of%20Alexandria%2C%20a%20place%20where%20hundreds%20of%20millions%20of%20people%20go%20to%20learn%20about%20anything%20and%20share%20everything%20they%20know.%20To%20do%20that%20we%20are%20going%20to%20have%20to%20expand.%20Today%20Quora%20is%20largely%20questions%20and%20answers%2C%20but%20that%20is%20not%20the%20ideal%20format%20for%20all%20knowledge.%20Other%20formats%20will%20gradually%20be%20added%20as%20we%20scale%20up.%20%0A%20%0AAll%20of%20this%20will%20be%20guided%20by%20our%20mission.</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::HRule" x="165" y="647" w="711" h="-1" measuredW="100" measuredH="10" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="965" y="131" w="227" h="148" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="-1"/>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Paragraph" x="978" y="163" w="200" h="17" measuredW="200" measuredH="80" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>*About%20author*%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Canvas" x="965" y="307" w="227" h="248" measuredW="100" measuredH="70" zOrder="15" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::TagCloud" x="974" y="322" w="209" h="218" measuredW="350" measuredH="110" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>software%20statistics%20teaching%20%7Bcolor%3A%23FF0000%7Dtechnology%7Bcolor%7D%20tips%20tool%20tools%20toread%20travel%20tutorial%20tutorials%20tv%20twitter%20typography%20ubuntu%20usability%20video%20videos%20visualization%20web%20web%5C%202.0%20web%5C%20design%20webdev%20wiki%20windows%20wordpress%20work%20writing%20youtube</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Webcam" x="1063" y="180" w="31" h="24" measuredW="177" measuredH="146" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Paragraph" x="993" y="216" w="165" h="18" measuredW="200" measuredH="80" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>A%20_web%20designer_%20from%20China</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Link" x="1123" y="248" w="-1" h="-1" measuredW="33" measuredH="19" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>follow</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Link" x="169" y="665" w="-1" h="-1" measuredW="74" measuredH="19" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>3%20comments</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Icon" x="165" y="692" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Button" x="766" y="657" w="-1" h="-1" measuredW="110" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <menuIcon>false</menuIcon>
+        <text>write%20comment</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Icon" x="165" y="960" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Icon" x="165" y="1076" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Paragraph" x="210" y="721" w="666" h="239" measuredW="200" measuredH="80" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20has%20to%20be%20a%20joke.%0A%20%0AIf%20I%20understand%20the%20Obama%20administration%27s%20policy%3A%0A%20%0AWe%20will%20kill%20anyone%20anywhere%20anytime%20that%20we%20determine%20in%20secret%20to%20be%20a%20worthy%20target%20of%20killing.%0A%20%0AWe%20will%20not%20tell%20anyone%2C%20even%20the%20US%20Congress%2C%20our%20reasoning%20as%20to%20why%20this%20is%20not%20a%20flagrant%20violation%20of%20the%20fourth%2C%20fifth%2C%20sixth%2C%20and%20eighth%20amendments.%0A%20%0AWe%20will%20make%20secret%20deals%20with%20pharmaceutical%20and%20health%20insurance%20companies.%0A%20%0AWe%20will%20not%20prosecute%20those%20who%20commit%20war%20crimes%20but%20will%20prosecute%20and%20torture%20those%20who%20report%20those%20war%20crimes.%0A%20%0A_But%20...%20we%20support%20open%20government._</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Canvas" x="200" y="692" w="676" h="24" measuredW="100" measuredH="70" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Paragraph" x="210" y="697" w="161" h="15" measuredW="200" measuredH="80" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <text>*%5BLeo%5D*%20%3A%20_2013-02-28%2017%3A30_</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Canvas" x="200" y="960" w="676" h="24" measuredW="100" measuredH="70" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Paragraph" x="210" y="965" w="161" h="15" measuredW="200" measuredH="80" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <text>*%5BBrown%5D*%20%3A%20_2013-02-28%2017%3A35_</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Canvas" x="200" y="1076" w="676" h="24" measuredW="100" measuredH="70" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Paragraph" x="210" y="1081" w="161" h="15" measuredW="200" measuredH="80" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <text>*%5BCoco%5D*%20%3A%20_2013-02-28%2017%3A40_</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::Paragraph" x="210" y="992" w="666" h="90" measuredW="200" measuredH="80" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20%5BFederal%20government%5D%20has%20more%20programmers%20working%20for%20it%20as%20employees%20and%20through%20its%20contracts%20and%20through%20its%20research%20grants%20than%20any%20private%20institution%20in%20the%20US.%20They%20produce%20more%20code%20than%20every%20American%20company%20combined.%20*Start%20a%20program%20to%20actively%20publish%20all%20US%20government%20source%20code%20and%20applications%20to%20the%20public%20domain.%20*With%20a%20few%20exceptions%20for%20safety%2C%20nearly%20all%20of%20that%20code%20is%20a%20national%20resource%20that%20can%20be%20reused%2C%20refactored%2C%20or%20improved%20within%20the%20federal%20system%20and%20by%20the%20public.</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Paragraph" x="210" y="1109" w="666" h="80" measuredW="200" measuredH="80" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Open%20Government%20is%20not%20just%20about%20data%20and%20activity%3B%20it%27s%20about%20sharing%20reusable%20work%20product%20with%20the%20taxpayer.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
