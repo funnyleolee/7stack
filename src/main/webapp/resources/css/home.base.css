@@ -196,3 +196,8 @@ cursor: pointer;
     font-size: 12px;
     vertical-align: bottom;
 }
+.cfix:after{
+	content: "";
+	clear: both;
+	display: table;
+}
