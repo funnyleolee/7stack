@@ -55,7 +55,7 @@ $(function(){
                                 </a>
                             </div>
                         </s:if>
-                    <hr style="margin:0 0 7px;clear:both;"/>
+                    
                         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style pull-right">
     <a class="jiathis_button_qzone"></a>
@@ -70,9 +70,27 @@ $(function(){
 <!-- JiaThis Button END -->
                         
                         
-                        
+                        <hr style="margin:0 0 7px;clear:both;"/>
                     </div>
+                    
+	                <!-- start -->
+	                <div class="comments ">
+	                    <div class="hd">
+	                        <div class="cfix">
+	                            <span class="help-inline">3条评论</span> 
+	                            <span class="help-inline"><a href="#" class="btn-link">发表评论</a></span>
+	                        </div>
+	                    </div>
+	                    <div class="bd"></div>
+	                    <div class="ft">
+	                       <
+	                    </div>
+	                </div>
+	                <!-- end -->
+                    
+                    
                 </div>
+                
             </div>
             <!-- right end -->
             <!-- left -->
