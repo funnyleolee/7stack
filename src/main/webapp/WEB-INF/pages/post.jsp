@@ -83,7 +83,7 @@ $(function(){
 	                    </div>
 	                    <div class="bd"></div>
 	                    <div class="ft">
-	                       
+	                       <
 	                    </div>
 	                </div>
 	                <!-- end -->
