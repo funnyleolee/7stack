@@ -92,7 +92,7 @@ $(function(){
           </div>
           <div class="control-group">
             <label class="control-label" for="password">
-                <span class="help-inline spl-0">密码 &nbsp;<a href="#"><span class="icon-question-sign"></span>忘记密码</a></span>
+                <span class="help-inline spl-0">密码 &nbsp;<a href="<s:url value='/account/forget'/>"><span class="icon-question-sign"></span>忘记密码</a></span>
             </label>
             <div class="controls">
                 

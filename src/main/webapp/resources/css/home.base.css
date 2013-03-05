@@ -141,6 +141,7 @@ cursor: pointer;
 	-moz-border-radius: 0 0 6px 6px;
 	-webkit-border-radius: 0 0 6px 6px;
 }
+
 .sign-box{
   width: 600px;
   margin: 50px auto 30px;
@@ -151,6 +152,15 @@ cursor: pointer;
   -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.5);
   padding: 45px 35px 20px;
 }
+/*框快内容*/
+.forget-box{
+    width: 750px;
+    margin-top: 33px;
+}
+.forget-content{
+    padding: 20px 14px;
+}
+
 .login-form {
   width:300px;
   padding-right: 39px;
