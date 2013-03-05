@@ -211,3 +211,34 @@ cursor: pointer;
 	clear: both;
 	display: table;
 }
+.comments>div{
+	margin:20px 0;
+}
+.comments .row-left{
+	padding-right:10px;
+}
+.comments .row-title{
+	margin-top:7px;
+	padding:2px 9px 3px;
+	height: 20px;
+	line-height: 20px;
+	background: #efefef;
+}
+.comments .row-content{
+	margin:6px 2px;
+}
+.comments .row-bottom{
+	padding:5px 3px 2px;
+	margin-bottom:6px;
+	text-align: right;
+	border-bottom: 1px dashed #888;
+}
+.comments .bd ul{
+	list-style: none;
+}
+.comments .bd li:after{
+	content:"";
+	clear: both;
+	display: table;
+}
+

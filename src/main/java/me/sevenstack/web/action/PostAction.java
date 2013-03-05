@@ -82,12 +82,20 @@ public class PostAction extends BaseAction {
                 Integer postId = postService.savePost(post);
                 post.setId(postId);
             }
+<<<<<<< HEAD
+            //任务调度
+            Map<String, Object> taskMap = new HashMap<String, Object>();
+            taskMap.put("postId", post.getId());
+            System.out.println("taskMap "+post.getId());
+            TaskScheduling.scheduling(ImageReplaceTask.class, taskMap);
+=======
             if(!"dev".equals(Constants.ENV)){
                 //任务调度
                 Map<String, Object> taskMap = new HashMap<String, Object>();
                 taskMap.put("postId", post.getId());
                 TaskScheduling.scheduling(ImageReplaceTask.class, taskMap);
             }
+>>>>>>> 7e9b68bef95403aedd9ac3212bad41ec151ece26
             return "index";
         }
         // 编辑页面初始化
