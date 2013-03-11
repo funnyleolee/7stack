@@ -1,10 +1,4 @@
-body 
-{ 
-	background-color: White;
-    font-family: sans-serif;
-}
-
-blockquote {
+.wmd-preview blockquote {
 	border-left: 2px dotted #888;
 	padding-left: 5px;
 	background: #d0f0ff;

@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 public class User {
-    private Integer id;
+    private Integer userId;
     private String userName;
     private String password;
     private String passwordRepeat;
@@ -18,12 +18,12 @@ public class User {
     private List<Post> postList = new ArrayList<Post>();
     private byte remCode;
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {

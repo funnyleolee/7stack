@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.google.inject.Inject;
 
 import me.sevenstack.web.dao.PostDao;
+import me.sevenstack.web.model.Comment;
 import me.sevenstack.web.model.Post;
 
 public class PostDaoImpl implements PostDao {
@@ -29,9 +30,7 @@ public class PostDaoImpl implements PostDao {
         if (id == null) {
             return null;
         }
-        Post post = new Post();
-        post.setId(id);
-        return session.selectOne("findPostList", post);
+        return session.selectOne("findPostById", id);
     }
 
     @Override
@@ -61,6 +60,11 @@ public class PostDaoImpl implements PostDao {
     @Override
     public int deletePostById(Integer id) throws Exception {
         return session.delete("deletePostById", id);
+    }
+
+    @Override
+    public int saveComment(Comment comment) throws Exception {
+        return session.insert("insertComment", comment);
     }
 
 }

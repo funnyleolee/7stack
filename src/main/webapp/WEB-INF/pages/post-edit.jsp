@@ -18,7 +18,7 @@ request.setAttribute("contextPath", contextPath);
     <div class="container stack-content">
         <div class="doc span8">
             <s:form action="post-edit" method="post">
-                <input type="hidden" name="post.id" value="<s:property value='post.id'/>">
+                <input type="hidden" name="post.postId" value="<s:property value='post.postId'/>">
                 <legend>写博客</legend>
                 <div class="control-group">
                     <label class="control-label" id="title">标题</label>

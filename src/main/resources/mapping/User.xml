@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userMapping">
     <resultMap type="me.sevenstack.web.model.User" id="only-user">
-        <id     property="id"         column="id"/>
+        <id     property="userId"         column="user_id"/>
         <result property="userName"   column="user_name"/>
         <result property="password"   column="password"/>
         <result property="email"      column="email"/>
@@ -12,7 +12,7 @@
         <result property="sns"        column="sns"/>
     </resultMap>
     <resultMap type="me.sevenstack.web.model.User" id="user-result">
-        <id     property="id"         column="id"/>
+        <id     property="userId"         column="user_id"/>
         <result property="userName"   column="user_name"/>
         <result property="password"   column="password"/>
         <result property="email"      column="email"/>
@@ -20,20 +20,22 @@
         <result property="mobile"     column="mobile"/>
         <result property="telephone"  column="telephone"/>
         <result property="sns"        column="sns"/>
-        <collection property="postList" javaType="post" column="author_id" select="postMapping.findPostList"/>
+        <collection property="postList" javaType="ArrayList" column="id" ofType="post" select="postMapping.findPostListByAuthor"/>
     </resultMap>
     
-    <select id="findUserById" resultMap="user-result" parameterType="_int">
+    
+    
+    <select id="findUserById" resultMap="only-user" parameterType="_int">
         select * 
           from users 
-         where id = #{value}
+         where user_id = #{value}
     </select>
-    <select id="findOneUser" resultMap="user-result" parameterType="user">
+    <select id="findOneUser" resultMap="only-user" parameterType="user">
         select *
           from users 
          where 1=1
-        <if test="id != null">
-            and id = #{id}
+        <if test="userId != null">
+            and user_id = #{userId}
         </if>
         <if test="@org.apache.commons.lang3.StringUtils@isNotBlank(userName)">
             and user_name = #{userName}
@@ -50,8 +52,8 @@
         select *
           from users 
          where 1=1
-        <if test="id != null">
-           and id = #{id}
+        <if test="userId != null">
+           and user_id = #{userId}
         </if>
         <if test="@org.apache.commons.lang3.StringUtils@isNotBlank(userName)">
            and user_name = #{userName}
@@ -80,7 +82,7 @@
                mobile     =  #{mobile},
                telephone  =  #{telephone},
                sns        =  #{sns}
-         where id         =  #{id}
+         where user_id    =  #{userId}
     </update>
     <insert id="saveUser" parameterType="user">
         insert into users (

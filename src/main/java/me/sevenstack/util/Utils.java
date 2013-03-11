@@ -65,7 +65,6 @@ public class Utils {
                 if (tag.getParent() == null) {
                     bf.append(tag.toHtml());
 
-                    System.out.println(tag.getStringText());
                     // tag.
                 }
             }
@@ -174,7 +173,6 @@ public class Utils {
 
             s = "" + b1[0] + b2[0];
             if ((s.equals("-1-40")) || (s.equals("6677")) || (s.equals("-11980")) || (s.equals("7173")) || (s.equals("5666"))) {
-                System.out.println(s);
                 return true;
             } else {
                 return false;

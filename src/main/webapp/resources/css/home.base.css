@@ -218,7 +218,6 @@ cursor: pointer;
 	padding-right:10px;
 }
 .comments .row-title{
-	margin-top:7px;
 	padding:2px 9px 3px;
 	height: 20px;
 	line-height: 20px;
@@ -236,7 +235,10 @@ cursor: pointer;
 .comments .bd ul{
 	list-style: none;
 }
-.comments .bd li:after{
+.comments .bd>ul>li{
+	padding-top: 16px;
+}
+.comments .bd>ul>li:after{
 	content:"";
 	clear: both;
 	display: table;

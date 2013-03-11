@@ -47,12 +47,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Integer saveOrUpdateUser(User user) throws Exception {
-        if (user.getId() == null) {
+        if (user.getUserId() == null) {
             userDao.saveUser(user);
         } else {
             userDao.updateUser(user);
         }
-        return user.getId();
+        return user.getUserId();
     }
 
     @Override

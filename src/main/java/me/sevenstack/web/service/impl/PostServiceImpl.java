@@ -3,6 +3,7 @@ package me.sevenstack.web.service.impl;
 import java.util.List;
 
 import me.sevenstack.web.dao.PostDao;
+import me.sevenstack.web.model.Comment;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.service.PostService;
 
@@ -51,12 +52,12 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Integer saveOrUpdatePost(Post post) throws Exception {
-        if (post.getId() == null) {
+        if (post.getPostId() == null) {
             postDao.savePost(post);
         } else {
             postDao.updatePost(post);
         }
-        return post.getId();
+        return post.getPostId();
     }
 
     @Override
@@ -66,9 +67,15 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    @Transactional
     public void deletePostById(Integer postId) throws Exception {
         postDao.deletePostById(postId);
 
+    }
+
+    @Override
+    public int saveComment(Comment comment) throws Exception {
+        return postDao.saveComment(comment);
     }
 
 }

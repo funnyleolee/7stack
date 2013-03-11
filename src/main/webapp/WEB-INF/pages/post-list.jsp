@@ -6,6 +6,23 @@
 <head>
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <title>Home</title>
+<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/jquery.scrollUp.tab.css'/>">
+<script type="text/javascript" src="<s:url value='/resources/js/jquery.scrollUp.min.js'/>"></script>
+<script type="text/javascript">
+$(function(){
+	//回顶部
+	   $.scrollUp({
+	       scrollName: 'scrollUp', // Element ID
+	       topDistance: '300', // Distance from top before showing element (px)
+	       topSpeed: 300, // Speed back to top (ms)
+	       animation: 'fade', // Fade, slide, none
+	       animationInSpeed: 200, // Animation in speed (ms)
+	       animationOutSpeed: 200, // Animation out speed (ms)
+	       scrollText: '回顶部', // Text for element
+	       activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+	   });
+});
+</script>
 </head>
 <body>
     <jsp:include page="/WEB-INF/pages/include/home-head.jsp" />
@@ -17,7 +34,7 @@
             <div class="doc">
               <h4>
                 <span class="title">
-                    <a href="<s:url value='post/%{id}'/>">
+                    <a href="<s:url value='post/%{postId}'/>">
                         <s:property value="title"/>
                     </a>
                 </span>
@@ -27,7 +44,7 @@
               </div>
               <div class="summary">
                 <s:property value="summary" escape="false"/>
-                <div style="text-align: right;"><a href="<s:url value='post/%{id}'/>" class="btn btn-link">继续阅读...</a></div>
+                <div style="text-align: right;"><a href="<s:url value='post/%{postId}'/>" class="btn btn-link">继续阅读...</a></div>
               </div>
             </div>
           </s:iterator>

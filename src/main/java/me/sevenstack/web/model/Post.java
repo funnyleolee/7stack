@@ -1,9 +1,12 @@
 package me.sevenstack.web.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.sevenstack.util.Utils;
 
 public class Post {
-    private Integer id;
+    private Integer postId;
     private String title;
     private String content;
     private Integer authorId;
@@ -13,13 +16,13 @@ public class Post {
     private Long createTime;
     private Long updateTime;
     private User author;
-
-    public Integer getId() {
-        return this.id;
+    private List<Comment> commentList = new ArrayList<Comment>();
+    public Integer getPostId() {
+        return postId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPostId(Integer postId) {
+        this.postId = postId;
     }
 
     public String getTitle() {
@@ -97,5 +100,13 @@ public class Post {
     public String getSummary() {
         // String more = "<p><a href='"+this.getId()+"'>(全文...)</a></p>";
         return Utils.subHTML(this.content, 500, "");
+    }
+
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
+    }
+
+    public List<Comment> getCommentList() {
+        return commentList;
     }
 }

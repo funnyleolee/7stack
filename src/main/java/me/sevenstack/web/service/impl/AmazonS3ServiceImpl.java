@@ -19,7 +19,6 @@ import javax.imageio.stream.ImageInputStream;
 import me.sevenstack.web.service.AmazonS3Service;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.amazonaws.ClientConfiguration;
@@ -78,7 +77,7 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
         config.withMaxErrorRetry(maxErrorRetry);
 
         String proxyHost = props.get(PROXY_HOST);
-        if (StringUtils.isNotBlank(proxyHost)) {
+        if (org.apache.commons.lang3.StringUtils.isNotBlank(proxyHost)) {
             config.withProxyHost(proxyHost);
             config.withProxyPort(Integer.parseInt(props.get(PROXY_PORT)));
             config.withProxyUsername(props.get(PROXY_USERNAME));
