@@ -27,7 +27,12 @@
             <form action="">
                 <legend>找回密码</legend>
                 <p><span class="help-inline"><i class="icon-info-sign"></i> 密码重置链接已发送</span></p>
-                <div class="forget-content">请登录 <strong><s:property value="email"/></strong> 查收邮件（没有收到邮件？<a class="btn-link">点此</a>再次发送）
+                <div class="forget-content">
+                <span class="text-info">请登录 <strong><s:property value="email"/></strong> 查收邮件</span>
+                <span class="muted">(<i class="icon-minus-sign"></i>没有收到邮件？<a class="btn-link">点此</a>再次发送)</span>
+                <br>
+                <br>
+                
                 </div>
                 <p> 
                     <a class="btn btn-link" href="<s:url value='/'/>"><i class="icon-home"></i> 回首页</a>
