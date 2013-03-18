@@ -24,16 +24,16 @@
     </div>
     <div class="block-out">
         <div class="forget-box sign-box cfix">
-            <form action="">
+            <form action="forget-send" method="post">
                 <legend>找回密码</legend>
                 <p><span class="help-inline"><i class="icon-info-sign"></i> 请输入您在注册时使用的邮箱，我会把密码重置链接发送到您的邮箱，谢谢！</span></p>
                 <div class="forget-content">
                     <div class="control-group">
-                        <label class="control-label" for="user-name"><span class="help-inline spl-0">邮箱</span></label>
+                        <label class="control-label" for="email-send"><span class="help-inline spl-0">邮箱</span></label>
                       </div>
                       <div class="control-group">
                            <div class="controls">
-                                <input type="text" name="user.userName" id="user-name" value="<s:property value='user.userName'/>">
+                                <input type="text" name="email" id="email-send" value="<s:property value='email'/>">
                             </div>
                       </div>
                       <div class="control-group">

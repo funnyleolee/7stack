@@ -145,4 +145,7 @@ public class PostAction extends BaseAction {
             return "index";
         }
     }
+    public static void main(String[] args) {
+        System.out.println(new Date(new Long("1357293606")));
+    }
 }
