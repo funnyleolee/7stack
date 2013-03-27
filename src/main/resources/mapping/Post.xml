@@ -61,7 +61,7 @@
                author_id   = #{authorId},
                visits_num  = #{visitsNum},
                update_time = #{updateTime}
-         where postId          = #{postId}
+         where post_id          = #{postId}
     </update>
     <update id="updatePostStatus" parameterType="post">
         update posts
