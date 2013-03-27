@@ -3,7 +3,6 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<properties resource="mysql.properties" />
 	<typeAliases>
 		<typeAlias alias="user" type="me.sevenstack.web.model.User" />
 		<typeAlias alias="post" type="me.sevenstack.web.model.Post" />

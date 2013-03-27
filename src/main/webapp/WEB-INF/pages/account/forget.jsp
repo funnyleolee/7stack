@@ -5,9 +5,18 @@
 <head>
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <title>密码忘记</title>
-<style type="text/css">
-
-</style>
+<script type="text/javascript">
+$("#forget-form").submit(function(){
+	var email = $.trim($("#email-send").val());
+	$("#email-send").val(email);
+	if(isEmail(email)){
+		return true;
+	}else{
+		alert("邮箱有误");
+		return false;
+	}
+});
+</script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-header">
@@ -24,7 +33,7 @@
     </div>
     <div class="block-out">
         <div class="forget-box sign-box cfix">
-            <form action="forget-send" method="post">
+            <s:form action="forget" namespace="/account" id="forget-form" theme="simple">
                 <legend>找回密码</legend>
                 <p><span class="help-inline"><i class="icon-info-sign"></i> 请输入您在注册时使用的邮箱，我会把密码重置链接发送到您的邮箱，谢谢！</span></p>
                 <div class="forget-content">
@@ -43,7 +52,7 @@
                 <p>
                     <a class="btn btn-link" href="<s:url value='/account/sign-in'/>">返回登录页面</a>
                 </p>
-            </form>
+            </s:form>
         </div>
     </div>
     

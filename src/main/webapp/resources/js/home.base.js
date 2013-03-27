@@ -10,14 +10,25 @@ $(function(){
   })*/
   $(".menu-account").parent().mouseout(function(){
 	    $(this).parent().removeClass("open");
-	  })
+	  });
   $("#user-control-link").click(function(){
 	  $(this).parent().toggleClass("open");
   });
   var h = $(".search-box").width()-($(".search-box .btn").width()+36)
   $(".search-box :text").width(h);
-})
-/** 登录遮罩 **/
+});
+
+function isEmail(email) {
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (filter.test(email)) {
+		return true;
+	}
+	return false;
+}
+
+
+
+/** 登录遮罩 * */
 function genLoginBox(){
   var panel = $("<div>");
   var dialog = panel.clone().addClass("login-dialog");

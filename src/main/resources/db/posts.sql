@@ -9,7 +9,7 @@ visits_num INTEGER  default 0,
 fav_num INTEGER  default 0,
 create_time BIGINT ,
 update_time BIGINT 
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB  DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
 
 ALTER TABLE `posts`
 DROP COLUMN `author_name`;
@@ -17,6 +17,4 @@ DROP COLUMN `author_name`;
 ALTER TABLE `posts`
 ADD COLUMN `status`  tinyint(1) ZEROFILL NULL DEFAULT 0 COMMENT '已删除（-1），正常（0）' AFTER `fav_num`;
 
-ALTER TABLE posts CHANGE id post_id INTEGER
-ALTER TABLE users CHANGE id user_id INTEGER
-ALTER TABLE comments CHANGE id comment_id INTEGER
+ALTER TABLE posts CHANGE id post_id INTEGER;

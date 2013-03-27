@@ -19,8 +19,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.convention.annotation.Action;
 
 import com.google.inject.Inject;
-import com.petebevin.markdown.MarkdownFilter;
-import com.petebevin.markdown.MarkdownProcessor;
 
 public class PostAction extends BaseAction {
     private static final long serialVersionUID = 1L;

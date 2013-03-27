@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
 import org.htmlparser.Node;
 import org.htmlparser.NodeFilter;
 import org.htmlparser.Parser;
@@ -186,5 +187,20 @@ public class Utils {
     public static void main(String[] args)throws Exception {
         System.out.println(replacePic("<img src='http://ww3.sinaimg.cn/mw600/73e9091dtw1e1jnxdg3upg.jpg' alt='蝙蝠侠的假日'>"));
         
+    }
+    /**
+     * 判断是不是一个合法的电子邮件地址
+     * @param email
+     * @return
+     */
+    public static boolean isEmail(String email){
+        if(StringUtils.isBlank(email)) return false;
+        email = email.toLowerCase();
+        if(email.endsWith(".con")) return false;
+        if(email.endsWith(".cm")) return false;
+        if(email.endsWith("@gmial.com")) return false;
+        if(email.endsWith("@gamil.com")) return false;
+        if(email.endsWith("@gmai.com")) return false;
+        return Constants.EMAIL_PATTERN.matcher(email).matches();
     }
 }

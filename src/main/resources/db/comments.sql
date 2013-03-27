@@ -6,4 +6,5 @@ IF NOT EXISTS comments (
     post_id INTEGER,
     create_time BIGINT,
     update_time BIGINT
-) ENGINE = INNODB;
+) ENGINE = INNODB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
+ALTER TABLE comments CHANGE id comment_id INTEGER;

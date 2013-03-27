@@ -34,7 +34,7 @@
                 <br>
                 
                 </div>
-                <p> 
+                <p>
                     <a class="btn btn-link" href="<s:url value='/'/>"><i class="icon-home"></i> 回首页</a>
                     <a class="btn btn-link" href="<s:url value='/account/sign-in'/>">登录</a>
                 </p>

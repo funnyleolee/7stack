@@ -10,4 +10,6 @@ IF NOT EXISTS users (
     sns VARCHAR (100),
     create_time INTEGER,
     update_time INTEGER
-) ENGINE = INNODB;
+) ENGINE = INNODB DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
+
+ALTER TABLE users CHANGE id user_id INTEGER;
