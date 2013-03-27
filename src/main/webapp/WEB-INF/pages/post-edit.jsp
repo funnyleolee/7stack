@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-<%@ taglib uri="http://ckeditor.com" prefix="ckeditor" %>
 <%
 String contextPath = request.getContextPath();
 request.setAttribute("contextPath", contextPath);
@@ -11,6 +10,7 @@ request.setAttribute("contextPath", contextPath);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script>
 <title>编辑博客</title>
 </head>
 <body>
@@ -30,7 +30,10 @@ request.setAttribute("contextPath", contextPath);
                     <label class="control-label" for="content">正文</label>
                     <div class="controls">
                         <textarea id="context" name="post.content"><s:property value="post.content"/></textarea>
-                        <ckeditor:replace replace="context" basePath="${contextPath }/ckeditor/" />
+                        <script type="text/javascript">//<![CDATA[
+                            CKEDITOR.replace('context');
+                        //]]>
+                        </script>
                     </div>
                 </div>
                 <div class="control-group">
