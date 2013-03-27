@@ -33,8 +33,8 @@ public class SimpleXMLMyBatisModule extends XMLMyBatisModule {
             }*/
             if(System.getenv("OPENSHIFT_APP_NAME") != null){
                 p.setProperty("db.url", "jdbc:mysql://" + System.getenv("OPENSHIFT_MYSQL_DB_HOST") + ":" + System.getenv("OPENSHIFT_MYSQL_DB_PORT") + "/" + System.getenv("OPENSHIFT_APP_NAME"));
-                p.setProperty("db.username", "OPENSHIFT_MYSQL_DB_USERNAME");
-                p.setProperty("db.password", "OPENSHIFT_MYSQL_DB_PASSWORD");
+                p.setProperty("db.username", System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
+                p.setProperty("db.password", System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
             }
             addProperties(p);
             setEnvironmentId(evnId);
