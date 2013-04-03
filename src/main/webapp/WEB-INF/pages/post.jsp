@@ -68,9 +68,11 @@ $(function(){
        scrollText: '回顶部', // Text for element
        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
    });
+   // 分页小按钮
+   $(".pagination").addClass("pagination-small pagination-right");
 });
 function toPage(pageNo){
-	
+	location = "<s:url value='/post/%{post.postId}'/>?page="+pageNo+"#comments";
 }
 </script>
 <style type="text/css">
@@ -126,7 +128,8 @@ function toPage(pageNo){
                     <div class="comments ">
                         <div class="hd">
                             <div class="cfix">
-                                <span class="help-inline"><s:property value="post.commentList.size()"/>条评论</span>
+                                <span class="help-inline"><s:property value="pagination.count"/>条评论</span>
+                                <a name="comments" href="#comments"></a>
 								<s:if test="#session['session-me.sevenstack.web.model.user'] eq null">
 								<span class="help-inline pull-right">
 									<a class="btn-link" href="<s:url namespace='/account' action='sign-in'/>">登录</a> 后发表评论，还没有帐号？现在 
@@ -159,14 +162,11 @@ function toPage(pageNo){
                                    </s:iterator>
                                    <s:if test="pagination.pageContent != ''">
 	                                   <li>
-	                                       
-	                                       <form action="<s:url value='post/%{postId}'/>" id="comment-page-form">
-	                                           <s:property value="pagination.pageContent" escape="false"/>
-	                                       </form>
+	                                       <s:property value="pagination.pageContent" escape="false"/>
 	                                   </li>
                                    </s:if>
                                    
-                                   <li>
+                                   <!--li>
                                    <div class="pagination pagination-small pagination-right">
 		                                <ul>
 		                                    <li class="disabled">
@@ -176,7 +176,7 @@ function toPage(pageNo){
 		                                    <li><a href="#">2</a></li>
 		                                </ul>
 		                            </div>
-                                   </li>
+                                   </li-->
                                    <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
                                    <li>
                                        <s:form action="save-comment" namespace="/post" id="comment-from" theme="simple">
