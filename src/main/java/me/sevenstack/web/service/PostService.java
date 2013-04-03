@@ -6,6 +6,7 @@ import java.util.List;
 import com.google.inject.ImplementedBy;
 
 import me.sevenstack.web.model.Comment;
+import me.sevenstack.web.model.Pagination;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.service.impl.PostServiceImpl;
 
@@ -29,6 +30,10 @@ public interface PostService extends Serializable {
     public void deletePost(Post post) throws Exception;
 
     public void deletePostById(Integer postId) throws Exception;
+    
+    public int findCommentListCount(Comment comment) throws Exception;
+    
+    public List<Comment> findCommentList(Comment comment) throws Exception;
     
     public int saveComment(Comment comment)throws Exception;
 }

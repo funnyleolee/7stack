@@ -24,9 +24,9 @@ $(function(){
         var t2 = document.body.scrollTop | document.documentElement.scrollTop;
         $(".debug").html(document.body.scrollHeight>document.body.clientHeight);
         if(document.body.scrollHeight>document.body.offsetHeight){
-            $(".footer").css({position:"fixed",bottom:0});
+            $(".footer").css({position:"fixed",bottom:0,width:"100%"});
         }else{
-            $(".footer").css({position:"static",bottom:"auto"});
+            $(".footer").css({position:"static",bottom:"auto",width:"100%"});
         }
     }
     // markdown 编辑器
@@ -69,8 +69,15 @@ $(function(){
        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
    });
 });
-
+function toPage(pageNo){
+	
+}
 </script>
+<style type="text/css">
+.pagination{
+    margin: 0;
+}
+</style>
 <title><s:property value="post.title" /></title>
 </head>
 <body>
@@ -112,8 +119,6 @@ $(function(){
 						</div>
 						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5139586d601bf950"></script>
 						<!-- AddThis Button END -->
-                        
-                        
                         <hr style="margin:0 0 7px;clear:both;"/>
                     </div>
                     
@@ -121,8 +126,16 @@ $(function(){
                     <div class="comments ">
                         <div class="hd">
                             <div class="cfix">
-                                <span class="help-inline"><s:property value="post.commentList.size()"/>条评论</span> 
-                                <span class="help-inline"><a href="#comment" class="btn-link comment-link">发表评论</a></span>
+                                <span class="help-inline"><s:property value="post.commentList.size()"/>条评论</span>
+								<s:if test="#session['session-me.sevenstack.web.model.user'] eq null">
+								<span class="help-inline pull-right">
+									<a class="btn-link" href="<s:url namespace='/account' action='sign-in'/>">登录</a> 后发表评论，还没有帐号？现在 
+									<a class="btn-link" href="<s:url namespace='/account' action='sign-up'/>">注册</a>
+									</span>
+								</s:if>
+								<s:else>
+								    <span class="help-inline"><a href="#comment" class="btn-link comment-link">发表评论</a></span>
+								</s:else>
                             </div>
                         </div>
                         
@@ -144,60 +157,28 @@ $(function(){
                                            </div>
                                        </li>
                                    </s:iterator>
-                                   <!-- li>
-                                       <div class="pull-left" style="width:5%;">
-                                        <img src="http://qph.cf.quoracdn.net/main-thumb-2736418-25-3Ay1Gi0e9YWe4hibclIOh1LFb3cipb2q.jpeg" style="width:32px;height:32px;">
-                                    </div>
-                                    <div class="pull-left" style="width:95%">
-                                        <div class="row-title">
-                                            <a href="#" class="btn-link">Alone</a>@ 2013-02-21 09:23
-                                            <a href="#" class="btn-link pull-right">回复</a>
-                                        </div>
-                                        <div class="row-content">
-                                            流式网格嵌套有点不同: 嵌套在内的列数总和需要等于12. 这是因为流式网格是用百分比设置宽度, 并不是像素值.
-                                        </div>
-                                    </div>
-                                   </li>
-                                   <li>
-                                       <div class="pull-left" style="width:5%;">
-                                        <img src="http://qph.cf.quoracdn.net/main-thumb-185811-25-SdspevWm1d6dfE2eVSyJGLHkPXlpk4Zl.jpeg" style="width:32px;height:32px;">
-                                    </div>
-                                    <div class="pull-left" style="width:95%">
-                                        <div class="row-title">
-                                            <a href="#" class="btn-link">Leo</a>@ 2013-02-21 09:23
-                                            <a href="#" class="btn-link pull-right">回复</a>
-                                        </div>
-                                        <div class="row-content">
-                                            流式网格嵌套有点不同: 嵌套在内的列数总和需要等于12. 这是因为流式网格是用百分比设置宽度, 并不是像素值.
-                                        </div>
-                                    </div>
-                                   </li>
-                                   <li>
-                                       <div class="pull-left" style="width:5%;">
-                                        <img src="http://qph.cf.quoracdn.net/main-thumb-13124217-25-OfpBYG7SmEidU39tXW7TgXBlBQZNnfka.jpeg" style="width:32px;height:32px;">
-                                    </div>
-                                    <div class="pull-left" style="width:95%">
-                                        <div class="row-title">
-                                            <a href="#" class="btn-link">Who</a>@ 2013-02-21 09:23
-                                            <a href="#" class="btn-link pull-right">回复</a>
-                                        </div>
-                                        <div class="row-content">
-                                            流式网格嵌套有点不同: 嵌套在内的列数总和需要等于12. 这是因为流式网格是用百分比设置宽度, 并不是像素值.
-                                        </div>
-                                    </div>
-                                   </li-->
+                                   <s:if test="pagination.pageContent != ''">
+	                                   <li>
+	                                       
+	                                       <form action="<s:url value='post/%{postId}'/>" id="comment-page-form">
+	                                           <s:property value="pagination.pageContent" escape="false"/>
+	                                       </form>
+	                                   </li>
+                                   </s:if>
                                    
-                                   <!-- 分页 -->
-                                   <!--li>
-                                       <a href="#" class="btn-link">1</a>
-                                    <a href="#" class="btn-link">2</a>
-                                    <a href="#" class="btn-link">3</a>
-                                    ...
-                                    <a href="#" class="btn-link">365</a>
-                                    <a href="#" class="btn-link">next</a>
-                                   </li-->
                                    <li>
-                                    
+                                   <div class="pagination pagination-small pagination-right">
+		                                <ul>
+		                                    <li class="disabled">
+		                                        <span>Prev</span>
+		                                    </li>
+		                                    <li class="active"><span>1</span></li>
+		                                    <li><a href="#">2</a></li>
+		                                </ul>
+		                            </div>
+                                   </li>
+                                   <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
+                                   <li>
                                        <s:form action="save-comment" namespace="/post" id="comment-from" theme="simple">
                                            <a href="#comment" name="comment"></a>
                                            <input type="hidden" name="comment.postId" value="<s:property value='post.postId'/>">
@@ -215,17 +196,12 @@ $(function(){
 		                                    </div>
 		                                    <div class="control-group">
 		                                        <div class="controls">
-		                                            <s:if test="#session['session-me.sevenstack.web.model.user'] eq null">
-		                                               
-		                                               <a class="btn-link" href="<s:url namespace='/account' action='sign-in'/>">登录</a> 后发表评论，还没有帐号？现在 <a class="btn-link" href="<s:url namespace='/account' action='sign-up'/>">注册</a>
-		                                            </s:if>
-		                                            <s:else>
-		                                                <s:submit value="发表评论"></s:submit>
-		                                            </s:else>
+		                                            <s:submit value="发表评论" cssClass="btn"/>
 		                                        </div>
 		                                    </div>
 	                                    </s:form>
                                    </li>
+                                   </s:if>
                                </ul>
                             
                             

@@ -11,6 +11,7 @@ import me.sevenstack.task.TaskScheduling;
 import me.sevenstack.util.Constants;
 import me.sevenstack.web.annotation.LoginRequired;
 import me.sevenstack.web.model.Comment;
+import me.sevenstack.web.model.Pagination;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.model.User;
 import me.sevenstack.web.service.PostService;
@@ -30,6 +31,8 @@ public class PostAction extends BaseAction {
     private Post post;
     private Comment comment;
     private Integer pid;
+    private Pagination pagination;
+    private Integer page;
 
     public List<Post> getPostList() {
         return postList;
@@ -62,10 +65,39 @@ public class PostAction extends BaseAction {
     public void setPid(Integer pid) {
         this.pid = pid;
     }
+    
+    public Pagination getPagination() {
+        return pagination;
+    }
+
+    public void setPagination(Pagination pagination) {
+        this.pagination = pagination;
+    }
+    
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
 
     @Action("post")
     public String post() throws Exception {
         post = postService.findPostById(pid);
+        // 获取评论（以后打算分离出来）
+        if (post != null) {
+            comment = new Comment();
+            comment.setPostId(post.getPostId());
+            pagination = new Pagination();
+            if (page != null) {
+                pagination.setPageNo(page);
+            }
+            comment.setPagination(pagination);
+            post.setCommentList(postService.findCommentList(comment));
+            pagination.setCount(postService.findCommentListCount(comment));
+        }
         return "post";
     }
 
@@ -129,21 +161,22 @@ public class PostAction extends BaseAction {
     }
 
     @Action("save-comment")
-    public String saveComment()throws Exception{
+    public String saveComment() throws Exception {
         User user = (User) session.get(Constants.USER_SESSION);
-        if(user !=null && comment!=null && comment.getPostId() != null 
-                && StringUtils.isNotBlank(StringUtils.trim(comment.getContent()))){
+        if (user != null && comment != null && comment.getPostId() != null && StringUtils.isNotBlank(StringUtils.trim(comment.getContent()))) {
             comment.setUserId(user.getUserId());
             postService.saveComment(comment);
         }
-        if(comment.getPostId() != null){
-            response.sendRedirect(comment.getPostId()+"");
+        if (comment.getPostId() != null) {
+            response.sendRedirect(comment.getPostId() + "");
             return NONE;
-        }else{
+        } else {
             return "index";
         }
     }
+
     public static void main(String[] args) {
-        System.out.println(new Date(new Long("1357293606")));
+        Integer i = 90;
+        System.out.println(i != null);
     }
 }

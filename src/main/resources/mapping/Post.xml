@@ -12,8 +12,9 @@
 		<result property="updateTime"  column="update_time"/>
 		<association property="author" column="author_id" javaType="user" resultMap="userMapping.only-user"/>
 	</resultMap>
+	<!-- 停用 -->
 	<resultMap type="me.sevenstack.web.model.Post" extends="post-result" id="one-post-result">
-	    <collection property="commentList" column="post_id"  javaType="ArrayList" ofType="comment" select="findCommentListByPost"/>
+	    <collection property="commentList" column="post_id"  javaType="ArrayList" ofType="comment" select="findCommentListByPost" />
 	</resultMap>
 	
 	<resultMap type="comment" id="comment-result">
@@ -45,7 +46,7 @@
            and author_id = #{value}
     </select>
     
-    <select id="findPostById" resultMap="one-post-result" parameterType="_int">
+    <select id="findPostById" resultMap="post-result" parameterType="_int">
         select *
           from posts p left join users u 
             on p.author_id = u.user_id
@@ -95,11 +96,18 @@
     <!-- TODO delete -->
     
     <!-- Comment part -->
-    <select id="findCommentListByPost" parameterType="_int" resultMap="comment-result">
+    <select id="findCommentListByPostCount" parameterType="comment" resultType="_int">
+        select count(*)
+          from comments c left join users u 
+            on c.user_id = u.user_id
+         where post_id = #{postId}
+    </select>
+    <select id="findCommentListByPost" parameterType="comment" resultMap="comment-result">
         select *
           from comments c left join users u 
             on c.user_id = u.user_id
-         where post_id = #{value}
+         where post_id = #{postId}
+         limit #{pagination.offset},#{pagination.limit}
     </select>
     <insert id="insertComment" parameterType="comment">
         insert into comments(

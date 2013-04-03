@@ -6,7 +6,7 @@ import java.util.Date;
 public class BaseModel {
     private Long createTime;
     private Long updateTime;
-
+    private Pagination pagination;
     public Long getCreateTime() {
         return createTime;
     }
@@ -33,5 +33,11 @@ public class BaseModel {
         return df.format(new Date(updateTime));
     }
 
+    public Pagination getPagination() {
+        return pagination;
+    }
 
+    public void setPagination(Pagination pagination) {
+        this.pagination = pagination;
+    }
 }

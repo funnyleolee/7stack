@@ -3,13 +3,13 @@ package me.sevenstack.web.dao.impl;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
-
-import com.google.inject.Inject;
-
 import me.sevenstack.web.dao.PostDao;
 import me.sevenstack.web.model.Comment;
 import me.sevenstack.web.model.Post;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.google.inject.Inject;
 
 public class PostDaoImpl implements PostDao {
     @Inject
@@ -62,6 +62,14 @@ public class PostDaoImpl implements PostDao {
         return session.delete("deletePostById", id);
     }
 
+    @Override
+    public List<Comment> findCommentList(Comment comment) throws Exception {
+        return session.selectList("findCommentListByPost", comment);
+    }
+    @Override
+    public int findCommentListCount(Comment comment) throws Exception {
+        return session.selectOne("findCommentListByPostCount", comment);
+    }
     @Override
     public int saveComment(Comment comment) throws Exception {
         return session.insert("insertComment", comment);

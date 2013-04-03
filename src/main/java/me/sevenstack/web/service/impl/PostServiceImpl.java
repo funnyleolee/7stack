@@ -4,6 +4,7 @@ import java.util.List;
 
 import me.sevenstack.web.dao.PostDao;
 import me.sevenstack.web.model.Comment;
+import me.sevenstack.web.model.Pagination;
 import me.sevenstack.web.model.Post;
 import me.sevenstack.web.service.PostService;
 
@@ -73,6 +74,18 @@ public class PostServiceImpl implements PostService {
 
     }
 
+    @Override
+    public int findCommentListCount(Comment comment) throws Exception {
+        return postDao.findCommentListCount(comment);
+    }
+    
+    @Override
+    public List<Comment> findCommentList(Comment comment) throws Exception{
+        return postDao.findCommentList(comment);
+    }
+    
+    
+    
     @Override
     public int saveComment(Comment comment) throws Exception {
         return postDao.saveComment(comment);

@@ -6,6 +6,7 @@ import com.google.inject.ImplementedBy;
 
 import me.sevenstack.web.dao.impl.PostDaoImpl;
 import me.sevenstack.web.model.Comment;
+import me.sevenstack.web.model.Pagination;
 import me.sevenstack.web.model.Post;
 
 @ImplementedBy(PostDaoImpl.class)
@@ -25,6 +26,10 @@ public interface PostDao {
     public int deletePost(Post post) throws Exception;
 
     public int deletePostById(Integer postId) throws Exception;
+
+    public int findCommentListCount(Comment comment) throws Exception;
+
+    public List<Comment> findCommentList(Comment comment) throws Exception;
 
     public int saveComment(Comment comment) throws Exception;
 
