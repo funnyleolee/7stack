@@ -72,7 +72,7 @@ $(function(){
        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
    });
    // 分页小按钮
-  // $(".pagination").addClass("pagination-small pagination-right");
+   $(".pagination").addClass("pagination-small pagination-right");
 });
 function toPage(pageNo){
 	location = "<s:url value='/post/%{post.postId}'/>?page="+pageNo+"#comments";
@@ -157,7 +157,7 @@ function toPage(pageNo){
                                                    <a href="#" class="btn-link"><s:property value="user.userName"/> </a>@ 
                                                    <s:property value="createDate"/>
                                                    <input type="hidden" value="<s:property value='createTime'/>" class="comment-time">
-                                                   <a href="#" class="btn-link pull-right">回复</a>
+                                                   <!--a href="#" class="btn-link pull-right">回复</a-->
                                                </div>
                                                <div class="row-content"><s:property value="htmlContent" escape="false"/></div>
                                            </div>
