@@ -22,7 +22,7 @@ $(function(){
     function fit(){
         var top = $(".footer").offset().top;
         var t2 = document.body.scrollTop | document.documentElement.scrollTop;
-        $(".debug").html(document.body.scrollHeight>document.body.clientHeight);
+        //$(".debug").html(document.body.scrollHeight>document.body.clientHeight);
         if(document.body.scrollHeight>document.body.offsetHeight){
             $(".footer").css({position:"fixed",bottom:0,width:"100%"});
         }else{
@@ -69,7 +69,7 @@ $(function(){
        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
    });
    // 分页小按钮
-   $(".pagination").addClass("pagination-small pagination-right");
+  // $(".pagination").addClass("pagination-small pagination-right");
 });
 function toPage(pageNo){
 	location = "<s:url value='/post/%{post.postId}'/>?page="+pageNo+"#comments";
