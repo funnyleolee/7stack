@@ -7,9 +7,11 @@
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/markdown.css'/>" />
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/jquery.scrollUp.tab.css'/>">
-<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
-<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Sanitizer.js'/>"></script>
-<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Editor.js'/>"></script>
+<s:if test="#session['session-me.sevenstack.web.model.user'] != null">
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Sanitizer.js'/>"></script>
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Editor.js'/>"></script>
+</s:if>
 <!--script type="text/javascript" src='<s:url value='/resources/js/date.js'/>'></script-->
 <script type="text/javascript" src="<s:url value='/resources/js/jquery.scrollUp.min.js'/>"></script>
 <script type="text/javascript">
@@ -29,6 +31,7 @@ $(function(){
             $(".footer").css({position:"static",bottom:"auto",width:"100%"});
         }
     }
+    <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
     // markdown 编辑器
     var converter = Markdown.getSanitizingConverter();
     converter.hooks.chain("preBlockGamut", function (text, rbg) {
@@ -38,7 +41,7 @@ $(function(){
     });
     var editor = new Markdown.Editor(converter);
     editor.run();
-    
+    </s:if>
    //发布评论
    $("#comment-from").submit(function(){
 	   if($.trim($(".comment-content").val())){
