@@ -62,7 +62,7 @@ public class Pagination {
         if (pageCount <= 1) {
             return "";
         }
-        String page = "<div class='pagination'><ul>";
+        String page = "<div class='pagination pagination-small pagination-right'><ul>";
         if(getPageNo() <= 1){
             page += "<li class='disabled' ><span>«</span></li>";
         }else{
