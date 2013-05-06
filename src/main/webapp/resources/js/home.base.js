@@ -72,7 +72,7 @@ function genLoginBox(){
 }
 function broadside(){
 	if($(".doc").size()){
-		$(".broad-side").width($(".doc:first").width()+61);
-		$(".broad-side").css({"max-width": "none","margin-left": "-30px"});
+		$(".doc .broad-side").width($(".doc:first").width()+61);
+		$(".doc .broad-side").css({"max-width": "none","margin-left": "-30px"});
 	}
 }
