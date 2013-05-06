@@ -16,6 +16,11 @@ $(function(){
   });
   var h = $(".search-box").width()-($(".search-box .btn").width()+36)
   $(".search-box :text").width(h);
+  // 图片宽边
+  broadside();
+  $(window).resize(function(){
+	  broadside();
+  });
 });
 
 function isEmail(email) {
@@ -62,6 +67,12 @@ function genLoginBox(){
   close.bind("click",function(){
     $(".veil-div").remove();
     $(this).parents(".login-dialog").remove();
-  })
+  });
   return false;
+}
+function broadside(){
+	if($(".doc").size()){
+		$(".broad-side").width($(".doc:first").width()+61);
+		$(".broad-side").css({"max-width": "none","margin-left": "-30px"});
+	}
 }

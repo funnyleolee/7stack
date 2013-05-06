@@ -1,7 +1,6 @@
 package me.sevenstack.web.action;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -126,6 +125,8 @@ public class PostAction extends BaseAction {
                 Integer postId = postService.savePost(post);
                 post.setPostId(postId);
             }
+            
+            //TODO 废弃
             if (!"dev".equals(Constants.ENV)) {
                 // 任务调度
                 Map<String, Object> taskMap = new HashMap<String, Object>();
@@ -173,10 +174,5 @@ public class PostAction extends BaseAction {
         } else {
             return "index";
         }
-    }
-
-    public static void main(String[] args) {
-        Integer i = 90;
-        System.out.println(i != null);
     }
 }
