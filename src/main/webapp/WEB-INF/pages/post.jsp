@@ -7,9 +7,11 @@
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/markdown.css'/>" />
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/jquery.scrollUp.tab.css'/>">
-<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
-<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Sanitizer.js'/>"></script>
-<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Editor.js'/>"></script>
+<s:if test="#session['session-me.sevenstack.web.model.user'] != null">
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Sanitizer.js'/>"></script>
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Editor.js'/>"></script>
+</s:if>
 <!--script type="text/javascript" src='<s:url value='/resources/js/date.js'/>'></script-->
 <script type="text/javascript" src="<s:url value='/resources/js/jquery.scrollUp.min.js'/>"></script>
 <script type="text/javascript">
@@ -22,13 +24,14 @@ $(function(){
     function fit(){
         var top = $(".footer").offset().top;
         var t2 = document.body.scrollTop | document.documentElement.scrollTop;
-        $(".debug").html(document.body.scrollHeight>document.body.clientHeight);
+        //$(".debug").html(document.body.scrollHeight>document.body.clientHeight);
         if(document.body.scrollHeight>document.body.offsetHeight){
             $(".footer").css({position:"fixed",bottom:0,width:"100%"});
         }else{
             $(".footer").css({position:"static",bottom:"auto",width:"100%"});
         }
     }
+    <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
     // markdown 编辑器
     var converter = Markdown.getSanitizingConverter();
     converter.hooks.chain("preBlockGamut", function (text, rbg) {
@@ -38,7 +41,7 @@ $(function(){
     });
     var editor = new Markdown.Editor(converter);
     editor.run();
-    
+    </s:if>
    //发布评论
    $("#comment-from").submit(function(){
 	   if($.trim($(".comment-content").val())){
@@ -68,9 +71,11 @@ $(function(){
        scrollText: '回顶部', // Text for element
        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
    });
+   // 分页小按钮
+   $(".pagination").addClass("pagination-small pagination-right");
 });
 function toPage(pageNo){
-	
+	location = "<s:url value='/post/%{post.postId}'/>?page="+pageNo+"#comments";
 }
 </script>
 <style type="text/css">
@@ -126,7 +131,8 @@ function toPage(pageNo){
                     <div class="comments ">
                         <div class="hd">
                             <div class="cfix">
-                                <span class="help-inline"><s:property value="post.commentList.size()"/>条评论</span>
+                                <span class="help-inline"><s:property value="pagination.count"/>条评论</span>
+                                <a name="comments" href="#comments"></a>
 								<s:if test="#session['session-me.sevenstack.web.model.user'] eq null">
 								<span class="help-inline pull-right">
 									<a class="btn-link" href="<s:url namespace='/account' action='sign-in'/>">登录</a> 后发表评论，还没有帐号？现在 
@@ -151,7 +157,7 @@ function toPage(pageNo){
                                                    <a href="#" class="btn-link"><s:property value="user.userName"/> </a>@ 
                                                    <s:property value="createDate"/>
                                                    <input type="hidden" value="<s:property value='createTime'/>" class="comment-time">
-                                                   <a href="#" class="btn-link pull-right">回复</a>
+                                                   <!--a href="#" class="btn-link pull-right">回复</a-->
                                                </div>
                                                <div class="row-content"><s:property value="htmlContent" escape="false"/></div>
                                            </div>
@@ -159,14 +165,11 @@ function toPage(pageNo){
                                    </s:iterator>
                                    <s:if test="pagination.pageContent != ''">
 	                                   <li>
-	                                       
-	                                       <form action="<s:url value='post/%{postId}'/>" id="comment-page-form">
-	                                           <s:property value="pagination.pageContent" escape="false"/>
-	                                       </form>
+	                                       <s:property value="pagination.pageContent" escape="false"/>
 	                                   </li>
                                    </s:if>
                                    
-                                   <li>
+                                   <!--li>
                                    <div class="pagination pagination-small pagination-right">
 		                                <ul>
 		                                    <li class="disabled">
@@ -176,7 +179,7 @@ function toPage(pageNo){
 		                                    <li><a href="#">2</a></li>
 		                                </ul>
 		                            </div>
-                                   </li>
+                                   </li-->
                                    <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
                                    <li>
                                        <s:form action="save-comment" namespace="/post" id="comment-from" theme="simple">

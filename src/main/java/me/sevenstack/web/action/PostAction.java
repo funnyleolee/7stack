@@ -102,7 +102,15 @@ public class PostAction extends BaseAction {
 
     @Action("post-list")
     public String postList() throws Exception {
-        postList = postService.findPostList(new Post());
+    	Post p = new Post();
+    	pagination = new Pagination();
+    	pagination.setPageSize(10);
+    	if(page != null){
+    		pagination.setPageNo(page);
+    	}
+    	p.setPagination(pagination);
+        postList = postService.findPostList(p);
+        pagination.setCount(postService.findPostListCount(p));
         return "post-list";
     }
 

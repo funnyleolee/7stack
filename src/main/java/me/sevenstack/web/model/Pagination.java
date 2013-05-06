@@ -25,7 +25,7 @@ public class Pagination {
     }
 
     public int getPageSize() {
-        return pageSize < 1 ? 17 : pageSize;
+        return pageSize < 1 ? 6 : pageSize;
     }
 
     public void setPageSize(int pageSize) {
@@ -33,12 +33,12 @@ public class Pagination {
     }
 
     public int getOffset() {
-        return (getPageNo() - 1) * getPageSize() + 1;
+        return (getPageNo() - 1) * getPageSize();
     }
 
     public int getLimit() {
 
-        return getPageNo() * getPageSize();
+        return pageSize < 1 ? 6 : pageSize;
     }
 
     public int getPageCount() {
@@ -67,7 +67,7 @@ public class Pagination {
             page += "<li class='disabled' ><span>«</span></li>";
         }else{
             //getPageNo()-1
-            page += "<li class='disabled' ><a href='#'>«</a></li>";
+            page += "<li><a href='javascript:;' onclick='toPage("+(getPageNo()-1)+")'>«</a></li>";
         }
         for (int i = 1; i <= pageCount; i++) {
 
@@ -75,7 +75,7 @@ public class Pagination {
                 if (getPageNo() == i) {
                     page += "<li class='active' ><span>" + i + "</span></li>";
                 } else {
-                    page += "<li><a href='#'>" + i + "</a></li>";
+                    page += "<li><a href='javascript:;' onclick='toPage("+i+")'>" + i + "</a></li>";
                 }
             } else if (i == 6) {
                 page += "<li class='disabled' ><span>...</span></li>";
@@ -86,7 +86,7 @@ public class Pagination {
             page += "<li class='disabled' ><span>»</span></li>";
         }else{
             //getPageNo()+1
-            page += "<li><a href='#'>»</a></li>";
+            page += "<li><a href='javascript:;' onclick='toPage("+(getPageNo()+1)+")' >»</a></li>";
         }
         page += "</ul></div>";
         return page;

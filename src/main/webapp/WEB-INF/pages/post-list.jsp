@@ -21,7 +21,12 @@ $(function(){
 	       scrollText: '回顶部', // Text for element
 	       activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
 	   });
+		// 分页靠右
+	   $(".pagination").addClass("pagination-right");
 });
+function toPage(pageNo){
+	location = "<s:url value='/'/>?page="+pageNo;
+}
 </script>
 </head>
 <body>
@@ -48,8 +53,11 @@ $(function(){
               </div>
             </div>
           </s:iterator>
-    
-          
+          <s:if test="pagination.pageContent != ''">
+	    	  <div>
+	    	  	<s:property value="pagination.pageContent" escape="false"/>
+	    	  </div>
+          </s:if>
         </div>
         <!-- right end -->
         <!-- left -->

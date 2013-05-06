@@ -5,7 +5,7 @@ import java.util.List;
 
 import me.sevenstack.util.Utils;
 
-public class Post {
+public class Post extends BaseModel {
     private Integer postId;
     private String title;
     private String content;

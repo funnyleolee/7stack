@@ -24,7 +24,17 @@
         <result property="updateTime"  column="update_time"/>
 	    <association property="user" column="user_id" javaType="user" resultMap="userMapping.only-user"/>
 	</resultMap>
-	
+	<select id="findPostListCount" resultType="_int" parameterType="post" >
+        select count(*)
+          from posts p,users u
+         where status = 0 and p.author_id = u.user_id
+         <if test="postId != null">
+           and p.post_id = #{postId}
+         </if>
+         <if test="authorId != null">
+           and p.author_id = #{author_id}
+         </if>
+    </select>
     <select id="findPostList" resultMap="post-result" parameterType="post" >
         select *
           from posts p,users u
@@ -35,7 +45,11 @@
          <if test="authorId != null">
            and p.author_id = #{author_id}
          </if>
+         
       order by p.create_time desc
+      <if test="pagination != null">
+         	limit #{pagination.offset},#{pagination.limit}
+         </if>
       <!-- TODO 条件 -->
     </select>
     
