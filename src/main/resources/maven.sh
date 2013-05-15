@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=D:\tmp\lucence\IKAnalyzer2012_u6.jar -DgroupId=org.wltea -DartifactId=IKAnalyzer -Dversion=2012-6 -Dpackaging=jar -DgeneratePom=true -DcreateChecksum=true 

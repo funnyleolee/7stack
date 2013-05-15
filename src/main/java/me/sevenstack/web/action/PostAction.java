@@ -1,9 +1,12 @@
 package me.sevenstack.web.action;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import me.sevenstack.task.ImageReplaceTask;
 import me.sevenstack.task.TaskScheduling;
@@ -182,5 +185,13 @@ public class PostAction extends BaseAction {
         } else {
             return "index";
         }
+    }
+    
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<String>();
+        set.add("dfsf1");
+        set.add("dfsf1wer");
+        set.add("dfsf1d");
+        System.out.println(new ArrayList<String>(set));
     }
 }

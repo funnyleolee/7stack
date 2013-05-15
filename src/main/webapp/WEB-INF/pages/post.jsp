@@ -103,8 +103,8 @@ function toPage(pageNo){
                         <s:property value="post.content" escape="false" />
                     </div>
                     <div class="doc-foot">
-                    <s:if test="#session['session-me.sevenstack.web.model.user'] != null && #session['session-me.sevenstack.web.model.user'].id == post.authorId">
-                            <div class="pull-right">
+                    <s:if test="#session['session-me.sevenstack.web.model.user'] != null && #session['session-me.sevenstack.web.model.user'].userId == post.authorId">
+                            <div style="text-align: right;">
                                 <a class="btn btn-link" href="<s:url action='post-del'><s:param name='pid' value='post.postId'/> </s:url>">
                                     <span class="icon-trash"></span>删除
                                 </a>

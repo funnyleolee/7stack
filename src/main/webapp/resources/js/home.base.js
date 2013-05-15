@@ -14,12 +14,13 @@ $(function(){
   $("#user-control-link").click(function(){
 	  $(this).parent().toggleClass("open");
   });
-  var h = $(".search-box").width()-($(".search-box .btn").width()+36)
-  $(".search-box :text").width(h);
+  
   // 图片宽边
   broadside();
+  fitSearch();
   $(window).resize(function(){
 	  broadside();
+	  fitSearch();
   });
 });
 
@@ -75,4 +76,8 @@ function broadside(){
 		$(".doc .broad-side").width($(".doc:first").width()+61);
 		$(".doc .broad-side").css({"max-width": "none","margin-left": "-30px"});
 	}
+}
+function fitSearch(){
+	var h = $(".search-box").width()-($(".search-box .btn").width()+36);
+	$(".search-box :text").width(h);
 }

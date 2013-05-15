@@ -1,0 +1,212 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1248" measuredH="1837" mockupW="1183" mockupH="1835">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="67" y="2" w="1181" h="1835" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20concise%20blog%0Ahttp%3A//7stack.me</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::HRule" x="67" y="106" w="1157" h="-1" measuredW="100" measuredH="10" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::HRule" x="65" y="1771" w="1159" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="95" y="84" w="40" h="-1" measuredW="39" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <state>up</state>
+        <text>*7stack*</text>
+        <textOrientation>right</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::LinkBar" x="1126" y="85" w="-1" h="-1" measuredW="94" measuredH="19" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Login%2Cregister</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="1788" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CopyrightIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="103" y="1786" w="-1" h="-1" measuredW="61" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1997-2013</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="222" y="1786" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Contact%20me</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="200" y="1788" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>EmailIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Canvas" x="128" y="132" w="779" h="669" measuredW="100" measuredH="70" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+        <color>16777215</color>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::SubTitle" x="157" y="166" w="-1" h="-1" measuredW="239" measuredH="26" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Making%20Sharing%20Better</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Paragraph" x="157" y="527" w="741" h="219" measuredW="200" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>I%20want%20to%20close%20the%20year%20out%20by%20articulating%20our%20mission%3A%0A*Quora%27s%20mission%20is%20to%20share%20and%20grow%20the%20world%27s%20knowledge.*%0A%20%0AThe%20vast%20majority%20of%20human%20knowledge%20is%20still%20not%20on%20the%20internet.%20Most%20of%20it%20is%20trapped%20in%20the%20form%20of%20experience%20in%20people%27s%20heads%2C%20or%20buried%20in%20books%20and%20papers%20that%20only%20experts%20can%20access.%20As%20a%20consequence%20most%20people%20don%27t%20have%20the%20knowledge%20they%20should%2C%20and%20don%27t%20have%20the%20time%2C%20connections%2C%20or%20skills%20to%20get%20to%20the%20knowledge%20they%20would%20have%20in%20an%20ideal%20world.%0A%20%0AThe%20internet%20was%20supposed%20to%20allow%20anyone%20to%20set%20up%20a%20web%20page%20and%20share%20their%20knowledge%20with%20the%20world.%20But%20in%20practice%20it%27s%20too%20difficult%20and%20takes%20too%20long%20and%20almost%20no%20one%20does%20it.%20Blogs%20are%20easy%20to%20start%2C%20but%20unless%20the%20author%20is%20famous%2C%20it%20takes%20years%20to%20build%20a%20following.%20More%20than%20a%20billion%20people%20use%20the%20internet%20yet%20only%20a%20tiny%20fraction%20contribute%20their%20knowledge%20to%20it.%0A%20%0AQuora%20aims%20to%20allow%20anyone%20to%20easily%20share%20their%20knowledge%20and%20in%20the%20process%20to%20dramatically%20increase%20the%20total%20amount%20of%20knowledge%20available%20to%20the%20world.%20As%20we%20grow%20...</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::SearchBox" x="966" y="131" w="217" h="-1" measuredW="120" measuredH="25" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Canvas" x="966" y="177" w="217" h="229" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::HRule" x="979" y="212" w="190" h="-1" measuredW="100" measuredH="10" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>3355443</color>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Title" x="979" y="192" w="-1" h="-1" measuredW="126" measuredH="20" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Popular%20Articles</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Tree" x="979" y="222" w="190" h="153" measuredW="300" measuredH="225" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>-%20some%20notes%20on%20surroundings%0A-%20I%20could%20count%20every%20molecule%0A-%20Her%20Mocking%20Bird%u2019s%20feathers%20run%20%0A-%20Art%20and%20Science%20Journal%0A-%20One%20Week%2C%20One%20Band%0A-%20Espen%20Kluge%0A-%20Dan%20Simon%20Macrophotography</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Canvas" x="966" y="436" w="217" h="274" measuredW="100" measuredH="70" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::HRule" x="979" y="471" w="190" h="-1" measuredW="100" measuredH="10" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <color>3355443</color>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Title" x="979" y="451" w="-1" h="-1" measuredW="69" measuredH="20" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Tag%20Wall</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::TagCloud" x="979" y="481" w="190" h="211" measuredW="350" measuredH="110" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>software%20statistics%20teaching%20%7Bcolor%3A%23FF0000%7Dtechnology%7Bcolor%7D%20tips%20tool%20tools%20toread%20travel%20tutorial%20tutorials%20tv%20twitter%20typography%20ubuntu%20usability%20video%20videos%20visualization%20web%20web%5C%202.0%20web%5C%20design%20webdev%20wiki%20windows%20wordpress%20work%20writing%20youtube</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::FieldSet" x="966" y="728" w="217" h="192" measuredW="200" measuredH="170" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Adsense*</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Image" x="970" y="746" w="208" h="165" measuredW="964" measuredH="482" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../Pictures/03_2.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::IconLabel" x="157" y="205" w="191" h="-1" measuredW="142" measuredH="24" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <icon>ContactIcon%7Csmall</icon>
+        <labelPosition>right</labelPosition>
+        <state>up</state>
+        <text>Alex%20%20%7C%20_08%20May%202013_</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::IconLabel" x="832" y="192" w="-1" h="-1" measuredW="66" measuredH="39" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>StarIcon%7Csmall</icon>
+        <text>100%20favorite</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::IconLabel" x="801" y="192" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CommentsIcon%7Csmall</icon>
+        <text>244</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Link" x="801" y="767" w="-1" h="-1" measuredW="69" measuredH="19" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Read%20More*</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Canvas" x="128" y="837" w="779" h="641" measuredW="100" measuredH="70" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+        <color>16777215</color>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::SubTitle" x="150" y="864" w="-1" h="-1" measuredW="707" measuredH="26" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Get%20More%20Out%20of%20Your%20Inbox%20with%20Evernote%20and%20Powerbot%20for%20Gmail</text>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Paragraph" x="147" y="1225" w="741" h="189" measuredW="200" measuredH="80" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Attaching%20notes%20to%20email%0A%20%0AWhen%20you%u2019re%20in%20your%20Gmail%20account%20writing%20an%20email%2C%20you%u2019ll%20see%20buttons%20right%20inside%20the%20email%20window%20that%20allow%20you%20to%20add%20notes%20and%20notebooks%20from%20your%20Evernote%20account.%20Here%20are%20few%20ways%20to%20incorporate%20Powerbot%20into%20your%20workflow%3A%0A%20%0AIf%20you%u2026%0A%20%0Aare%20emailing%20about%20a%20meeting%2C%20you%20can%20insert%20a%20link%20to%20your%20Evernote%20note%20with%20details%20about%20what%20you%20need%20to%20discuss.%0Aneed%20to%20share%20a%20whole%20notebook%2C%20such%20as%20your%20full%20project%20specs%20and%20designs%2C%20you%20can%20insert%20a%20link%20to%20that%20notebook%20right%20in%20your%20email%20text.%0Awant%20to%20save%20all%20sent%20emails%20in%20Evernote%20to%20stay%20organized%3F%20Open%20the%20Powerbot%20interface%20to%20choose%20the%20destination%20notebook%2C%20and%20add%20tags%20and%20comments.</text>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::IconLabel" x="150" y="911" w="191" h="-1" measuredW="138" measuredH="24" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <icon>ContactIcon%7Csmall</icon>
+        <labelPosition>right</labelPosition>
+        <state>up</state>
+        <text>Kiki%20%20%7C%20_02%20May%202013_</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::IconLabel" x="825" y="898" w="-1" h="-1" measuredW="59" measuredH="39" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>StarIcon%7Csmall</icon>
+        <text>20%20favorite</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::IconLabel" x="794" y="898" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CommentsIcon%7Csmall</icon>
+        <text>36</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Link" x="794" y="1444" w="-1" h="-1" measuredW="69" measuredH="19" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Read%20More*</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Image" x="157" y="244" w="734" h="274" measuredW="1000" measuredH="667" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./26136552.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::IconLabel" x="157" y="743" w="-1" h="-1" measuredW="209" measuredH="24" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TagIcon%7Csmall</icon>
+        <labelPosition>right</labelPosition>
+        <text>%26Haha%26%20%26Sea%26%20%26Art%26%20%26WEB%26%20%26teaching%26%20...</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Image" x="150" y="952" w="728" h="258" measuredW="2048" measuredH="1536" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../Pictures/HR9xl.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::IconLabel" x="150" y="1420" w="-1" h="-1" measuredW="209" measuredH="24" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TagIcon%7Csmall</icon>
+        <labelPosition>right</labelPosition>
+        <text>%26Haha%26%20%26Sea%26%20%26Art%26%20%26WEB%26%20%26teaching%26%20...</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
