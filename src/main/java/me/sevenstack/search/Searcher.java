@@ -42,7 +42,7 @@ public class Searcher {
 
     public static void main(String[] args) throws Exception {
         Searcher searcher = new Searcher("D:/tmp/lucence/indexDir");
-        searcher.serach("独 ");
+        searcher.serach("delivering xxx");
 
     }
 

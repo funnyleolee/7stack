@@ -44,8 +44,15 @@ function toPage(pageNo){
                     </a>
                 </span>
               </h4>
-              <div class="author">
-                <strong><s:property value="author.userName"/> </strong>
+              <div class="author cfix">
+                <div class="pull-left">
+                    <strong><s:property value="author.userName"/> </strong>
+                </div>
+                <div class="pull-right">
+                  <span class="icon-star icon-white"></span>
+                  <span class="icon-comment icon-white"></span>
+                </div>
+                
               </div>
               <div class="summary">
                 <s:property value="summary" escape="false"/>
