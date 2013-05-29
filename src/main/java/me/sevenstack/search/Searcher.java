@@ -12,7 +12,6 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
-import org.wltea.analyzer.lucene.IKAnalyzer;
 
 public class Searcher {
     private File indexDir;
@@ -42,7 +41,7 @@ public class Searcher {
 
     public static void main(String[] args) throws Exception {
         Searcher searcher = new Searcher("D:/tmp/lucence/indexDir");
-        searcher.serach("独 ");
+        searcher.serach("delivering xxx");
 
     }
 

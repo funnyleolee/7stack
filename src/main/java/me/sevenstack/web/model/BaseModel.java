@@ -2,6 +2,7 @@ package me.sevenstack.web.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class BaseModel {
     private Long createTime;
@@ -24,12 +25,16 @@ public class BaseModel {
     }
 
     public String getCreateDate() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd HH:mm");
         return format.format(new Date(createTime));
     }
 
     public String getUpdateDate() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return df.format(new Date(updateTime));
+    }
+    public String getEnCreateDate(){
+        SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy",Locale.ENGLISH);
         return df.format(new Date(updateTime));
     }
 

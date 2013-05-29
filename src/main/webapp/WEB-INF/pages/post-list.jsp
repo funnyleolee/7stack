@@ -28,6 +28,43 @@ function toPage(pageNo){
 	location = "<s:url value='/'/>?page="+pageNo;
 }
 </script>
+<style type="text/css">
+.title-link {
+	color: #2a2e35;
+	text-decoration: none;
+	font-size: 1.3em;
+	font-weight: normal;
+	font-family: 'Text Me One', '微软雅黑', '宋体', sans-serif;
+}
+
+.author {
+	margin: 10px 0 15px;
+}
+
+.author .components-ul {
+	display: inline-block;
+	text-align: center;
+	list-style: none;
+}
+
+.doc-bottom {
+	padding-top: 10px;
+}
+
+.tag-bar .tag-ul {
+	list-style: none;
+	margin-left: 0;
+}
+
+.tag-bar .tag-ul li {
+	padding-left: 5px;
+	float: left;
+}
+
+.tag-bar .tag-ul li .btn-link {
+	text-decoration: underline;
+}
+</style>
 </head>
 <body>
     <jsp:include page="/WEB-INF/pages/include/home-head.jsp" />
@@ -37,19 +74,55 @@ function toPage(pageNo){
         <div class="span9 rht">
           <s:iterator value="postList">
             <div class="doc">
-              <h4>
-                <span class="title">
-                    <a href="<s:url value='post/%{postId}'/>">
-                        <s:property value="title"/>
+              <span class="title">
+                  <a class="title-link" href="<s:url value='post/%{postId}'/>">
+                      <s:property value="title"/>
+                  </a>
+              </span>
+              <div class="author cfix">
+                <div class="pull-left">
+                    <a href="javascript:;">
+                        <img src='<s:url value="/resources/img/user.png"/>'>
                     </a>
-                </span>
-              </h4>
-              <div class="author">
-                <strong><s:property value="author.userName"/> </strong>
+                    <s:property value="author.userName"/> | <s:property value="enCreateDate"/>
+                </div>
+                <div class="pull-right">
+                  <ul class="components-ul">
+                    <li>
+                        <button style="border: none;width: 16px;height:16px; background: url('<s:url value="/resources/img/comments.png"/>');margin-bottom:-5px;"></button>
+                    </li>
+                    <li>
+                        <a class="btn-link" href="javascript:;">10</a>
+                    </li>
+                  </ul>
+                  <ul class="components-ul">
+                    <li>
+                        <button style="border: none;width: 16px;height:16px; background: url('<s:url value="/resources/img/star_outline.png"/>');"></button>
+                    </li>
+                    <li>
+                        <a class="btn-link" href="javascript:;">0</a>
+                    </li>
+                  </ul>
+                </div>
+                
               </div>
               <div class="summary">
                 <s:property value="summary" escape="false"/>
-                <div style="text-align: right;"><a href="<s:url value='post/%{postId}'/>" class="btn btn-link">继续阅读...</a></div>
+              </div>
+              <div class="doc-bottom">
+                  <div class="tag-bar cfix">
+                       <ul class="tag-ul">
+                           <li>
+                               <span class="icon-tags"></span>
+                           </li>
+                           <li><a href="#" class="btn-link">design</a></li>
+                           <li><a href="#" class="btn-link">Go!</a></li>
+                           <li><a href="#" class="btn-link">tumblr</a></li>
+                           <li><a href="#" class="btn-link">bad piggies</a></li>
+                           <li><a href="#" class="btn-link">EA</a></li>
+                       </ul>
+                  </div>
+                  <div style="text-align: right;"><a href="<s:url value='post/%{postId}'/>" class="btn btn-link">Read More...</a></div>
               </div>
             </div>
           </s:iterator>
