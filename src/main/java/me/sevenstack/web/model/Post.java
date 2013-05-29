@@ -13,8 +13,6 @@ public class Post extends BaseModel {
     private Integer visitsNum;
     private Integer favNum;
     private Byte status;
-    private Long createTime;
-    private Long updateTime;
     private User author;
     private List<Comment> commentList = new ArrayList<Comment>();
     public Integer getPostId() {
@@ -72,23 +70,7 @@ public class Post extends BaseModel {
     public void setStatus(Byte status) {
         this.status = status;
     }
-
-    public Long getCreateTime() {
-        return this.createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public Long getUpdateTime() {
-        return this.updateTime;
-    }
-
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-    }
-
+    
     public User getAuthor() {
         return author;
     }

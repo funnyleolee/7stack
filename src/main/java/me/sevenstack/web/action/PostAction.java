@@ -188,10 +188,8 @@ public class PostAction extends BaseAction {
     }
     
     public static void main(String[] args) {
-        Set<String> set = new HashSet<String>();
-        set.add("dfsf1");
-        set.add("dfsf1wer");
-        set.add("dfsf1d");
-        System.out.println(new ArrayList<String>(set));
+        Set<Long> set = new HashSet<Long>();
+        
+        System.out.println(StringUtils.join(set, ",").length());
     }
 }
