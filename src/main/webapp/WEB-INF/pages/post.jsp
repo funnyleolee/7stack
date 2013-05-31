@@ -7,6 +7,7 @@
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/markdown.css'/>" />
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/jquery.scrollUp.tab.css'/>">
+<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/post.base.css'/>">
 <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
 	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
 	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Sanitizer.js'/>"></script>
@@ -93,11 +94,24 @@ function toPage(pageNo){
             <!-- right -->
             <div class="span9 rht">
                 <div class="doc c-fix">
-                    <h4>
-                        <span class="title"><s:property value="post.title" /></span>
-                    </h4>
-                    <div class="author">
-                        <strong><s:property value="post.author.userName"/></strong>
+                    <span class="title"><s:property value="post.title" /></span>
+                    <div class="author cfix">
+		                <div class="pull-left">
+		                    <a href="javascript:;">
+		                        <img src='<s:url value="/resources/img/user.png"/>'>
+		                    </a>
+		                    <s:property value="post.author.userName"/> | <s:property value="post.enCreateDate"/>
+		                </div>
+		                <div class="pull-right">
+		                  <ul class="components-ul">
+		                    <li>
+		                        <button style="border: none;width: 16px;height:16px; background: url('<s:url value="/resources/img/star_outline.png"/>');"></button>
+		                    </li>
+		                    <li>
+		                        <a class="btn-link" href="javascript:;">0</a>
+		                    </li>
+		                  </ul>
+		                </div>
                     </div>
                     <div class="content">
                         <s:property value="post.content" escape="false" />
@@ -131,7 +145,7 @@ function toPage(pageNo){
                     <div class="comments ">
                         <div class="hd">
                             <div class="cfix">
-                                <span class="help-inline"><s:property value="pagination.count"/>条评论</span>
+                                <span class="help-inline"><i class="icon-comment"></i><s:property value="pagination.count"/>条评论</span>
                                 <a name="comments" href="#comments"></a>
 								<s:if test="#session['session-me.sevenstack.web.model.user'] eq null">
 								<span class="help-inline pull-right">

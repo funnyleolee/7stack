@@ -248,4 +248,9 @@ cursor: pointer;
 	max-width: none;
 	margin-left: -30px;
 }
+.main-container .footer{
+	position: absolute;
+	width:100%;
+	bottom: 0;
+}
 

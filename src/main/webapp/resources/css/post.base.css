@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+.main-container{
+	height: 100%;
+	min-height: 100%;
+	position: static;
+	padding-bottom: 40px;
+}
+.doc .title,.title-link {
+	color: #2a2e35;
+	text-decoration: none;
+	font-size: 1.3em;
+	font-weight: normal;
+	font-family: 'Text Me One', '微软雅黑', '宋体', sans-serif;
+}
+
+.author {
+	margin: 10px 0 7px;
+	color: #999;
+}
+
+.author .components-ul {
+	display: inline-block;
+	text-align: center;
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.doc-bottom {
+	padding-top: 10px;
+}
+
+.tag-bar .tag-ul {
+	list-style: none;
+	margin-left: 0;
+}
+
+.tag-bar .tag-ul li {
+	padding-left: 5px;
+	float: left;
+}
+
+.tag-bar .tag-ul li .btn-link {
+	text-decoration: underline;
+}

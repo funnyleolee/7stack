@@ -1,5 +1,6 @@
 package me.sevenstack.web.action;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -187,9 +188,8 @@ public class PostAction extends BaseAction {
         }
     }
     
-    public static void main(String[] args) {
-        Set<Long> set = new HashSet<Long>();
-        
-        System.out.println(StringUtils.join(set, ",").length());
+    public static void main(String[] args)throws Exception {
+        File f = new File("/tmpx/sfd.txt");
+        f.createNewFile();
     }
 }
