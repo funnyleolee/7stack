@@ -189,7 +189,6 @@ public class PostAction extends BaseAction {
     }
     
     public static void main(String[] args)throws Exception {
-        File f = new File("/tmpx/sfd.txt");
-        f.createNewFile();
+        System.out.println(new Date(1370378140*1000L));
     }
 }
