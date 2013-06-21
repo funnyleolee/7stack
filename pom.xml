@@ -132,19 +132,12 @@
 		</dependency>
 		<!--dependency> <groupId>storm</groupId> <artifactId>storm</artifactId> 
 			<version>0.8.2</version> <scope>provided</scope> </dependency -->
-<<<<<<< HEAD
-		<!--dependency> <groupId>com.amazonaws</groupId> <artifactId>aws-java-sdk</artifactId> 
-			<version>1.3.32</version> </dependency -->
-	</dependencies>
-=======
-		<dependency>
+		<!--dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
 			<version>1.3.32</version>
-		</dependency>
+		</dependency-->
 	</dependencies>
-
->>>>>>> 824804651aef21f6b511210d85a178f6bf17188c
 	<build>
 		<plugins>
 			<plugin>
@@ -168,10 +161,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-<<<<<<< HEAD
-=======
-
->>>>>>> 824804651aef21f6b511210d85a178f6bf17188c
 	</build>
 	<profiles>
 		<profile>
@@ -191,8 +180,4 @@
 			</build>
 		</profile>
 	</profiles>
-<<<<<<< HEAD
 </project>
-=======
-</project>
->>>>>>> 824804651aef21f6b511210d85a178f6bf17188c
