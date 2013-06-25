@@ -1,6 +1,9 @@
 package me.sevenstack.web.action;
 
 import java.io.File;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -189,6 +192,14 @@ public class PostAction extends BaseAction {
     }
     
     public static void main(String[] args)throws Exception {
-        System.out.println(new Date(1370378140*1000L));
+        String s = "1";
+        s += "2";
+        //System.out.println(new Date(new Long("1372147885000")));
+        
+        List<Long> list = new ArrayList<Long>();
+        list.add(null);
+        for(Long l : list){
+            System.out.println(l);
+        }
     }
 }
