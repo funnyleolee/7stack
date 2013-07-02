@@ -7,6 +7,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="user" type="me.sevenstack.web.model.User" />
 		<typeAlias alias="post" type="me.sevenstack.web.model.Post" />
 		<typeAlias alias="comment" type="me.sevenstack.web.model.Comment" />
+		<typeAlias alias="userPostFavorite" type="me.sevenstack.web.model.UserPostFavorite"/>
 		
 	</typeAliases>
 	<environments default="dev">
@@ -44,8 +45,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="mapping/User.xml" />
-		<mapper resource="mapping/Post.xml" />
-		<mapper resource="mapping/Comment.xml" />
+		<mapper resource="me/sevenstack/web/model/User.xml" />
+		<mapper resource="me/sevenstack/web/model/Post.xml" />
+		<mapper resource="me/sevenstack/web/model/Comment.xml" />
 	</mappers>
 </configuration> 

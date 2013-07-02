@@ -1,6 +1,7 @@
 package me.sevenstack.web.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.google.inject.ImplementedBy;
 
@@ -13,26 +14,27 @@ import me.sevenstack.web.model.Post;
 public interface PostDao {
 	public Post findOnePost(Post post) throws Exception;
 
-	public int findPostListCount(Post post) throws Exception;
+	public Integer findPostListCount(Post post) throws Exception;
 
 	public List<Post> findPostList(Post post) throws Exception;
 
 	public Post findPostById(Integer postId) throws Exception;
 
-	public int updatePost(Post post) throws Exception;
+	public Integer updatePost(Post post) throws Exception;
 
-	public int updatePostStatus(Post post) throws Exception;
+	public Integer updatePostStatus(Post post) throws Exception;
 
-	public int savePost(Post post) throws Exception;
+	public Integer savePost(Post post) throws Exception;
 
-	public int deletePost(Post post) throws Exception;
+	public Integer deletePost(Post post) throws Exception;
 
-	public int deletePostById(Integer postId) throws Exception;
+	public Integer deletePostById(Integer postId) throws Exception;
 
-	public int findCommentListCount(Comment comment) throws Exception;
+	public Integer findCommentListCount(Comment comment) throws Exception;
 
 	public List<Comment> findCommentList(Comment comment) throws Exception;
 
-	public int saveComment(Comment comment) throws Exception;
+	public Integer saveComment(Comment comment) throws Exception;
 
+	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception;
 }

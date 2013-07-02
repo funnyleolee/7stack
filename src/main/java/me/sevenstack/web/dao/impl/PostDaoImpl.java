@@ -2,6 +2,7 @@ package me.sevenstack.web.dao.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import me.sevenstack.web.dao.PostDao;
 import me.sevenstack.web.model.Comment;
@@ -21,7 +22,7 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public int findPostListCount(Post post) throws Exception {
+	public Integer findPostListCount(Post post) throws Exception {
 		return session.selectOne("findPostListCount", post);
 	}
 
@@ -39,31 +40,31 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public int updatePost(Post post) throws Exception {
+	public Integer updatePost(Post post) throws Exception {
 		post.setUpdateTime(new Date().getTime());
 		return session.update("updatePost", post);
 	}
 
 	@Override
-	public int updatePostStatus(Post post) throws Exception {
+	public Integer updatePostStatus(Post post) throws Exception {
 		post.setUpdateTime(new Date().getTime());
 		return session.update("updatePostStatus", post);
 	}
 
 	@Override
-	public int savePost(Post post) throws Exception {
+	public Integer savePost(Post post) throws Exception {
 		post.setCreateTime(new Date().getTime());
 		post.setUpdateTime(new Date().getTime());
 		return session.insert("insertPost", post);
 	}
 
 	@Override
-	public int deletePost(Post post) throws Exception {
+	public Integer deletePost(Post post) throws Exception {
 		return session.delete("deletePost", post);
 	}
 
 	@Override
-	public int deletePostById(Integer id) throws Exception {
+	public Integer deletePostById(Integer id) throws Exception {
 		return session.delete("deletePostById", id);
 	}
 
@@ -73,13 +74,18 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public int findCommentListCount(Comment comment) throws Exception {
+	public Integer findCommentListCount(Comment comment) throws Exception {
 		return session.selectOne("findCommentListByPostCount", comment);
 	}
 
 	@Override
-	public int saveComment(Comment comment) throws Exception {
+	public Integer saveComment(Comment comment) throws Exception {
 		return session.insert("insertComment", comment);
+	}
+	
+	@Override
+	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception{
+	    return session.selectList("findCommentCountByPids", param);
 	}
 
 }

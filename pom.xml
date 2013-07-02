@@ -38,11 +38,8 @@
 			<artifactId>lucene-core</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		<!--dependency>
-			<groupId>org.wltea</groupId>
-			<artifactId>IKAnalyzer</artifactId>
-			<version>2012-6</version>
-		</dependency-->
+		<!--dependency> <groupId>org.wltea</groupId> <artifactId>IKAnalyzer</artifactId> 
+			<version>2012-6</version> </dependency -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
@@ -132,6 +129,20 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>

@@ -2,6 +2,7 @@ package me.sevenstack.web.service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import com.google.inject.ImplementedBy;
 
@@ -38,4 +39,6 @@ public interface PostService extends Serializable {
 	public List<Comment> findCommentList(Comment comment) throws Exception;
 
 	public int saveComment(Comment comment) throws Exception;
+	
+	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception;
 }

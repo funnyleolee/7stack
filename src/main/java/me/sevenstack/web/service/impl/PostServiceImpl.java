@@ -1,6 +1,7 @@
 package me.sevenstack.web.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import me.sevenstack.web.dao.PostDao;
 import me.sevenstack.web.model.Comment;
@@ -93,5 +94,9 @@ public class PostServiceImpl implements PostService {
 	public int saveComment(Comment comment) throws Exception {
 		return postDao.saveComment(comment);
 	}
-
+	
+	@Override
+	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception{
+	    return postDao.findCommentCountByPids(param);
+	}
 }
