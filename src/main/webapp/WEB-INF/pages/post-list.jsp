@@ -134,7 +134,7 @@ function Loader(){
                             <button style="border: none;width: 16px;height:16px; background: url('<s:url value="/resources/img/star_outline.png"/>');"></button>
                         </li>
                         <li>
-                            <a class="btn-link" href="javascript:;">0</a>
+                            <a class="btn-link fav-num" href="javascript:;">${favNum }</a>
                         </li>
                       </ul>
                     </div>

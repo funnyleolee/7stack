@@ -36,7 +36,15 @@
          </if>
     </select>
     <select id="findPostList" resultMap="post-result" parameterType="post" >
-        select *
+        select p.post_id post_id,
+               p.title title,
+               p.content content,
+               p.author_id author_id,
+               p.visits_num visits_num,
+               (SELECT COUNT(post_id) FROM user_post_favorite WHERE post_id = p.post_id) fav_num,
+               p.create_time create_time,
+               p.update_time update_time,
+               u.*
           from posts p,users u
          where status = 0 and p.author_id = u.user_id
          <if test="postId != null">
