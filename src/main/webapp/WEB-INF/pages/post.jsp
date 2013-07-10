@@ -8,12 +8,18 @@
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/markdown.css'/>" />
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/jquery.scrollUp.tab.css'/>">
 <link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/post.base.css'/>">
+<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/bootstrap-wysihtml5.css'/>">
+<link rel="stylesheet" type="text/css" href="<s:url value='/resources/css/wysiwyg-color.css'/>">
+
 <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
-	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
+	<!--script type="text/javascript" src="<s:url value='/resources/js/Markdown.Converter.js'/>"></script>
 	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Sanitizer.js'/>"></script>
-	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Editor.js'/>"></script>
+	<script type="text/javascript" src="<s:url value='/resources/js/Markdown.Editor.js'/>"></script-->
+	<script type="text/javascript" src="<s:url value='/resources/js/wysihtml5-0.3.0.min.js'/>"></script>
+<script type="text/javascript" src="<s:url value='/resources/js/bootstrap-wysihtml5-0.0.2.min.js'/>"></script>
 </s:if>
 <!--script type="text/javascript" src='<s:url value='/resources/js/date.js'/>'></script-->
+
 <script type="text/javascript" src="<s:url value='/resources/js/jquery.scrollUp.min.js'/>"></script>
 <script type="text/javascript">
 $(function(){
@@ -32,7 +38,9 @@ $(function(){
             $(".footer").css({position:"static",bottom:"auto",width:"100%"});
         }
     }
-    <s:if test="#session['session-me.sevenstack.web.model.user'] != null">
+    // bootstrap-wysihtml5
+    $('#comment-content').wysihtml5({"color": true,"lists":false});
+    <%--s:if test="#session['session-me.sevenstack.web.model.user'] != null">
     // markdown 编辑器
     var converter = Markdown.getSanitizingConverter();
     converter.hooks.chain("preBlockGamut", function (text, rbg) {
@@ -42,10 +50,10 @@ $(function(){
     });
     var editor = new Markdown.Editor(converter);
     editor.run();
-    </s:if>
+    </s:if--%>
    //发布评论
    $("#comment-from").submit(function(){
-	   if($.trim($(".comment-content").val())){
+	   if($.trim($(".comment-content").val()) == ""){
 		   return false;
 	   }
 	   return true;
@@ -203,17 +211,17 @@ function toPage(pageNo){
 		                                        <div class="controls">
 		                                            <!--textarea rows="5" style="width:95%;"></textarea-->
 		                                            <!-- markdown editor -->
-		                                            <div class="wmd-panel">
-		                                                <div id="wmd-button-bar"></div>
-		                                                <textarea class="wmd-input" id="wmd-input" name="comment.content" class="comment-content"></textarea>
+		                                            <div class="hero-unit" style="padding: 17px;">
+		                                                <textarea name="comment.content" class="comment-content" id="comment-content" style="width: 97%;height: 90px;" placeholder="Enter comment ..."></textarea>
+		                                                
+		                                                <s:submit value="发表评论" cssClass="btn"/>
 		                                            </div>
-		                                            <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 		                                            <!-- editor end -->
 		                                        </div>
 		                                    </div>
 		                                    <div class="control-group">
 		                                        <div class="controls">
-		                                            <s:submit value="发表评论" cssClass="btn"/>
+		                                            
 		                                        </div>
 		                                    </div>
 	                                    </s:form>

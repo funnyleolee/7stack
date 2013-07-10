@@ -112,7 +112,7 @@
     </control>
     <control controlID="77" controlTypeID="com.balsamiq.mockups::Image" x="970" y="746" w="208" h="165" measuredW="964" measuredH="482" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>../Pictures/03_2.jpg</src>
+        <src>../../../../../../C%3A/Users/lijinlong.EACHNETAD/Pictures/03_2.jpg</src>
       </controlProperties>
     </control>
     <control controlID="84" controlTypeID="com.balsamiq.mockups::IconLabel" x="157" y="205" w="191" h="-1" measuredW="142" measuredH="24" zOrder="23" locked="false" isInGroup="-1">
@@ -184,9 +184,9 @@
         <text>*Read%20More*</text>
       </controlProperties>
     </control>
-    <control controlID="105" controlTypeID="com.balsamiq.mockups::Image" x="157" y="244" w="734" h="274" measuredW="1000" measuredH="667" zOrder="34" locked="false" isInGroup="-1">
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Image" x="157" y="244" w="734" h="274" measuredW="964" measuredH="476" zOrder="34" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>./26136552.jpg</src>
+        <src>../../../../../../C%3A/Users/lijinlong.EACHNETAD/Pictures/06_1.jpg</src>
       </controlProperties>
     </control>
     <control controlID="108" controlTypeID="com.balsamiq.mockups::IconLabel" x="157" y="743" w="-1" h="-1" measuredW="209" measuredH="24" zOrder="35" locked="false" isInGroup="-1">
@@ -196,9 +196,9 @@
         <text>%26Haha%26%20%26Sea%26%20%26Art%26%20%26WEB%26%20%26teaching%26%20...</text>
       </controlProperties>
     </control>
-    <control controlID="109" controlTypeID="com.balsamiq.mockups::Image" x="150" y="952" w="728" h="258" measuredW="2048" measuredH="1536" zOrder="36" locked="false" isInGroup="-1">
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Image" x="150" y="952" w="728" h="258" measuredW="964" measuredH="476" zOrder="36" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>../Pictures/HR9xl.jpg</src>
+        <src>../../../../../../C%3A/Users/lijinlong.EACHNETAD/Pictures/06_1.jpg</src>
       </controlProperties>
     </control>
     <control controlID="110" controlTypeID="com.balsamiq.mockups::IconLabel" x="150" y="1420" w="-1" h="-1" measuredW="209" measuredH="24" zOrder="37" locked="false" isInGroup="-1">

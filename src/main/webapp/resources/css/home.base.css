@@ -248,4 +248,15 @@ cursor: pointer;
 	max-width: none;
 	margin-left: -30px;
 }
+.simple-box{
+    border: 1px solid #999;
+    border-bottom: 1px solid #888;
+    float: left;
+    font-size: 13px;
+    padding: 3px;
+    width: 110px;
+    webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
 

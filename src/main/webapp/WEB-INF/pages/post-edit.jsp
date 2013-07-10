@@ -15,13 +15,18 @@ request.setAttribute("contextPath", contextPath);
 <%@include file="/WEB-INF/pages/include/home-resource.jsp" %>
 <script type="text/javascript" src="<s:url value='/resources/js/wysihtml5-0.3.0.min.js'/>"></script>
 <script type="text/javascript" src="<s:url value='/resources/js/bootstrap-wysihtml5-0.0.2.min.js'/>"></script>
-<!--script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script-->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#context').wysihtml5();
+	//$('#context').wysihtml5({"color": true,"html": true});
 });
 </script>
 <title>编辑博客</title>
+<style type="text/css">
+hr {
+	margin: 2px 0 10px;
+}
+</style>
 </head>
 <body>
 	<div class="main-container">
@@ -34,18 +39,40 @@ $(function(){
 	                <div class="control-group">
 	                    <label class="control-label" id="title">标题</label>
 	                    <div class="controls">
-	                        <input type="text" class="input-xlarge" id="title" name="post.title" value="<s:property value='post.title'/>">
+	                        <input type="text" class="input-xxlarge" id="title" name="post.title" value="<s:property value='post.title'/>">
 	                    </div>
 	                </div>
 	                <div class="control-group">
-	                    <label class="control-label" for="content">正文</label>
+	                    <label class="control-label" for="content">正文
+	                    </label>
+	                    <hr/>
 	                    <div class="controls">
 	                        <textarea id="context" name="post.content"><s:property value="post.content"/></textarea>
 	                        <script type="text/javascript">//<![CDATA[
-	                            //CKEDITOR.replace('context');
+	                            CKEDITOR.replace('context');
 	                        //]]>
 	                        </script>
 	                    </div>
+	                </div>
+	                <div class="control-group">
+	                   <div class="controls">
+	                       <span class="icon-tags"></span><span class="help-inline">标签</span>
+	                       <div style="clear: both;"></div>
+	                       <hr class="c-fix">
+	                       <div>
+	                           <div>
+	                               <input type="text" value="" class="simple-box" placeholder="选择标签" style="border-radius: 0px;">
+	                           </div>
+                               <div>
+                                  <ul>
+                                      <li>sdfsdfsdf</li>
+                                      <li>sdfsdfsdf</li>
+                                      <li>sdfsdfsdf</li>
+                                      <li>sdfsdfsdf</li>
+                                  </ul>
+                               </div>
+	                       </div>
+	                   </div>
 	                </div>
 	                <div class="control-group">
 	                    <div class="controls">
