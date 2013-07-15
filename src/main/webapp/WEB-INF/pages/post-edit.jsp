@@ -19,12 +19,70 @@ request.setAttribute("contextPath", contextPath);
 <script type="text/javascript">
 $(function(){
 	//$('#context').wysihtml5({"color": true,"html": true});
+	// tag
+	$("#tag-input").focus(function(){
+		genTagCtx($(this));
+	}).keydown(function(){
+		genTagCtx($(this));
+	}).blur(function(){
+		$(this).siblings(".tag-menu").remove();
+	});
+	
 });
+function genTagCtx(obj){
+	obj.siblings(".tag-menu").remove();
+	obj.val($.trim(obj.val()));
+    var tagMenu = $("<div>").addClass("tag-menu");
+    var tagMenuUl = $("<ul>");
+    tagMenu.html(tagMenuUl);
+    if(obj.val() != ""){
+    	var owerLi = $("<li>").html(obj.val());
+        owerLi.append($("<button>").addClass("btn btn-mini btn-primary pull-right").html("添加"));
+        tagMenuUl.append(owerLi);
+        $.getJSON("<s:url value='access/tag_list'/>",{tagName:obj.val()},function(data){
+        	if(data){
+        		$.each(data,function(i,obj){
+        			owerLi.before($("<li>").html(obj.tagName));
+                });
+        	}
+        });
+    }else{
+        tagMenuUl.html("<li>").css({"background": "#e0e0e0"}).html("请输入标签名称");
+    }
+    
+    obj.after(tagMenu);
+}
 </script>
 <title>编辑博客</title>
 <style type="text/css">
 hr {
 	margin: 2px 0 10px;
+}
+.tag-box{
+    position: relative;
+}
+.tag-menu{
+    border: 1px solid #ccc;
+    width:300px;
+    position: absolute;
+    top: 29px;
+    z-index: 999;
+}
+.tag-menu>ul{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+.tag-menu>ul>li{
+    padding: 4px 6px;
+    background: #fff;
+    height: 20px;
+    line-height: 20px;
+}
+
+.tag-menu>ul>li:HOVER{
+    background: #dfeaf4;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -59,18 +117,20 @@ hr {
 	                       <span class="icon-tags"></span><span class="help-inline">标签</span>
 	                       <div style="clear: both;"></div>
 	                       <hr class="c-fix">
-	                       <div>
-	                           <div>
-	                               <input type="text" value="" class="simple-box" placeholder="选择标签" style="border-radius: 0px;">
-	                           </div>
-                               <div>
+	                       <div class="tag-box">
+	                           <input type="text" value="" class="simple-box" id="tag-input" placeholder="添加标签" style="border-radius: 0px;float: none;">
+                               <!--div class="tag-menu">
                                   <ul>
+                                      <li style="background: #e0e0e0;">请输入标签名称</li>
                                       <li>sdfsdfsdf</li>
                                       <li>sdfsdfsdf</li>
                                       <li>sdfsdfsdf</li>
                                       <li>sdfsdfsdf</li>
+                                      <li>
+                                        sfsfsdf <button class="btn btn-mini btn-primary pull-right">添加</button>
+                                      </li>
                                   </ul>
-                               </div>
+                               </div-->
 	                       </div>
 	                   </div>
 	                </div>

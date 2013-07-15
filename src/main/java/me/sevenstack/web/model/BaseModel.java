@@ -25,15 +25,24 @@ public class BaseModel {
     }
 
     public String getCreateDate() {
+        if(createTime == null){
+            return "";
+        }
         SimpleDateFormat format = new SimpleDateFormat("yyyy-M-dd HH:mm");
         return format.format(new Date(createTime));
     }
 
     public String getUpdateDate() {
+        if(updateTime == null){
+            return "";
+        }
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         return df.format(new Date(updateTime));
     }
     public String getEnCreateDate(){
+        if(updateTime == null){
+            return "";
+        }
         SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy",Locale.ENGLISH);
         return df.format(new Date(updateTime));
     }

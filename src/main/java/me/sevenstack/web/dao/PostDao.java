@@ -9,6 +9,7 @@ import me.sevenstack.web.dao.impl.PostDaoImpl;
 import me.sevenstack.web.model.Comment;
 import me.sevenstack.web.model.Pagination;
 import me.sevenstack.web.model.Post;
+import me.sevenstack.web.model.Tag;
 
 @ImplementedBy(PostDaoImpl.class)
 public interface PostDao {
@@ -37,4 +38,6 @@ public interface PostDao {
 	public Integer saveComment(Comment comment) throws Exception;
 
 	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception;
+	
+	public List<Tag> findTagListLikeName(String tagName)throws Exception;
 }

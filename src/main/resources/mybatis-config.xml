@@ -7,8 +7,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="user" type="me.sevenstack.web.model.User" />
 		<typeAlias alias="post" type="me.sevenstack.web.model.Post" />
 		<typeAlias alias="comment" type="me.sevenstack.web.model.Comment" />
+		<typeAlias alias="tag" type="me.sevenstack.web.model.Tag" />
 		<typeAlias alias="userPostFavorite" type="me.sevenstack.web.model.UserPostFavorite"/>
-		
 	</typeAliases>
 	<environments default="dev">
 		<environment id="dev">

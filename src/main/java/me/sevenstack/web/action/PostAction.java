@@ -185,14 +185,6 @@ public class PostAction extends BaseAction {
     }
     
     public static void main(String[] args)throws Exception {
-        String s = "1";
-        s += "2";
-        //System.out.println(new Date(new Long("1372147885000")));
-        
-        List<Long> list = new ArrayList<Long>();
-        list.add(null);
-        for(Long l : list){
-            System.out.println(l);
-        }
+       System.out.println(new Integer(11230)/1000);
     }
 }

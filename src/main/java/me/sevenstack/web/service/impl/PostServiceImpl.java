@@ -7,6 +7,7 @@ import me.sevenstack.web.dao.PostDao;
 import me.sevenstack.web.model.Comment;
 import me.sevenstack.web.model.Pagination;
 import me.sevenstack.web.model.Post;
+import me.sevenstack.web.model.Tag;
 import me.sevenstack.web.service.PostService;
 
 import org.mybatis.guice.transactional.Transactional;
@@ -99,4 +100,9 @@ public class PostServiceImpl implements PostService {
 	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception{
 	    return postDao.findCommentCountByPids(param);
 	}
+
+    @Override
+    public List<Tag> findTagListLikeName(String tagName) throws Exception {
+        return postDao.findTagListLikeName(tagName);
+    }
 }

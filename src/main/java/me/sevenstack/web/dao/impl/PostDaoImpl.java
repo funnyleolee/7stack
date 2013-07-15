@@ -7,6 +7,7 @@ import java.util.Map;
 import me.sevenstack.web.dao.PostDao;
 import me.sevenstack.web.model.Comment;
 import me.sevenstack.web.model.Post;
+import me.sevenstack.web.model.Tag;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -87,5 +88,10 @@ public class PostDaoImpl implements PostDao {
 	public List<Map<String, Object>> findCommentCountByPids(Map<String, Object> param)throws Exception{
 	    return session.selectList("findCommentCountByPids", param);
 	}
+
+    @Override
+    public List<Tag> findTagListLikeName(String tagName) throws Exception {
+        return session.selectList("findTagListLikeName","%"+tagName+"%");
+    }
 
 }
